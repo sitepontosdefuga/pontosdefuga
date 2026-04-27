@@ -641,14 +641,8 @@
     ]
   },
   "_auth": {
-    "tokens": [
-      {
-        "label": "teste",
-        "salt": "9rxjbfEdglLn5ll+rs55qw==",
-        "iv": "lV5JPB8t3CNAl8zD",
-        "data": "Unv46Lcp1ftYpt9g1iWU1ngpETjbpHqREZPsVDMaaiA97leOHm6tPVht24EmT+bL7C6l/bLgEls="
-      }
-    ]
+    "tokens": [],
+    "users": []
   },
   "otherProductions": [
     {
