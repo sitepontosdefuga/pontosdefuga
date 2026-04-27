@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>pontos de fuga — Admin</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,600;1,9..144,300;1,9..144,400;1,9..144,600&family=Space+Grotesk:wght@300;400;500;600;700&family=IBM+Plex+Mono:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style/style-base.css">
+  <link rel="stylesheet" href="style/style-admin.css">
+</head>
+<body>
+
+  <!-- ══ LOGIN ══════════════════════════════════════════════ -->
+  <div id="loginScreen">
+    <div class="login-box">
+      <div class="login-logo">pontos de fuga</div>
+      <h1 class="login-title">Admin<br>Panel</h1>
+      <p class="login-sub">// acesso restrito à equipe</p>
+      <div class="field">
+        <label>Senha</label>
+        <input type="password" id="passwordInput" placeholder="••••••••••••">
+      </div>
+      <button class="btn btn-primary" id="loginBtn" onclick="doLogin()">Entrar →</button>
+      <p id="loginErr"></p>
+    </div>
+  </div>
+
+  <!-- ══ SETUP (primeira vez — nenhuma senha cadastrada) ════ -->
+  <div id="setupScreen">
+    <div class="login-box">
+      <div class="login-logo">pontos de fuga</div>
+      <h1 class="login-title">Primeiro<br>acesso</h1>
+      <p class="login-sub">// configure sua senha de acesso</p>
+      <div class="field">
+        <label>Seu nome</label>
+        <input type="text" id="setupLabel" placeholder="ex: Pedro">
+      </div>
+      <div class="field">
+        <label>GitHub Token</label>
+        <input type="password" id="setupToken" placeholder="ghp_xxxxxxxxxxxxxxxxxxxx">
+      </div>
+      <div class="field">
+        <label>Senha que deseja usar</label>
+        <input type="password" id="setupPassword" placeholder="escolha uma senha forte">
+      </div>
+      <button class="btn btn-primary" id="setupBtn" onclick="doSetup()">Salvar e entrar →</button>
+      <p id="setupErr"></p>
+    </div>
+  </div>
+
+  <!-- ══ APP ════════════════════════════════════════════════ -->
+  <div id="app">
+
+    <div class="adm-topbar">
+      <button class="adm-menu-btn" onclick="toggleAdmDrawer()" aria-label="Menu">☰</button>
+      <span class="adm-topbar-logo">pontos de fuga / admin</span>
+      <div class="adm-topbar-right">
+        <span id="saveStatus" class="save-status">carregando…</span>
+        <button class="btn btn-primary" id="saveBtn" onclick="saveAll()" disabled>
+          <span id="saveBtnText">Salvar no GitHub</span>
+        </button>
+        <button class="btn btn-secondary btn-small" onclick="doLogout()">Sair</button>
+      </div>
+    </div>
+
+    <div class="adm-drawer-backdrop" id="admDrawerBackdrop" onclick="toggleAdmDrawer()"></div>
+    <div class="adm-layout">
+
+      <!-- SIDEBAR -->
+      <aside class="adm-sidebar">
+        <span class="sidebar-section">Catálogo</span>
+        <button class="nav-btn active" onclick="showPanel('films')">Produções <span id="filmsCount"></span></button>
+        <button class="nav-btn" onclick="showPanel('upcoming')">Em produção <span id="upcomingCount"></span></button>
+        <span class="sidebar-section">Institucional</span>
+        <button class="nav-btn" onclick="showPanel('festivais')">Festivais</button>
+<button class="nav-btn" onclick="showPanel('parceiros')">Parceiros</button>
+        <span class="sidebar-section">Páginas</span>
+        <button class="nav-btn" onclick="showPanel('pag-principal')">Pág. principal</button>
+        <button class="nav-btn" onclick="showPanel('pag-producoes')">Produções</button>
+        <button class="nav-btn" onclick="showPanel('pag-historia')">Nossa história</button>
+        <button class="nav-btn" onclick="showPanel('pag-vemai')">Vem aí</button>
+        <button class="nav-btn" onclick="showPanel('pag-contato')">Contato</button>
+        <span class="sidebar-section">Sistema</span>
+        <button class="nav-btn" onclick="showPanel('estilo')">Estilo</button>
+        <button class="nav-btn" onclick="showPanel('tipografia')">Tipografia</button>
+        <button class="nav-btn" onclick="showPanel('links')">Links</button>
+        <button class="nav-btn" onclick="showPanel('acessos')">Acessos</button>
+      </aside>
+
+      <!-- CONTENT -->
+      <main class="adm-content">
+
+        <div class="section-panel active" id="panel-films">
+          <div class="panel-header">
+            <span class="panel-title">Produções</span>
+            <span class="panel-count" id="filmsPanelCount"></span>
+          </div>
+          <div id="filmsList"></div>
+          <button class="add-btn" onclick="addFilm()">+ adicionar produção</button>
+
+          <!-- ── OUTRAS PRODUÇÕES ── -->
+          <div class="panel-header" style="margin-top:2.5rem">
+            <span class="panel-title" style="font-size:16px">Outras Produções</span>
+            <span class="panel-count" id="otherPanelCount"></span>
+          </div>
+          <div id="otherProductionsList"></div>
+          <button class="add-btn" onclick="addOtherProduction()">+ adicionar outra produção</button>
+        </div>
+
+        <div class="section-panel" id="panel-upcoming">
+          <div class="panel-header">
+            <span class="panel-title">Em produção</span>
+            <span class="panel-count" id="upcomingPanelCount"></span>
+          </div>
+          <div id="upcomingList"></div>
+          <button class="add-btn" onclick="addUpcoming()">+ adicionar produção</button>
+        </div>
+
+        <div class="section-panel" id="panel-festivais">
+          <div class="panel-header">
+            <span class="panel-title">Festivais</span>
+            <span class="panel-count" id="festivalPanelCount"></span>
+          </div>
+          <div id="festivaisList"></div>
+          <button class="add-btn" onclick="addFestival()">+ adicionar festival</button>
+        </div>
+
+        <div class="section-panel" id="panel-parceiros">
+          <div class="panel-header"><span class="panel-title">Parceiros</span></div>
+          <div id="parceirosForm"></div>
+        </div>
+
+        <!-- ── NOSSA HISTÓRIA ── -->
+        <div class="section-panel" id="panel-pag-historia">
+          <div class="panel-header"><span class="panel-title">Nossa história</span></div>
+          <div id="pagHistoriaForm"></div>
+        </div>
+
+        <!-- ── PÁG. PRINCIPAL ── -->
+        <div class="section-panel" id="panel-pag-principal">
+          <div class="panel-header"><span class="panel-title">Pág. principal</span></div>
+          <div id="pagPrincipalForm"></div>
+        </div>
+
+        <!-- ── PRODUÇÕES ── -->
+        <div class="section-panel" id="panel-pag-producoes">
+          <div class="panel-header"><span class="panel-title">Produções</span></div>
+          <div id="pagProducoesForm"></div>
+        </div>
+
+        <!-- ── VEM AÍ ── -->
+        <div class="section-panel" id="panel-pag-vemai">
+          <div class="panel-header"><span class="panel-title">Vem aí</span></div>
+          <div id="pagVemaiForm"></div>
+        </div>
+
+        <!-- ── CONTATO ── -->
+        <div class="section-panel" id="panel-pag-contato">
+          <div class="panel-header"><span class="panel-title">Contato</span></div>
+          <div id="pagContatoForm"></div>
+        </div>
+
+        <!-- ── ESTILO ── -->
+        <div class="section-panel" id="panel-estilo">
+          <div class="panel-header"><span class="panel-title">Estilo</span></div>
+          <div id="estiloForm"></div>
+        </div>
+
+        <!-- ── TIPOGRAFIA ── -->
+        <div class="section-panel" id="panel-tipografia">
+          <div class="panel-header"><span class="panel-title">Tipografia</span></div>
+          <div id="tipografiaForm"></div>
+        </div>
+
+        <!-- ── LINKS ── -->
+        <div class="section-panel" id="panel-links">
+          <div class="panel-header"><span class="panel-title">Links</span></div>
+          <div id="linksForm"></div>
+        </div>
+
+        <!-- ── ACESSOS ── -->
+        <div class="section-panel" id="panel-acessos">
+          <div class="panel-header"><span class="panel-title">Gerenciar acessos</span></div>
+
+          <div id="acessosList" style="margin-bottom:2rem"></div>
+
+          <div class="card">
+            <div class="card-header" onclick="toggleCard('card-add-access')">
+              <div class="card-header-left">
+                <span class="card-name">Adicionar novo acesso</span>
+              </div>
+              <span class="card-chevron">▼</span>
+            </div>
+            <div class="card-body" id="card-add-access">
+              <div class="fields-grid">
+                <div class="field"><label>Nome do usuário</label><input id="newLabel" placeholder="ex: Ana"></div>
+                <div class="field"></div>
+                <div class="field full"><label>GitHub Token</label><input type="password" id="newToken" placeholder="ghp_xxxxxxxxxxxxxxxxxxxx"></div>
+                <div class="field full"><label>Senha</label><input type="password" id="newPassword" placeholder="senha que o usuário vai usar"></div>
+              </div>
+              <div class="card-actions">
+                <button class="btn btn-primary" id="addAccessBtn" onclick="addAccess()">+ adicionar acesso</button>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </main>
+    </div>
+  </div>
+
+  <div id="toast"></div>
+
+  <script src="scripts/data.js"></script>
+  <script src="scripts/script-admin.js"></script>
+</body>
+</html>

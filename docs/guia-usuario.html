@@ -1,0 +1,839 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Inter', sans-serif;
+    font-size: 11pt;
+    line-height: 1.7;
+    color: #1a1a1a;
+    background: #fff;
+  }
+
+  /* CAPA */
+  .cover {
+    height: 100vh;
+    background: #0d0b09;
+    color: #f0ece4;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 80px;
+    page-break-after: always;
+  }
+  .cover-label {
+    font-size: 9pt;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: #c9a84c;
+    margin-bottom: 32px;
+  }
+  .cover-title {
+    font-size: 42pt;
+    font-weight: 300;
+    line-height: 1.15;
+    margin-bottom: 24px;
+  }
+  .cover-title em { font-style: italic; color: #c9a84c; }
+  .cover-sub {
+    font-size: 13pt;
+    color: rgba(240,236,228,0.55);
+    font-weight: 300;
+    max-width: 480px;
+    line-height: 1.6;
+    margin-bottom: 60px;
+  }
+  .cover-footer {
+    font-size: 9pt;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: rgba(240,236,228,0.3);
+  }
+
+  /* LAYOUT */
+  .page {
+    padding: 56px 72px;
+    max-width: 100%;
+  }
+
+  /* CABEÇALHO DE SEÇÃO */
+  .section-header {
+    border-top: 3px solid #0d0b09;
+    padding-top: 16px;
+    margin-bottom: 36px;
+    margin-top: 48px;
+  }
+  .section-header:first-child { margin-top: 0; }
+  .section-number {
+    font-size: 8pt;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: #c9a84c;
+    font-weight: 600;
+    margin-bottom: 6px;
+  }
+  .section-title {
+    font-size: 22pt;
+    font-weight: 300;
+    color: #0d0b09;
+  }
+
+  /* SUBSECTION */
+  h3 {
+    font-size: 13pt;
+    font-weight: 600;
+    color: #0d0b09;
+    margin-top: 32px;
+    margin-bottom: 12px;
+    padding-bottom: 6px;
+    border-bottom: 1px solid #e8e4dc;
+  }
+
+  h4 {
+    font-size: 11pt;
+    font-weight: 600;
+    color: #333;
+    margin-top: 20px;
+    margin-bottom: 8px;
+  }
+
+  p { margin-bottom: 12px; color: #333; }
+
+  /* LISTAS */
+  ul, ol {
+    margin: 8px 0 16px 20px;
+    color: #333;
+  }
+  li { margin-bottom: 6px; }
+
+  /* CALLOUTS */
+  .callout {
+    border-left: 4px solid #c9a84c;
+    background: #fdf9f0;
+    padding: 14px 18px;
+    margin: 20px 0;
+    border-radius: 0 6px 6px 0;
+  }
+  .callout-warn {
+    border-left-color: #c4622d;
+    background: #fdf3ee;
+  }
+  .callout-tip {
+    border-left-color: #6b8f71;
+    background: #f0f6f1;
+  }
+  .callout strong {
+    font-size: 9pt;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    display: block;
+    margin-bottom: 4px;
+  }
+
+  /* PASSO A PASSO */
+  .steps { margin: 16px 0; }
+  .step {
+    display: flex;
+    gap: 16px;
+    margin-bottom: 14px;
+    align-items: flex-start;
+  }
+  .step-num {
+    width: 28px;
+    height: 28px;
+    background: #0d0b09;
+    color: #c9a84c;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 9pt;
+    font-weight: 700;
+    flex-shrink: 0;
+    margin-top: 2px;
+  }
+  .step-body { flex: 1; }
+  .step-body strong { display: block; margin-bottom: 3px; }
+
+  /* CAMPO DE DESTAQUE */
+  .field-box {
+    background: #f5f4f2;
+    border: 1px solid #e0ddd8;
+    border-radius: 6px;
+    padding: 10px 14px;
+    font-family: monospace;
+    font-size: 10pt;
+    color: #0d0b09;
+    margin: 8px 0;
+  }
+
+  /* TABELA */
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 16px 0;
+    font-size: 10pt;
+  }
+  th {
+    background: #0d0b09;
+    color: #c9a84c;
+    padding: 10px 14px;
+    text-align: left;
+    font-size: 9pt;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    font-weight: 600;
+  }
+  td {
+    padding: 9px 14px;
+    border-bottom: 1px solid #e8e4dc;
+    color: #333;
+    vertical-align: top;
+  }
+  tr:last-child td { border-bottom: none; }
+  tr:nth-child(even) td { background: #fafaf8; }
+
+  /* BADGE */
+  .badge {
+    display: inline-block;
+    padding: 2px 8px;
+    border-radius: 3px;
+    font-size: 8.5pt;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+  }
+  .badge-obrig { background: #fee; color: #c00; }
+  .badge-opc   { background: #eff; color: #066; }
+
+  /* ÍNDICE */
+  .toc { page-break-after: always; padding: 56px 72px; }
+  .toc-title {
+    font-size: 22pt;
+    font-weight: 300;
+    margin-bottom: 40px;
+    color: #0d0b09;
+  }
+  .toc-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    padding: 10px 0;
+    border-bottom: 1px dotted #ccc;
+    font-size: 11pt;
+  }
+  .toc-item strong { font-weight: 500; }
+  .toc-item-sub {
+    padding: 7px 0 7px 20px;
+    border-bottom: 1px dotted #e5e5e5;
+    font-size: 10pt;
+    color: #666;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  /* PAGE BREAK */
+  .break { page-break-before: always; }
+
+  /* GRID 2 COLUNAS */
+  .grid2 { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin: 16px 0; }
+  .card-info {
+    background: #f8f7f5;
+    border: 1px solid #e4e0d8;
+    border-radius: 8px;
+    padding: 16px;
+  }
+  .card-info h5 {
+    font-size: 10pt;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: #555;
+    margin-bottom: 8px;
+  }
+  .card-info p { font-size: 10pt; margin-bottom: 0; color: #555; }
+
+  /* SCREENSHOT PLACEHOLDER */
+  .screen-note {
+    border: 2px dashed #ccc;
+    border-radius: 8px;
+    padding: 20px;
+    text-align: center;
+    color: #999;
+    font-size: 9.5pt;
+    margin: 16px 0;
+    font-style: italic;
+  }
+
+  /* RODAPÉ */
+  @page {
+    margin: 0;
+    size: A4;
+  }
+</style>
+</head>
+<body>
+
+<!-- CAPA -->
+<div class="cover">
+  <div class="cover-label">pontos de fuga — documentação</div>
+  <div class="cover-title">Guia de<br><em>Administração</em><br>do Site</div>
+  <div class="cover-sub">Tudo o que você precisa saber para manter o site atualizado — sem precisar entender de programação.</div>
+  <div class="cover-footer">versão 1.0 &nbsp;·&nbsp; 2026</div>
+</div>
+
+<!-- ÍNDICE -->
+<div class="toc">
+  <div class="toc-title">Índice</div>
+
+  <div class="toc-item"><strong>1. O que é o painel admin?</strong> <span>3</span></div>
+  <div class="toc-item"><strong>2. Como acessar</strong> <span>3</span></div>
+  <div class="toc-item-sub"><span>2.1 Login</span></div>
+  <div class="toc-item-sub"><span>2.2 Esqueci a senha</span></div>
+  <div class="toc-item"><strong>3. Navegação pelo painel</strong> <span>4</span></div>
+  <div class="toc-item"><strong>4. Gerenciar produções</strong> <span>5</span></div>
+  <div class="toc-item-sub"><span>4.1 Adicionar um novo filme</span></div>
+  <div class="toc-item-sub"><span>4.2 Editar um filme existente</span></div>
+  <div class="toc-item-sub"><span>4.3 Fazer upload de imagem e vídeo</span></div>
+  <div class="toc-item-sub"><span>4.4 Remover um filme</span></div>
+  <div class="toc-item"><strong>5. Filmes em produção (Vem aí)</strong> <span>8</span></div>
+  <div class="toc-item"><strong>6. Nossa história</strong> <span>9</span></div>
+  <div class="toc-item-sub"><span>6.1 Equipe</span></div>
+  <div class="toc-item-sub"><span>6.2 Festivais e prêmios</span></div>
+  <div class="toc-item-sub"><span>6.3 Marcos históricos</span></div>
+  <div class="toc-item-sub"><span>6.4 Parceiros</span></div>
+  <div class="toc-item"><strong>7. Conteúdo das páginas</strong> <span>11</span></div>
+  <div class="toc-item"><strong>8. Links e redes sociais</strong> <span>12</span></div>
+  <div class="toc-item"><strong>9. Identidade visual (logo)</strong> <span>12</span></div>
+  <div class="toc-item"><strong>10. Gerenciar acessos</strong> <span>13</span></div>
+  <div class="toc-item"><strong>11. Salvar alterações</strong> <span>14</span></div>
+  <div class="toc-item"><strong>12. Dúvidas frequentes</strong> <span>14</span></div>
+</div>
+
+<!-- CONTEÚDO -->
+<div class="page break">
+
+  <!-- SEÇÃO 1 -->
+  <div class="section-header">
+    <div class="section-number">01</div>
+    <div class="section-title">O que é o painel admin?</div>
+  </div>
+
+  <p>O painel administrativo é uma área privada do site onde você pode atualizar todo o conteúdo da <strong>pontos de fuga</strong> sem precisar mexer em código. É como uma "sala dos fundos" do site: o visitante comum nunca a vê.</p>
+
+  <p>Por lá você consegue:</p>
+  <ul>
+    <li>Adicionar, editar e remover filmes do catálogo</li>
+    <li>Subir fotos, vídeos e trailers</li>
+    <li>Manter a seção "Vem aí" com projetos em produção</li>
+    <li>Atualizar informações da equipe, festivais e parceiros</li>
+    <li>Editar textos de todas as páginas do site</li>
+    <li>Configurar links de redes sociais</li>
+    <li>Trocar o logo do site</li>
+    <li>Gerenciar quem tem acesso ao painel</li>
+  </ul>
+
+  <div class="callout">
+    <strong>Importante</strong>
+    Toda alteração feita no painel é salva diretamente no site. Não existe "modo rascunho" — ao clicar em <em>Salvar</em>, as mudanças ficam visíveis ao público em alguns segundos.
+  </div>
+
+
+  <!-- SEÇÃO 2 -->
+  <div class="section-header">
+    <div class="section-number">02</div>
+    <div class="section-title">Como acessar</div>
+  </div>
+
+  <h3>2.1 Login</h3>
+
+  <p>O painel fica em um endereço específico do site. Para acessá-lo:</p>
+
+  <div class="steps">
+    <div class="step">
+      <div class="step-num">1</div>
+      <div class="step-body"><strong>Abra o navegador</strong> (Chrome, Firefox, Safari — qualquer um funciona)</div>
+    </div>
+    <div class="step">
+      <div class="step-num">2</div>
+      <div class="step-body"><strong>Digite o endereço:</strong>
+        <div class="field-box">https://[endereço-do-site]/admin.html</div>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">3</div>
+      <div class="step-body"><strong>Digite a senha</strong> no campo que aparece e clique em <em>Entrar →</em></div>
+    </div>
+  </div>
+
+  <div class="callout callout-warn">
+    <strong>Atenção — bloqueio por segurança</strong>
+    Após 5 tentativas incorretas de senha, o acesso fica bloqueado por 15 minutos. Isso é uma proteção contra invasores. Se você errou a senha muitas vezes, aguarde o tempo indicado na tela.
+  </div>
+
+  <h3>2.2 Esqueci a senha</h3>
+
+  <p>A senha não pode ser recuperada automaticamente — ela é guardada de forma criptografada por segurança. Se você perdeu o acesso, será necessário que alguém com acesso técnico ao repositório GitHub crie uma nova senha. Consulte o <strong>Guia Técnico</strong> ou entre em contato com o desenvolvedor responsável.</p>
+
+
+  <!-- SEÇÃO 3 -->
+  <div class="section-header">
+    <div class="section-number">03</div>
+    <div class="section-title">Navegação pelo painel</div>
+  </div>
+
+  <p>Após o login, você verá o painel dividido em duas partes:</p>
+
+  <ul>
+    <li><strong>Menu lateral esquerdo</strong> — lista todas as seções editáveis</li>
+    <li><strong>Área central</strong> — mostra os campos da seção selecionada</li>
+  </ul>
+
+  <p>O menu está organizado em grupos:</p>
+
+  <table>
+    <tr><th>Grupo</th><th>O que contém</th></tr>
+    <tr><td><strong>Catálogo</strong></td><td>Produções e projetos em produção</td></tr>
+    <tr><td><strong>Institucional</strong></td><td>Festivais, marcos históricos, equipe e parceiros</td></tr>
+    <tr><td><strong>Páginas</strong></td><td>Textos e conteúdos de cada página do site</td></tr>
+    <tr><td><strong>Sistema</strong></td><td>Links de redes sociais e gerenciamento de senhas</td></tr>
+  </table>
+
+  <div class="callout callout-tip">
+    <strong>Dica</strong>
+    Clique em qualquer item do menu para ir direto à seção. A seção ativa fica destacada em amarelo na barra lateral.
+  </div>
+
+  <p>No canto superior direito existe um botão <strong>Sair</strong> para encerrar a sessão com segurança. Sempre use-o ao terminar, especialmente em computadores compartilhados.</p>
+
+</div>
+
+<!-- SEÇÃO 4 -->
+<div class="page break">
+
+  <div class="section-header">
+    <div class="section-number">04</div>
+    <div class="section-title">Gerenciar produções</div>
+  </div>
+
+  <p>Esta é a seção mais usada do painel. Aqui ficam todos os filmes que aparecem na página <strong>Produções</strong> e nas fichas individuais de cada filme.</p>
+
+  <h3>4.1 Adicionar um novo filme</h3>
+
+  <div class="steps">
+    <div class="step">
+      <div class="step-num">1</div>
+      <div class="step-body"><strong>Clique em "Produções"</strong> no menu lateral</div>
+    </div>
+    <div class="step">
+      <div class="step-num">2</div>
+      <div class="step-body"><strong>Role até o final da lista</strong> e clique no botão <em>+ adicionar produção</em></div>
+    </div>
+    <div class="step">
+      <div class="step-num">3</div>
+      <div class="step-body"><strong>Um novo bloco aparecerá</strong> no topo da lista com todos os campos em branco</div>
+    </div>
+    <div class="step">
+      <div class="step-num">4</div>
+      <div class="step-body"><strong>Preencha os campos</strong> (veja a tabela abaixo)</div>
+    </div>
+    <div class="step">
+      <div class="step-num">5</div>
+      <div class="step-body"><strong>Clique em "Salvar tudo"</strong> no canto superior direito quando terminar</div>
+    </div>
+  </div>
+
+  <h4>Campos disponíveis para cada filme</h4>
+
+  <table>
+    <tr><th>Campo</th><th>O que é</th><th>Obrigatoriedade</th></tr>
+    <tr><td>Título PT</td><td>Nome do filme em português</td><td><span class="badge badge-obrig">obrigatório</span></td></tr>
+    <tr><td>Título EN</td><td>Nome em inglês (pode ser igual ao PT)</td><td><span class="badge badge-opc">opcional</span></td></tr>
+    <tr><td>Diretor(a)</td><td>Nome do(a) diretor(a)</td><td><span class="badge badge-obrig">obrigatório</span></td></tr>
+    <tr><td>Ano</td><td>Ano de lançamento</td><td><span class="badge badge-obrig">obrigatório</span></td></tr>
+    <tr><td>Gênero PT / EN</td><td>Ex: Longa-metragem, Documentário</td><td><span class="badge badge-opc">opcional</span></td></tr>
+    <tr><td>Sinopse PT / EN</td><td>Texto que aparece na página do filme</td><td><span class="badge badge-opc">opcional</span></td></tr>
+    <tr><td>Imagem retrato</td><td>Poster/capa vertical do filme (proporção 3:4)</td><td><span class="badge badge-obrig">obrigatório</span></td></tr>
+    <tr><td>Imagem paisagem</td><td>Imagem horizontal para o hero (proporção 16:9)</td><td><span class="badge badge-opc">opcional</span></td></tr>
+    <tr><td>Vídeo trailer</td><td>Link do YouTube ou Vimeo</td><td><span class="badge badge-opc">opcional</span></td></tr>
+    <tr><td>Destaque no hero</td><td>Marcar para que o filme apareça no banner principal da home</td><td><span class="badge badge-opc">opcional</span></td></tr>
+    <tr><td>Ficha técnica</td><td>Lista de funções e nomes da equipe técnica</td><td><span class="badge badge-opc">opcional</span></td></tr>
+    <tr><td>Elenco</td><td>Lista de personagens e atores</td><td><span class="badge badge-opc">opcional</span></td></tr>
+    <tr><td>Fotografias</td><td>Galeria de fotos do filme</td><td><span class="badge badge-opc">opcional</span></td></tr>
+    <tr><td>Making of</td><td>Fotos dos bastidores</td><td><span class="badge badge-opc">opcional</span></td></tr>
+  </table>
+
+  <h3>4.2 Editar um filme existente</h3>
+
+  <div class="steps">
+    <div class="step">
+      <div class="step-num">1</div>
+      <div class="step-body"><strong>Clique em "Produções"</strong> no menu lateral</div>
+    </div>
+    <div class="step">
+      <div class="step-num">2</div>
+      <div class="step-body"><strong>Localize o filme</strong> na lista — cada filme aparece como um bloco com o título</div>
+    </div>
+    <div class="step">
+      <div class="step-num">3</div>
+      <div class="step-body"><strong>Clique no bloco</strong> para expandir e ver todos os campos</div>
+    </div>
+    <div class="step">
+      <div class="step-num">4</div>
+      <div class="step-body"><strong>Faça as alterações</strong> desejadas nos campos</div>
+    </div>
+    <div class="step">
+      <div class="step-num">5</div>
+      <div class="step-body"><strong>Clique em "Salvar tudo"</strong> ao terminar</div>
+    </div>
+  </div>
+
+  <h3>4.3 Fazer upload de imagem e vídeo</h3>
+
+  <p>Ao lado de cada campo de imagem existe um botão <strong>"Escolher arquivo"</strong>. Ao clicar, você seleciona a imagem do seu computador e ela é enviada automaticamente para o servidor.</p>
+
+  <div class="callout">
+    <strong>Tamanhos recomendados</strong>
+    <ul style="margin:8px 0 0 16px">
+      <li><strong>Imagem retrato (poster):</strong> 800 × 1067 px — proporção 3:4 — formato JPG ou PNG</li>
+      <li><strong>Imagem paisagem (hero):</strong> 1920 × 1080 px — proporção 16:9 — formato JPG</li>
+      <li><strong>Fotos da galeria:</strong> 1600 × 1200 px — proporção 4:3</li>
+      <li><strong>Logo da produtora:</strong> PNG com fundo transparente, altura mínima 80 px</li>
+    </ul>
+  </div>
+
+  <div class="callout callout-warn">
+    <strong>Atenção com tamanho de arquivo</strong>
+    Imagens acima de 5 MB podem demorar para enviar ou falhar. Redimensione antes de subir. Ferramentas gratuitas online: <em>squoosh.app</em> ou <em>tinypng.com</em>.
+  </div>
+
+  <p>Para <strong>trailers e vídeos</strong>, não é necessário fazer upload. Basta colar o link do YouTube ou Vimeo no campo correspondente. O site incorpora o vídeo automaticamente.</p>
+
+  <h3>4.4 Remover um filme</h3>
+
+  <div class="steps">
+    <div class="step">
+      <div class="step-num">1</div>
+      <div class="step-body">Expanda o bloco do filme</div>
+    </div>
+    <div class="step">
+      <div class="step-num">2</div>
+      <div class="step-body">Clique no botão <strong>"Remover"</strong> (ícone de lixeira ou texto vermelho)</div>
+    </div>
+    <div class="step">
+      <div class="step-num">3</div>
+      <div class="step-body">Confirme a ação na janela que aparece</div>
+    </div>
+    <div class="step">
+      <div class="step-num">4</div>
+      <div class="step-body">Clique em <strong>"Salvar tudo"</strong></div>
+    </div>
+  </div>
+
+  <div class="callout callout-warn">
+    <strong>Atenção</strong>
+    Remover um filme é irreversível. As imagens do filme ficam armazenadas no servidor, mas o filme desaparece do site após salvar. Se tiver dúvida, prefira deixar o filme sem imagem a excluí-lo.
+  </div>
+
+</div>
+
+<!-- SEÇÃO 5 -->
+<div class="page break">
+
+  <div class="section-header">
+    <div class="section-number">05</div>
+    <div class="section-title">Filmes em produção (Vem aí)</div>
+  </div>
+
+  <p>A seção <strong>"Em produção"</strong> no menu corresponde à página <em>Vem aí</em> do site, onde aparecem os projetos ainda em desenvolvimento ou filmagem.</p>
+
+  <p>O processo é o mesmo que para as produções finalizadas. Os campos específicos são:</p>
+
+  <table>
+    <tr><th>Campo</th><th>O que é</th></tr>
+    <tr><td>Status</td><td>Em qual fase está: <em>Desenvolvimento</em>, <em>Filmando</em> ou <em>Pós-produção</em></td></tr>
+    <tr><td>Título PT / EN</td><td>Nome do projeto (pode mudar até o lançamento)</td></tr>
+    <tr><td>Sinopse PT / EN</td><td>Texto de apresentação do projeto</td></tr>
+    <tr><td>Imagem retrato</td><td>Imagem representativa do projeto (pode ser um still, arte conceitual, etc.)</td></tr>
+  </table>
+
+  <div class="callout callout-tip">
+    <strong>Dica</strong>
+    Quando um projeto em produção for finalizado, remova-o de "Em produção" e adicione-o na seção "Produções" com todos os dados completos.
+  </div>
+
+
+  <!-- SEÇÃO 6 -->
+  <div class="section-header">
+    <div class="section-number">06</div>
+    <div class="section-title">Nossa história</div>
+  </div>
+
+  <h3>6.1 Equipe</h3>
+
+  <p>Cadastre os membros da equipe que aparecem na página <em>Nossa história</em>:</p>
+
+  <table>
+    <tr><th>Campo</th><th>O que é</th></tr>
+    <tr><td>Nome</td><td>Nome completo do membro</td></tr>
+    <tr><td>Cargo PT / EN</td><td>Função na produtora (ex: Diretora, Produtor Executivo)</td></tr>
+    <tr><td>Bio PT / EN</td><td>Texto curto sobre a pessoa (2–4 linhas)</td></tr>
+    <tr><td>Foto</td><td>Foto da pessoa — proporção 3:4 (retrato), mínimo 600 × 800 px</td></tr>
+  </table>
+
+  <div class="callout callout-tip">
+    <strong>Sobre a foto</strong>
+    Fotos de fundo escuro ou neutro ficam melhor na estética do site. Fundos coloridos e muito saturados podem colidir com o design.
+  </div>
+
+  <h3>6.2 Festivais e prêmios</h3>
+
+  <p>Lista de festivais onde os filmes da produtora participaram. Para cada festival:</p>
+
+  <table>
+    <tr><th>Campo</th><th>O que é</th></tr>
+    <tr><td>Nome</td><td>Nome do festival (ex: Festival de Brasília)</td></tr>
+    <tr><td>Ano</td><td>Ano de participação</td></tr>
+    <tr><td>Logo</td><td>Logo do festival — PNG transparente, altura mínima 72 px</td></tr>
+  </table>
+
+  <h3>6.3 Marcos históricos</h3>
+
+  <p>Linha do tempo da produtora. Cada marco tem:</p>
+
+  <table>
+    <tr><th>Campo</th><th>O que é</th></tr>
+    <tr><td>Ano</td><td>O ano do acontecimento</td></tr>
+    <tr><td>Título PT / EN</td><td>Título curto do marco (ex: "Primeiro longa-metragem")</td></tr>
+    <tr><td>Texto PT / EN</td><td>Descrição breve do acontecimento</td></tr>
+  </table>
+
+  <h3>6.4 Parceiros</h3>
+
+  <p>Lista de empresas, instituições ou patrocinadores parceiros da produtora. Você pode adicionar apenas o nome ou também o logo:</p>
+
+  <table>
+    <tr><th>Campo</th><th>O que é</th></tr>
+    <tr><td>Nome</td><td>Nome do parceiro</td></tr>
+    <tr><td>Logo</td><td>Logo da empresa — PNG transparente, proporção 3:1, mínimo 200 px de largura</td></tr>
+  </table>
+
+</div>
+
+<!-- SEÇÃO 7 -->
+<div class="page break">
+
+  <div class="section-header">
+    <div class="section-number">07</div>
+    <div class="section-title">Conteúdo das páginas</div>
+  </div>
+
+  <p>No grupo <strong>Páginas</strong> você edita os textos que aparecem em cada seção do site. Não são os filmes em si, mas os títulos, subtítulos e textos de apresentação de cada página.</p>
+
+  <div class="grid2">
+    <div class="card-info">
+      <h5>Pág. principal</h5>
+      <p>Textos do banner principal, grade de produções recentes, carrossel de palavras e seção de contato da home.</p>
+    </div>
+    <div class="card-info">
+      <h5>Produções</h5>
+      <p>Título principal da página de catálogo em PT e EN.</p>
+    </div>
+    <div class="card-info">
+      <h5>Nossa história</h5>
+      <p>Texto do manifesto, títulos das seções de equipe, festivais, marcos e parceiros.</p>
+    </div>
+    <div class="card-info">
+      <h5>Vem aí</h5>
+      <p>Textos de apresentação da página de projetos em produção.</p>
+    </div>
+    <div class="card-info">
+      <h5>Contato</h5>
+      <p>Eyebrow, título, subtítulo e número de WhatsApp para o botão de contato direto.</p>
+    </div>
+  </div>
+
+  <div class="callout callout-tip">
+    <strong>Sobre o WhatsApp</strong>
+    O número deve ser preenchido no formato internacional, sem espaços ou símbolos: <code>5521988902499</code> (55 = Brasil, 21 = DDD, número sem traço).
+  </div>
+
+  <div class="callout">
+    <strong>Sobre os dois idiomas</strong>
+    O site é bilíngue (português e inglês). Para cada campo de texto há uma versão PT e uma EN. Se deixar a versão EN em branco, o site usará um texto padrão em inglês — o recomendado é sempre preencher os dois.
+  </div>
+
+
+  <!-- SEÇÃO 8 -->
+  <div class="section-header">
+    <div class="section-number">08</div>
+    <div class="section-title">Links e redes sociais</div>
+  </div>
+
+  <p>Em <strong>Sistema → Links</strong> você gerencia os links que aparecem no rodapé e no menu de todas as páginas do site.</p>
+
+  <p>Para cada link você define:</p>
+  <ul>
+    <li><strong>Nome</strong> — o texto que aparece no site (ex: Instagram, YouTube, Vimeo)</li>
+    <li><strong>URL</strong> — o endereço completo (ex: https://instagram.com/pontosfuga)</li>
+  </ul>
+
+  <p>Para adicionar um novo link:</p>
+  <div class="steps">
+    <div class="step">
+      <div class="step-num">1</div>
+      <div class="step-body">Preencha os campos "Nome" e "URL" na linha inferior</div>
+    </div>
+    <div class="step">
+      <div class="step-num">2</div>
+      <div class="step-body">Clique em <strong>+ adicionar</strong></div>
+    </div>
+    <div class="step">
+      <div class="step-num">3</div>
+      <div class="step-body">Clique em <strong>Salvar tudo</strong></div>
+    </div>
+  </div>
+
+  <p>Para remover um link, clique no botão <strong>✕</strong> ao lado dele e depois salve.</p>
+
+
+  <!-- SEÇÃO 9 -->
+  <div class="section-header">
+    <div class="section-number">09</div>
+    <div class="section-title">Identidade visual (logo)</div>
+  </div>
+
+  <p>Em <strong>Páginas → Pág. principal</strong> existe a seção <em>Identidade visual</em> onde você pode trocar o logo da produtora que aparece no cabeçalho de todas as páginas.</p>
+
+  <div class="steps">
+    <div class="step">
+      <div class="step-num">1</div>
+      <div class="step-body">Clique em "Pág. principal" no menu</div>
+    </div>
+    <div class="step">
+      <div class="step-num">2</div>
+      <div class="step-body">Localize a seção <em>Identidade visual</em> no topo</div>
+    </div>
+    <div class="step">
+      <div class="step-num">3</div>
+      <div class="step-body">Clique em <strong>Escolher arquivo</strong> e selecione o novo logo</div>
+    </div>
+    <div class="step">
+      <div class="step-num">4</div>
+      <div class="step-body">Aguarde o envio (barra de progresso aparece)</div>
+    </div>
+    <div class="step">
+      <div class="step-num">5</div>
+      <div class="step-body">Clique em <strong>Salvar tudo</strong></div>
+    </div>
+  </div>
+
+  <div class="callout">
+    <strong>Formato recomendado para o logo</strong>
+    PNG com fundo transparente. Altura entre 56 px e 80 px. O logo será exibido com 28 px de altura no cabeçalho.
+  </div>
+
+</div>
+
+<!-- SEÇÃO 10 -->
+<div class="page break">
+
+  <div class="section-header">
+    <div class="section-number">10</div>
+    <div class="section-title">Gerenciar acessos</div>
+  </div>
+
+  <p>Em <strong>Sistema → Acessos</strong> você controla quem pode entrar no painel administrativo.</p>
+
+  <h3>Adicionar um novo acesso</h3>
+
+  <div class="steps">
+    <div class="step">
+      <div class="step-num">1</div>
+      <div class="step-body">Clique em "Acessos" no menu lateral</div>
+    </div>
+    <div class="step">
+      <div class="step-num">2</div>
+      <div class="step-body">Clique em <strong>+ Novo acesso</strong></div>
+    </div>
+    <div class="step">
+      <div class="step-num">3</div>
+      <div class="step-body">Preencha o campo <strong>Token GitHub</strong> (fornecido pelo desenvolvedor ou gerado no GitHub) e escolha uma <strong>senha</strong> para esse acesso</div>
+    </div>
+    <div class="step">
+      <div class="step-num">4</div>
+      <div class="step-body">Clique em <strong>Salvar acesso</strong></div>
+    </div>
+  </div>
+
+  <div class="callout callout-warn">
+    <strong>Atenção</strong>
+    Cada acesso tem um token GitHub associado. Esse token é o que permite salvar alterações no site. Não compartilhe tokens e não os guarde em e-mails ou mensagens. Se um token for comprometido, remova o acesso imediatamente e gere um novo no GitHub.
+  </div>
+
+  <h3>Remover um acesso</h3>
+
+  <p>Na lista de acessos, clique no botão <strong>Remover</strong> ao lado do acesso que deseja excluir e depois salve. A pessoa perderá acesso imediatamente.</p>
+
+  <h3>Trocar a própria senha</h3>
+
+  <p>Para trocar sua senha de acesso ao painel, você precisa:</p>
+  <ol>
+    <li>Remover o acesso atual</li>
+    <li>Adicionar um novo acesso com o mesmo token GitHub e a nova senha</li>
+  </ol>
+
+
+  <!-- SEÇÃO 11 -->
+  <div class="section-header">
+    <div class="section-number">11</div>
+    <div class="section-title">Salvar alterações</div>
+  </div>
+
+  <p>O botão <strong>"Salvar tudo"</strong> fica fixo no canto superior direito do painel. Ele salva <em>todas</em> as alterações feitas desde o último salvamento, em todas as seções.</p>
+
+  <div class="callout callout-warn">
+    <strong>Não esqueça de salvar</strong>
+    Se você fechar o navegador ou mudar de seção sem salvar, as alterações <strong>não editadas na tela atual podem ser perdidas</strong>. O painel não salva automaticamente — é necessário clicar em "Salvar tudo" toda vez.
+  </div>
+
+  <p>Durante o salvamento, o botão fica desativado e aparece uma animação. Aguarde a mensagem de confirmação antes de fechar a janela.</p>
+
+  <p>Se aparecer uma mensagem de erro ao salvar, provavelmente o token GitHub expirou ou houve problema de conexão. Tente novamente ou consulte o Guia Técnico.</p>
+
+
+  <!-- SEÇÃO 12 -->
+  <div class="section-header">
+    <div class="section-number">12</div>
+    <div class="section-title">Dúvidas frequentes</div>
+  </div>
+
+  <h4>Alterei um texto mas ele não apareceu no site. O que fazer?</h4>
+  <p>Verifique se você clicou em "Salvar tudo". Se salvou e o texto ainda não mudou, tente recarregar o site com <strong>Ctrl+Shift+R</strong> (Windows) ou <strong>Cmd+Shift+R</strong> (Mac) para limpar o cache do navegador.</p>
+
+  <h4>Fiz upload de uma imagem mas ela não aparece.</h4>
+  <p>Aguarde alguns segundos após o envio — o GitHub pode demorar até 1 minuto para processar o arquivo. Recarregue a página do site. Se o problema persistir, tente um arquivo menor ou em formato diferente.</p>
+
+  <h4>O site parece desatualizado / mostra conteúdo antigo.</h4>
+  <p>O navegador pode estar exibindo uma versão em cache. Use <strong>Ctrl+Shift+R</strong> (Windows) ou <strong>Cmd+Shift+R</strong> (Mac) para forçar o recarregamento completo.</p>
+
+  <h4>Apareceu a mensagem "Erro ao carregar dados".</h4>
+  <p>Isso indica que houve falha na conexão com o servidor. Clique no botão "Recarregar" que aparece na tela. Se o erro persistir, verifique sua conexão de internet. Se tudo estiver normal, o serviço do GitHub pode estar temporariamente fora do ar — aguarde e tente novamente.</p>
+
+  <h4>O botão "Salvar tudo" retornou erro.</h4>
+  <p>Provavelmente o token GitHub de acesso expirou. Entre em contato com o desenvolvedor responsável para gerar um novo token e atualizar o acesso no painel.</p>
+
+  <h4>Como coloco um filme para aparecer no banner principal da home?</h4>
+  <p>Edite o filme e marque a opção <strong>"Destaque no hero"</strong>. O filme precisa ter uma imagem paisagem (16:9) configurada para aparecer corretamente no banner.</p>
+
+  <h4>Posso usar o painel pelo celular?</h4>
+  <p>Tecnicamente sim, mas não é recomendado. O painel foi projetado para telas de computador. Para fazer alterações rápidas de texto é aceitável, mas para uploads e edições mais complexas prefira usar um computador.</p>
+
+</div>
+
+</body>
+</html>

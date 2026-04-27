@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>pontos de fuga — Contato</title>
+  <meta name="description" content="Entre em contato com a produtora pontos de fuga — parcerias, imprensa e conversas sobre cinema.">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="pontos de fuga">
+  <meta property="og:title" content="pontos de fuga — Contato">
+  <meta property="og:description" content="Entre em contato com a produtora pontos de fuga.">
+  <meta property="og:image" content="assets/logo/pontos_de_fuga-matriz_t.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,600;1,9..144,300;1,9..144,400;1,9..144,600&family=Space+Grotesk:wght@300;400;500;600;700&display=swap">
+  <link rel="stylesheet" href="./style/style-base.css">
+  <link rel="stylesheet" href="./style/style-contato.css">
+  <script>(function(){var s=localStorage.getItem('theme'),d=window.matchMedia('(prefers-color-scheme: dark)').matches;document.documentElement.setAttribute('data-theme',s||(d?'dark':'light'));})();</script>
+</head>
+<body>
+
+  <header>
+    <button class="logo-btn" id="menuBtn" aria-label="Abrir menu">
+      <div class="hamburger"><span></span><span></span><span></span></div>
+      <img src="assets/logo/pontos_de_fuga-matriz_t.png" alt="pontos de fuga" class="logo-img">
+    </button>
+    <div class="header-right">
+      <div class="lang-selector" id="langSelector">
+        <button class="lang-selector__trigger" id="langBtn">
+          <img class="lang-selector__flag" id="langCurrentFlag" src="https://flagcdn.com/w40/br.png" alt="Português">
+          <svg class="lang-selector__chevron" viewBox="0 0 10 6" width="10" height="6" fill="none" aria-hidden="true"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+        <div class="lang-selector__dropdown" id="langDropdown">
+          <button class="lang-selector__option" id="langOptionBtn">
+            <img class="lang-selector__flag" id="langOptionFlag" src="https://flagcdn.com/w40/us.png" alt="English">
+          </button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="contact-page">
+
+    <div class="contact-header">
+      <span class="contact-eyebrow reveal" data-i18n="contact.eyebrow">Fale com a gente</span>
+      <h1 class="contact-title reveal reveal-delay-1" data-i18n="contact.title">Contato</h1>
+      <p class="contact-sub reveal reveal-delay-2" data-i18n="contact.sub">Estamos disponíveis para parcerias, imprensa e qualquer conversa sobre cinema.</p>
+    </div>
+
+    <div class="contact-body">
+
+      <!-- FORMULÁRIO -->
+      <div class="contact-form-wrap reveal reveal-delay-2">
+        <form class="contact-form" id="contactForm" novalidate>
+
+          <div class="form-row">
+            <div class="form-field">
+              <label for="nome" data-i18n="form.name">Nome</label>
+              <input type="text" id="nome" name="nome" autocomplete="name" required>
+            </div>
+            <div class="form-field">
+              <label for="telefone" data-i18n="form.phone">Telefone</label>
+              <input type="tel" id="telefone" name="telefone" autocomplete="tel">
+            </div>
+          </div>
+
+          <div class="form-field">
+            <label for="email" data-i18n="form.email">E-mail</label>
+            <input type="email" id="email" name="email" autocomplete="email" required>
+          </div>
+
+          <div class="form-field">
+            <label for="assunto" data-i18n="form.subject">Assunto</label>
+            <input type="text" id="assunto" name="assunto" required>
+          </div>
+
+          <div class="form-field">
+            <label for="mensagem" data-i18n="form.message">Mensagem</label>
+            <textarea id="mensagem" name="mensagem" rows="5" required></textarea>
+          </div>
+
+          <div class="form-actions">
+            <button type="submit" class="btn-submit">
+              <span data-i18n="form.send">Enviar mensagem</span>
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1"/>
+              </svg>
+            </button>
+
+            <a id="whatsappLink" href="#" target="_blank" rel="noopener" class="btn-whatsapp" style="display:none">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+              </svg>
+              <span data-i18n="form.whatsapp">Prefere o WhatsApp?</span>
+            </a>
+          </div>
+
+          <!-- Feedback de envio -->
+          <div class="form-feedback" id="formFeedback" aria-live="polite"></div>
+
+        </form>
+      </div>
+
+    </div>
+  </main>
+
+  <footer>
+    <div class="footer-top">
+      <div class="footer-logo">pontos de fuga</div>
+      <div class="footer-links">
+        <div class="footer-col">
+          <h4 data-i18n="footer.col1">Navegação</h4>
+          <ul>
+            <li><a href="producoes.html" data-i18n="nav.portfolio">Portfólio</a></li>
+            <li><a href="vemai.html" data-i18n="menu.upcoming">Vem aí</a></li>
+            <li><a href="historia.html" data-i18n="menu.history">Nossa história</a></li>
+            <li><a href="contato.html" data-i18n="menu.contact">Contato</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span class="footer-copy" data-i18n="footer.copy">© 2026 - PONTOS DE FUGA</span>
+      <div class="footer-social"></div>
+    </div>
+  </footer>
+
+  <!-- MENU OVERLAY -->
+  <div class="menu-overlay" id="menuOverlay">
+  <div class="menu-body">
+    <nav class="menu-primary">
+      <ul class="menu-primary-list">
+        <li><a href="index.html">
+          <span class="menu-item-title" data-i18n="menu.home">Início</span>
+          <span class="menu-item-count" data-i18n="menu.home.count">Página inicial</span>
+        </a></li>
+        <li><a href="producoes.html">
+          <span class="menu-item-title" data-i18n="menu.productions">Produções</span>
+          <span class="menu-item-count" data-i18n="menu.productions.count">10+</span>
+        </a></li>
+        <li><a href="vemai.html">
+          <span class="menu-item-title" data-i18n="menu.upcoming">Vem aí</span>
+          <span class="menu-item-count" data-i18n="menu.upcoming.count">Em produção</span>
+        </a></li>
+        <li><a href="historia.html">
+          <span class="menu-item-title" data-i18n="menu.history">Nossa história</span>
+          <span class="menu-item-count" data-i18n="menu.history.count">Sobre</span>
+        </a></li>
+      </ul>
+    </nav>
+
+
+    <div class="menu-secondary">
+      <div class="menu-social"></div>
+      <div class="menu-copy">© 2026 - PONTOS DE FUGA</div>
+    </div>
+
+  </div>
+
+</div>
+
+
+      <!-- EMAILJS (APLICAÇÃO EXTERNA)-->
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+  <!-- i18next -->
+  <script src="https://unpkg.com/i18next/dist/umd/i18next.min.js"></script>
+  
+  <script src="./scripts/data.js"></script>
+  <script src="./scripts/script-shared.js"></script>
+  <script src="./scripts/script-contato.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>pontos de fuga — Vem aí</title>
+  <meta name="description" content="Próximos filmes da produtora pontos de fuga — projetos em desenvolvimento e produção.">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="pontos de fuga">
+  <meta property="og:title" content="pontos de fuga — Vem aí">
+  <meta property="og:description" content="Próximos filmes da produtora pontos de fuga — projetos em desenvolvimento e produção.">
+  <meta property="og:image" content="assets/logo/pontos_de_fuga-matriz_t.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,600;1,9..144,300;1,9..144,400;1,9..144,600&family=Space+Grotesk:wght@300;400;500;600;700&display=swap">
+  <link rel="stylesheet" href="./style/style-base.css">
+  <link rel="stylesheet" href="./style/style-vemai.css">
+  <script>(function(){var s=localStorage.getItem('theme'),d=window.matchMedia('(prefers-color-scheme: dark)').matches;document.documentElement.setAttribute('data-theme',s||(d?'dark':'light'));})();</script>
+</head>
+<body>
+
+  <header>
+    <button class="logo-btn" id="menuBtn" aria-label="Abrir menu">
+      <div class="hamburger"><span></span><span></span><span></span></div>
+      <img src="assets/logo/pontos_de_fuga-matriz_t.png" alt="pontos de fuga" class="logo-img">
+    </button>
+    <div class="header-right">
+      <div class="lang-selector" id="langSelector">
+        <button class="lang-selector__trigger" id="langBtn">
+          <img class="lang-selector__flag" id="langCurrentFlag" src="https://flagcdn.com/w40/br.png" alt="Português">
+          <svg class="lang-selector__chevron" viewBox="0 0 10 6" width="10" height="6" fill="none" aria-hidden="true"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+        <div class="lang-selector__dropdown" id="langDropdown">
+          <button class="lang-selector__option" id="langOptionBtn">
+            <img class="lang-selector__flag" id="langOptionFlag" src="https://flagcdn.com/w40/us.png" alt="English">
+          </button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="vemai-page">
+
+    <!-- ── INTRO ── -->
+    <section class="vemai-intro">
+      <div class="vemai-intro__eyebrow reveal" data-i18n="vemai.eyebrow">Em produção</div>
+      <h1 class="vemai-intro__title reveal reveal-delay-1" data-i18n="vemai.title">Vem aí</h1>
+      <p id="vemaiStatement" class="vemai-intro__text reveal reveal-delay-2"></p>
+      <div class="vemai-intro__line reveal reveal-delay-3"></div>
+      <p class="vemai-intro__sub reveal reveal-delay-3" data-i18n="vemai.sub">
+        Cada projeto nasce de uma inquietação — uma pergunta que não cabe em silêncio.
+        Aqui vivem as histórias que ainda estão tomando forma.
+      </p>
+    </section>
+
+    <!-- ── FILMES (preenchido pelo JS) ── -->
+    <section class="vemai-filmes" id="vemai-filmes"></section>
+
+  </main>
+
+  <footer>
+    <div class="footer-top">
+      <div class="footer-logo">pontos de fuga</div>
+      <div class="footer-links">
+        <div class="footer-col">
+          <h4 data-i18n="footer.col1">Navegação</h4>
+          <ul>
+            <li><a href="producoes.html" data-i18n="nav.portfolio">Portfólio</a></li>
+            <li><a href="vemai.html"     data-i18n="menu.upcoming">Vem aí</a></li>
+            <li><a href="historia.html"  data-i18n="menu.history">Nossa história</a></li>
+            <li><a href="contato.html"   data-i18n="menu.contact">Contato</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span class="footer-copy" data-i18n="footer.copy">© 2026 - PONTOS DE FUGA</span>
+      <div class="footer-social">
+      </div>
+    </div>
+  </footer>
+
+  <!-- MENU OVERLAY -->
+  <div class="menu-overlay" id="menuOverlay">
+    <div class="menu-body">
+      <nav class="menu-primary">
+        <ul class="menu-primary-list">
+          <li><a href="producoes.html">
+            <span class="menu-item-title" data-i18n="menu.productions">Produções</span>
+            <span class="menu-item-count" data-i18n="menu.productions.count">10+</span>
+          </a></li>
+          <li><a href="vemai.html">
+            <span class="menu-item-title" data-i18n="menu.upcoming">Vem aí</span>
+            <span class="menu-item-count" data-i18n="menu.upcoming.count">Em produção</span>
+          </a></li>
+          <li><a href="historia.html">
+            <span class="menu-item-title" data-i18n="menu.history">Nossa história</span>
+            <span class="menu-item-count" data-i18n="menu.history.count">Sobre</span>
+          </a></li>
+          <li><a href="contato.html">
+            <span class="menu-item-title" data-i18n="menu.contact">Contato</span>
+            <span class="menu-item-count" data-i18n="menu.contact.count">fale com a gente</span>
+          </a></li>
+        </ul>
+      </nav>
+    </div>
+    <div class="menu-secondary">
+      <div class="menu-social"></div>
+      <div class="menu-copy">© 2026 - PONTOS DE FUGA</div>
+    </div>
+  </div>
+
+  <script src="https://unpkg.com/i18next/dist/umd/i18next.min.js"></script>
+  
+  <script src="scripts/data.js"></script>
+  <script src="./scripts/script-shared.js"></script>
+  <script src="./scripts/script-vemai.js"></script>
+
+</body>
+</html>

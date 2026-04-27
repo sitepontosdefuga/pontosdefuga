@@ -1,0 +1,481 @@
+/* ================================================================
+   style-producoes.css — pontos de fuga · Edição Indie / Alternativa
+   Visual: zine digital · produtora independente · DIY artístico
+
+   Estratégia: cabeçalho da página em parchment (sente editorial),
+   grade de filmes permanece escura — os cards são principalmente
+   imagens. Contraste parchment ↔ tinta cria ritmo visual forte.
+   ================================================================ */
+
+
+/* ─────────────────────────────────────────────────────────────────
+   [1]  PALETA INDIE (sobrescreve style-base.css)
+   ───────────────────────────────────────────────────────────────── */
+
+:root {
+  --black:      #1c1714;
+  --white:      #f5eedf;
+  --cream:      #ece5d3;
+  --gold:       #c83b18;
+  --red:        #c83b18;
+  --electric:   #1a3bd4;
+  --acid:       #b4d600;
+  --sand:       #d3c5ae;
+  --grey:       #cbc3b4;
+  --border:     rgba(28, 23, 20, 0.1);
+  --dim:        rgba(28, 23, 20, 0.4);
+  --pad-desk:   56px;
+  --pad-mob:    24px;
+}
+
+body {
+  background: var(--white);
+  color: var(--black);
+}
+
+
+/* ─────────────────────────────────────────────────────────────────
+   [2]  HEADER
+   ───────────────────────────────────────────────────────────────── */
+
+header {
+  background: var(--white);
+  background-color: var(--white);
+  border-bottom: 1px solid var(--border);
+}
+
+.logo-btn          { color: var(--black); }
+.hamburger span    { background: var(--black); }
+.header-link       { color: var(--black); transition: color 0.35s cubic-bezier(0.16, 1, 0.3, 1); }
+
+
+
+
+/* ─────────────────────────────────────────────────────────────────
+   [4]  MENU OVERLAY
+   ───────────────────────────────────────────────────────────────── */
+
+.menu-overlay {
+  background: var(--white);
+  border-right-color: var(--border);
+}
+
+.menu-primary-list li,
+.menu-primary-list li:last-child { border-color: var(--border); }
+
+.menu-primary-list a { color: var(--black); transition: padding 0.3s, color 0.3s; }
+.menu-item-title     { font-style: italic; color: var(--black); letter-spacing: -0.025em; transition: color 0.3s; }
+.menu-item-count     { color: var(--gold); font-style: italic; transition: color 0.3s; }
+
+.menu-primary-list li:nth-child(1) a:hover,
+.menu-primary-list li:nth-child(1) a:hover .menu-item-title { color: var(--gold); }
+.menu-primary-list li:nth-child(2) a:hover,
+.menu-primary-list li:nth-child(2) a:hover .menu-item-title { color: var(--amber); }
+.menu-primary-list li:nth-child(3) a:hover,
+.menu-primary-list li:nth-child(3) a:hover .menu-item-title { color: var(--sage); }
+.menu-primary-list li:nth-child(4) a:hover,
+.menu-primary-list li:nth-child(4) a:hover .menu-item-title { color: var(--gold); }
+
+.menu-social a       { color: var(--dim); }
+.menu-social a:hover { color: var(--black); }
+.menu-copy           { color: rgba(28, 23, 20, 0.2); }
+
+
+/* ─────────────────────────────────────────────────────────────────
+   [5]  FOOTER
+   ───────────────────────────────────────────────────────────────── */
+
+footer                { background: var(--black); border-top-color: rgba(28,23,20,0.2); }
+.footer-logo          { color: var(--white); }
+.footer-col h4        { color: rgba(245,238,223,0.35); font-style: italic; }
+.footer-col a         { color: rgba(245,238,223,0.55); }
+.footer-col a:hover   { color: var(--white); }
+.footer-bottom        { border-top-color: rgba(245,238,223,0.07); }
+.footer-copy          { color: rgba(245,238,223,0.18); }
+.footer-social a      { color: rgba(245,238,223,0.3); }
+.footer-social a:hover { color: var(--white); }
+
+
+/* ═══════════════════════════════════════════════════════════════════
+   CATÁLOGO DE PRODUÇÕES
+   ═══════════════════════════════════════════════════════════════════ */
+
+
+/* ─────────────────────────────────────────────────────────────────
+   [6]  PAGE LAYOUT
+   ───────────────────────────────────────────────────────────────── */
+
+.page {
+  padding-top: 80px;
+  min-height: 100vh;
+  background: var(--white);
+}
+
+
+/* ─────────────────────────────────────────────────────────────────
+   [7]  SECTION HEADER
+        Parchment, título itálico, sort buttons com underline burnt.
+   ───────────────────────────────────────────────────────────────── */
+
+.section-header {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  padding: 56px var(--pad-desk) 40px;
+  border-bottom: 1px solid var(--border);
+  background: var(--white);
+}
+
+/* Título itálico expressivo — marca da identidade */
+.section-title {
+  font-family: var(--font-display);
+  font-size: clamp(32px, 4.5vw, 56px);
+  font-weight: 300;
+  letter-spacing: -0.025em;
+  font-style: italic;
+  color: var(--black);
+}
+
+.section-sort { display: flex; gap: 20px; }
+
+.sort-btn {
+  background: none;
+  border: none;
+  font-family: var(--font-ui);
+  font-size: 10px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  color: rgba(28, 23, 20, 0.35);
+  cursor: pointer;
+  padding: 0 0 3px;
+  transition: color 0.25s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.15s cubic-bezier(0.16, 1, 0.3, 1);
+  border-bottom: 1px solid transparent;
+}
+
+.sort-btn:active { transform: translateY(1px); }
+
+/* Sort ativo: underline burnt orange */
+.sort-btn.active {
+  color: var(--black);
+  border-bottom-color: var(--gold);
+}
+
+.sort-btn:hover { color: var(--black); }
+
+@media (max-width: 767px) {
+  .section-header { padding: 40px var(--pad-mob) 28px; }
+  .section-title  { font-size: 24px; }
+  .section-sort   { gap: 8px; }
+  .sort-btn       { font-size: 7px; letter-spacing: 0.1em; }
+}
+
+
+/* ─────────────────────────────────────────────────────────────────
+   [8]  FILMS GRID
+        3 colunas — peso editorial maior por card.
+        Gap 1px em tinta cria textura de grade artesanal.
+   ───────────────────────────────────────────────────────────────── */
+
+.films-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+  background: var(--white);
+  padding: 24px var(--pad-desk);
+}
+
+@media (max-width: 1024px) { .films-grid { grid-template-columns: repeat(3, 1fr); } }
+@media (max-width: 700px)  { .films-grid { grid-template-columns: repeat(2, 1fr); padding: 16px var(--pad-mob); } }
+
+@media (max-width: 700px) {
+  .film-card__title  { font-size: 13px; line-height: 1.1; }
+  .other-card__title { font-size: 11px; }
+}
+
+.card--wide { grid-column: span 1; }
+.card--tall { grid-row:    span 1; }
+
+
+/* ─────────────────────────────────────────────────────────────────
+   [9]  FILM CARD
+        Estética catálogo de festival — numeração editorial,
+        título em itálico expressivo, accent bar lateral no hover.
+   ───────────────────────────────────────────────────────────────── */
+
+.film-card {
+  background: #0d0b09;
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+  overflow: hidden;
+  transition: outline-color 0.2s ease,
+              transform 0.15s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.film-card:active { transform: scale(0.98); }
+
+.film-card__img {
+  position: relative;
+  overflow: hidden;
+  background: #1a1512;
+  flex-shrink: 0;
+}
+
+.film-card__img { aspect-ratio: 3 / 4; }
+
+.film-card__img img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.7s cubic-bezier(0.25, 0.1, 0.25, 1),
+              opacity   3s ease;
+}
+
+.film-card__img .img-portrait { opacity: 1; z-index: 1; }
+
+.film-card:hover .film-card__img img { opacity: 0.75; }
+
+.film-card__video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  z-index: 2;
+  transition: opacity 0.4s ease;
+}
+
+.card--has-video:hover .img-portrait   { opacity: 0; }
+.card--has-video:hover .film-card__video { opacity: 1; }
+
+.film-card__img::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(13, 11, 9, 0.35);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  z-index: 3;
+}
+.film-card:hover .film-card__img::after { opacity: 1; }
+
+.film-card__placeholder {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 0;
+}
+
+.film-card__placeholder svg {
+  opacity: 0.06;
+  stroke: var(--white);
+}
+
+/* ── Info: título em itálico + meta ── */
+.film-card__info {
+  padding: 12px 14px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  background: #0d0b09;
+  flex: 1;
+}
+
+.film-card__title {
+  font-family: var(--font-display);
+  font-size: clamp(18px, 2vw, 28px);
+  font-weight: 300;
+  font-style: italic;
+  letter-spacing: -0.02em;
+  line-height: 1.05;
+  color: var(--white);
+  transition: color 0.3s ease;
+}
+
+.film-card__meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-top: auto;
+  padding-top: 6px;
+  border-top: 1px solid rgba(245, 238, 223, 0.06);
+}
+
+.film-card__dir {
+  font-size: 9px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: rgba(245, 238, 223, 0.35);
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.film-card__year {
+  font-size: 9px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--acid);
+  flex-shrink: 0;
+  white-space: nowrap;
+  padding-left: 8px;
+}
+
+
+/* ─────────────────────────────────────────────────────────────────
+   [10]  DIVIDER — Outras Produções
+   ───────────────────────────────────────────────────────────────── */
+
+.other-divider {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 48px var(--pad-desk) 32px;
+}
+
+@media (max-width: 767px) {
+  .other-divider { padding: 36px var(--pad-mob) 24px; }
+}
+
+.other-divider__line {
+  flex: 1;
+  height: 0;
+  border-top: 1px solid rgba(28, 23, 20, 0.25);
+}
+
+.other-divider__label {
+  font-family: var(--font-ui);
+  font-size: 10px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--dim);
+  white-space: nowrap;
+}
+
+
+/* ─────────────────────────────────────────────────────────────────
+   [11]  OTHER PRODUCTIONS GRID
+   ───────────────────────────────────────────────────────────────── */
+
+.other-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+  background: var(--white);
+  padding: 0 var(--pad-desk) 48px;
+}
+
+@media (max-width: 1024px) { .other-grid { grid-template-columns: repeat(3, 1fr); } }
+@media (max-width: 700px)  { .other-grid { grid-template-columns: repeat(2, 1fr); padding: 0 var(--pad-mob) 36px; } }
+
+.other-card {
+  background: #0d0b09;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  cursor: pointer;
+  text-decoration: none;
+  transition: outline-color 0.2s ease,
+              transform 0.15s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.other-card:active { transform: scale(0.98); }
+
+.other-card__img {
+  position: relative;
+  overflow: hidden;
+  background: #1a1512;
+  aspect-ratio: 2 / 3;
+}
+
+.other-card__img img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.other-card__img .film-card__placeholder svg { opacity: 0.04; }
+
+.other-card__info {
+  padding: 8px 10px 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  background: #0d0b09;
+}
+
+.other-card__title {
+  font-family: var(--font-display);
+  font-size: clamp(11px, 1.2vw, 15px);
+  font-weight: 300;
+  font-style: italic;
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+  color: var(--white);
+  transition: color 0.3s ease;
+}
+
+.other-card__meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-top: auto;
+  padding-top: 4px;
+  border-top: 1px solid rgba(245, 238, 223, 0.06);
+}
+
+.other-card__dir {
+  font-size: 8px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: rgba(245, 238, 223, 0.3);
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.other-card__year {
+  font-size: 8px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--acid);
+  flex-shrink: 0;
+  white-space: nowrap;
+  padding-left: 8px;
+}
+
+
+/* ══════════════════════════════════════════════════════════════════
+   DARK MODE — overrides específicos de produções
+   ══════════════════════════════════════════════════════════════════ */
+
+/* Fundo da página e do grid: mais claro que os cards (#0d0b09) para criar contraste */
+html[data-theme="dark"] body,
+html[data-theme="dark"] .page,
+html[data-theme="dark"] .films-grid,
+html[data-theme="dark"] .other-grid,
+html[data-theme="dark"] .section-header { background: #1c1714; }
+
+/* Sort buttons com rgba hardcoded */
+html[data-theme="dark"] .sort-btn        { color: rgba(240, 236, 228, 0.35); }
+html[data-theme="dark"] .sort-btn.active { color: #f0ece4; border-bottom-color: #c9a84c; }
+html[data-theme="dark"] .sort-btn:hover  { color: #f0ece4; }
+
+/* Títulos dos cards: usam color: var(--white) que no dark mode vira #0d0b09 —
+   texto escuro sobre fundo escuro (#0d0b09) = invisível */
+html[data-theme="dark"] .film-card__title   { color: #f0ece4; }
+html[data-theme="dark"] .other-card__title  { color: #f0ece4; }
+html[data-theme="dark"] .other-divider__line { border-top-color: rgba(240, 236, 228, 0.2); }
+
+/* Ano: mantém ácido (já visível no escuro) */
+html[data-theme="dark"] .film-card__year  { color: var(--acid); }
+html[data-theme="dark"] .other-card__year { color: var(--acid); }

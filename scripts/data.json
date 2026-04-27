@@ -1,0 +1,771 @@
+{
+  "siteData": {
+    "logoUrl": "",
+    "socialLinks": [
+      {
+        "label": "Instagram",
+        "url": "https://www.instagram.com/pontosdefuga_/"
+      },
+      {
+        "label": "Relatórios de comercialização",
+        "url": "https://drive.google.com/drive/folders/1g-RpPL8dvd7IjQXj-NLPrP4ujAC3LYPc?usp=share_link"
+      }
+    ],
+    "fontDisplayUrl": "https://fonts.googleapis.com/css2?family=Red+Hat+Mono:ital,wght@0,300;0,400;0,500;1,300&display=swap",
+    "fontDisplayFamily": "'Red Hat Mono', monospace",
+    "fontUiUrl": "https://fonts.googleapis.com/css2?family=Red+Hat+Mono:ital,wght@0,300;0,400;0,500;1,300&display=swap",
+    "fontUiFamily": "'Red Hat Mono', monospace",
+    "theme": "dark"
+  },
+  "films": [
+    {
+      "title": "Simonal",
+      "titleEn": "Simonal",
+      "director": "Leonardo Domingues",
+      "year": "2019",
+      "genre": "Longa-Metragem de Ficção",
+      "hero": true,
+      "synopsis": "Baseado na vida do cantor e compositor Wilson Simonal de Castro, o Simonal (Fabrício Boliveira). O carioca faz sucesso durante as décadas de 1960 e 1970 com uma carreira repleta de altos e baixos que transitaram para além dos palcos. Problemas financeiros e polêmicos posicionamentos durante a ditadura marcam a história do astro.",
+      "synopsisEn": "Based on the life of singer and songwriter Wilson Simonal de Castro, known as Simonal (Fabrício Boliveira). The Rio de Janeiro native achieved success during the 1960s and 1970s with a career full of highs and lows that extended beyond the stage. Financial problems and controversial stances during the dictatorship mark the star's history.",
+      "tags": [],
+      "imgPortrait": "https://raw.githubusercontent.com/myceliumBrain/site-produtora/lite_mode/assets/filmes/retratos/Simonal_p.jpeg",
+      "imgLandscape": "https://raw.githubusercontent.com/myceliumBrain/site-produtora/lite_mode/assets/filmes/paisagens/Simonal_l.jpg",
+      "videoHover": "https://raw.githubusercontent.com/myceliumBrain/site-produtora/lite_mode/assets/filmes/previews/Simonal_p.mp4",
+      "videoTrailer": "https://www.youtube.com/watch?v=9zZw9-9UTx0",
+      "fotografias": [
+        "https://raw.githubusercontent.com/myceliumBrain/site-produtora/lite_mode/assets/filmes/fotografias/Simonal/Simonal_foto_1775327988455_0.jpg",
+        "https://raw.githubusercontent.com/myceliumBrain/site-produtora/lite_mode/assets/filmes/fotografias/Simonal/Simonal_foto_1775327989670_1.jpg",
+        "https://raw.githubusercontent.com/myceliumBrain/site-produtora/lite_mode/assets/filmes/fotografias/Simonal/Simonal_foto_1775327990635_2.jpg",
+        "https://raw.githubusercontent.com/myceliumBrain/site-produtora/lite_mode/assets/filmes/fotografias/Simonal/Simonal_foto_1775327997925_3.png",
+        "https://raw.githubusercontent.com/myceliumBrain/site-produtora/lite_mode/assets/filmes/fotografias/Simonal/Simonal_foto_1775328000218_4.jpg",
+        "https://raw.githubusercontent.com/myceliumBrain/site-produtora/lite_mode/assets/filmes/fotografias/Simonal/Simonal_foto_1775328006913_5.jpg",
+        "https://raw.githubusercontent.com/myceliumBrain/site-produtora/lite_mode/assets/filmes/fotografias/Simonal/Simonal_foto_1775328010753_6.jpg",
+        "https://raw.githubusercontent.com/myceliumBrain/site-produtora/lite_mode/assets/filmes/fotografias/Simonal/Simonal_foto_1775328011660_7.jpg",
+        "https://raw.githubusercontent.com/myceliumBrain/site-produtora/lite_mode/assets/filmes/fotografias/Simonal/Simonal_foto_1775328018126_8.jpg",
+        "https://raw.githubusercontent.com/myceliumBrain/site-produtora/lite_mode/assets/filmes/fotografias/Simonal/Simonal_foto_1775328021779_9.jpg",
+        "https://raw.githubusercontent.com/myceliumBrain/site-produtora/lite_mode/assets/filmes/fotografias/Simonal/Simonal_foto_1775328025582_10.jpg"
+      ],
+      "videoTrailers": [
+        "https://www.youtube.com/watch?v=9zZw9-9UTx0"
+      ],
+      "elenco": [
+        {
+          "role": "Simonal",
+          "name": "Fabrício Boliveira"
+        },
+        {
+          "role": "Tereza",
+          "name": "Isis Valverde"
+        },
+        {
+          "role": "Carlos Imperial",
+          "name": "Leandro Hassum"
+        },
+        {
+          "role": "Santana",
+          "name": "Caco Ciocler"
+        },
+        {
+          "role": "Laura Figueredo",
+          "name": "Mariana Lima"
+        }
+      ],
+      "fichatecnica": [
+        {
+          "role": "Produtora",
+          "name": "Nathalie Felippe"
+        },
+        {
+          "role": "Produtor",
+          "name": "Carlos Diegues"
+        },
+        {
+          "role": "Roteiro",
+          "name": "Victor Atherino"
+        },
+        {
+          "role": "Roteiro",
+          "name": "Leonardo Domingues"
+        },
+        {
+          "role": "Direção de Fotografia",
+          "name": "Pablo Baião"
+        },
+        {
+          "role": "Direção de Arte",
+          "name": "Yurika Yamasaki"
+        },
+        {
+          "role": "Compositor",
+          "name": "Wilson Simoninha e Max de Castro"
+        }
+      ]
+    },
+    {
+      "title": "Zico: O Samurai de Quintino",
+      "titleEn": "",
+      "director": "João Wainer",
+      "year": "2026",
+      "genre": "Documentário",
+      "hero": false,
+      "synopsis": "Um olhar original sobre a vida e a carreira de Arthur Antunes Coimbra, Zico, o Samurai de Quintino investiga em diversas dimensões a personalidade única de um maiores jogadores da história do futebol. Navegando pelo arquivo pessoal do craque - até então inédito para o público -, o filme costura histórias e personagens de sua trajetória de ídolo no Flamengo, na Seleção e no Japão. Com a participação de Ronaldo Fenômeno, Maestro Júnior, amigos e família, a descoberta de sua intimidade nos leva a um encontro surpreendente com o Spirit of Zico: uma identidade tão fascinante quanto paradoxal, forjada no subúrbio do Rio de Janeiro, mas com valores e uma disciplina que só os japoneses entenderiam perfeitamente no seu recomeço do outro lado do mundo.",
+      "synopsisEn": "",
+      "fichatecnica": [
+        {
+          "role": "Produção",
+          "name": "Vudoo Filmes"
+        },
+        {
+          "role": "Coprodução",
+          "name": "Globo Filmes"
+        },
+        {
+          "role": "Coprodução",
+          "name": "SporTV"
+        },
+        {
+          "role": "Coprodução",
+          "name": "Pontos de Fuga"
+        },
+        {
+          "role": "Distribuição",
+          "name": "Downtown Filmes"
+        },
+        {
+          "role": "Distribuição",
+          "name": "RioFilme"
+        }
+      ],
+      "elenco": [],
+      "tags": [],
+      "imgPortrait": "https://raw.githubusercontent.com/myceliumBrain/site-produtora/lite_mode/assets/filmes/retratos/Zico_O_Samurai_de_Quintino_p.jpg",
+      "imgLandscape": "https://raw.githubusercontent.com/myceliumBrain/site-produtora/lite_mode/assets/filmes/paisagens/Zico_O_Samurai_de_Quintino_l.png",
+      "videoHover": "",
+      "videoTrailers": [
+        "https://www.youtube.com/watch?v=fxz8_j4x7CM"
+      ],
+      "videoMakingOff": "",
+      "fotografias": [],
+      "makingOff": []
+    },
+    {
+      "title": "O Amor Dá Voltas",
+      "titleEn": "O Amor Dá Voltas",
+      "director": "Marcos Bernstein",
+      "year": "2022",
+      "genre": "Longa-Metragem de ficção",
+      "hero": true,
+      "synopsis": "Os encontros e desencontros amorosos de André, um jovem médico que, ao retornar ao Brasil, após mais de um ano cuidando de doentes na África, descobre que havia trocado cartas de amor não com sua namorada de longa data, mas sim com a irmã da moça.",
+      "synopsisEn": "The romantic encounters and misadventures of André, a young doctor who, upon returning to Brazil after more than a year caring for patients in Africa, discovers that he had exchanged love letters not with his long-time girlfriend, but with her sister.",
+      "tags": [],
+      "imgPortrait": "https://raw.githubusercontent.com/myceliumBrain/site-produtora/lite_mode/assets/filmes/retratos/O_Amos_Dá_Voltas_p.jpg",
+      "imgLandscape": "https://raw.githubusercontent.com/myceliumBrain/site-produtora/lite_mode/assets/filmes/paisagens/O_Amor_Dá_Voltas_l.jpg",
+      "videoHover": "https://raw.githubusercontent.com/myceliumBrain/site-produtora/lite_mode/assets/filmes/previews/O_Amor_Dá_Voltas_v.mp4",
+      "videoTrailer": "https://www.youtube.com/watch?v=pGffEe96PHY",
+      "makingOff": [
+        "https://raw.githubusercontent.com/myceliumBrain/site-produtora/lite_mode/assets/filmes/makingoff/O_Amor_Dá_Voltas/O_Amor_Dá_Voltas_mo_1775244804082_0.jpg",
+        "https://raw.githubusercontent.com/myceliumBrain/site-produtora/lite_mode/assets/filmes/makingoff/O_Amor_Dá_Voltas/O_Amor_Dá_Voltas_mo_1775244806205_1.jpg",
+        "https://raw.githubusercontent.com/myceliumBrain/site-produtora/lite_mode/assets/filmes/makingoff/O_Amor_Dá_Voltas/O_Amor_Dá_Voltas_mo_1775244807653_2.jpg",
+        "https://raw.githubusercontent.com/myceliumBrain/site-produtora/lite_mode/assets/filmes/makingoff/O_Amor_Dá_Voltas/O_Amor_Dá_Voltas_mo_1775244809374_3.jpg",
+        "https://raw.githubusercontent.com/myceliumBrain/site-produtora/lite_mode/assets/filmes/makingoff/O_Amor_Dá_Voltas/O_Amor_Dá_Voltas_mo_1775244810935_4.jpg",
+        "https://raw.githubusercontent.com/myceliumBrain/site-produtora/lite_mode/assets/filmes/makingoff/O_Amor_Dá_Voltas/O_Amor_Dá_Voltas_mo_1775244812919_5.jpg",
+        "https://raw.githubusercontent.com/myceliumBrain/site-produtora/lite_mode/assets/filmes/makingoff/O_Amor_Dá_Voltas/O_Amor_Dá_Voltas_mo_1775244814844_6.jpg"
+      ],
+      "fotografias": [
+        "https://raw.githubusercontent.com/myceliumBrain/site-produtora/lite_mode/assets/filmes/fotografias/O_Amor_Dá_Voltas/O_Amor_Dá_Voltas_foto_1775246843958_0.jpg",
+        "https://raw.githubusercontent.com/myceliumBrain/site-produtora/lite_mode/assets/filmes/fotografias/O_Amor_Dá_Voltas/O_Amor_Dá_Voltas_foto_1775246845760_1.jpg",
+        "https://raw.githubusercontent.com/myceliumBrain/site-produtora/lite_mode/assets/filmes/fotografias/O_Amor_Dá_Voltas/O_Amor_Dá_Voltas_foto_1775246854242_2.jpg",
+        "https://raw.githubusercontent.com/myceliumBrain/site-produtora/lite_mode/assets/filmes/fotografias/O_Amor_Dá_Voltas/O_Amor_Dá_Voltas_foto_1775246860692_3.jpg",
+        "https://raw.githubusercontent.com/myceliumBrain/site-produtora/lite_mode/assets/filmes/fotografias/O_Amor_Dá_Voltas/O_Amor_Dá_Voltas_foto_1775246863481_4.jpg"
+      ],
+      "videoTrailers": [
+        "https://www.youtube.com/watch?v=pGffEe96PHY"
+      ],
+      "fichatecnica": [
+        {
+          "role": "Produção",
+          "name": "Pontos de Fuga e Neanderthal MB"
+        },
+        {
+          "role": "Coprodução",
+          "name": "Globo Filmes"
+        },
+        {
+          "role": "Distribuição",
+          "name": "Imagem Filmes"
+        },
+        {
+          "role": "Produtores",
+          "name": "Nathalie Felippe e Marcos Bernstein"
+        },
+        {
+          "role": "Produtores Associados",
+          "name": "Carlos Diegues, Marc Bechar e Leonardo Domingues"
+        },
+        {
+          "role": "Roteiro",
+          "name": "Marcos Bernstein, Marc Bechar e Victor Atherino"
+        },
+        {
+          "role": "Direção de Fotografia",
+          "name": "Gustavo Hadba, ABC e Lula Cerri"
+        },
+        {
+          "role": "Produção Executiva",
+          "name": "Nathalie Felippe e Antonio Irivan"
+        }
+      ],
+      "elenco": [
+        {
+          "role": "André",
+          "name": "Igor Angelkorte"
+        },
+        {
+          "role": "Dani",
+          "name": "Cleo"
+        },
+        {
+          "role": "Beta",
+          "name": "Juliana Didone"
+        },
+        {
+          "role": "Marcos",
+          "name": "Pablo Sanábio"
+        },
+        {
+          "role": "Sérgio",
+          "name": "Klebber Toledo"
+        }
+      ]
+    },
+    {
+      "title": "Simonal - Ninguém Sabe o Duro Que Dei",
+      "titleEn": "Simonal - Ninguém Sabe o Duro Que Dei",
+      "director": "Cláudio Manoel, Calvito Leal e Micael Langer",
+      "year": "2008",
+      "genre": "Longa-Metragem Documental",
+      "hero": false,
+      "synopsis": "Baseado na vida do cantor e compositor Wilson Simonal, o filme mostra o sucesso do artista durante as décadas de 1960 e 1970 em uma carreira repleta de altos e baixos",
+      "synopsisEn": "Based on the life of singer and songwriter Wilson Simonal, the film portrays the artist's success during the 1960s and 1970s in a career full of highs and lows.",
+      "tags": [],
+      "imgPortrait": "https://raw.githubusercontent.com/myceliumBrain/site-produtora/lite_mode/assets/filmes/retratos/Simonal_-_Ninguém_Sabe_o_Duro_Que_Dei_p.png",
+      "imgLandscape": "https://raw.githubusercontent.com/myceliumBrain/site-produtora/lite_mode/assets/filmes/paisagens/Simonal_-_Ninguém_Sabe_o_Duro_Que_Dei_l.jpg",
+      "videoHover": "https://raw.githubusercontent.com/myceliumBrain/site-produtora/lite_mode/assets/filmes/previews/Simonal_-_Ninguém_Sabe_o_Duro_Que_Dei_p.mp4",
+      "videoTrailer": "https://www.youtube.com/watch?v=wQER5RBU6n4",
+      "fotografias": [
+        "https://raw.githubusercontent.com/myceliumBrain/site-produtora/lite_mode/assets/filmes/fotografias/Simonal_-_Ninguém_Sabe_o_Duro_Que_Dei/Simonal_-_Ninguém_Sabe_o_Duro_Que_Dei_foto_1775328233934_0.jpg",
+        "https://raw.githubusercontent.com/myceliumBrain/site-produtora/lite_mode/assets/filmes/fotografias/Simonal_-_Ninguém_Sabe_o_Duro_Que_Dei/Simonal_-_Ninguém_Sabe_o_Duro_Que_Dei_foto_1775328234929_1.jpg",
+        "https://raw.githubusercontent.com/myceliumBrain/site-produtora/lite_mode/assets/filmes/fotografias/Simonal_-_Ninguém_Sabe_o_Duro_Que_Dei/Simonal_-_Ninguém_Sabe_o_Duro_Que_Dei_foto_1775328235857_2.png"
+      ],
+      "videoTrailers": [
+        "https://www.youtube.com/watch?v=wQER5RBU6n4"
+      ]
+    },
+    {
+      "title": "Um Dia Antes de Todos os Outros",
+      "titleEn": "Um Dia Antes de Todos os Outros",
+      "director": "Valentina Homem e Fernanda Bond",
+      "year": "2024",
+      "genre": "Longa-Metragem de ficção",
+      "hero": true,
+      "synopsis": "Marli é pega de surpresa com a notícia de que o apartamento da Lara, para quem ela trabalha há vinte anos, foi vendido e aquele será o último dia das duas alí, já que no dia seguinte a idosa será transferida para um asilo. Apesar de atônita com a urgência da mudança, Marli não vê a hora de voltar para a sua terra natal, Olinda. O que ela não espera é receber de Sofia, sua filha adolescente, a noticia mais difícil deste longo dia.",
+      "synopsisEn": "Marli is taken by surprise by the news that Lara's apartment, for whom she has worked for twenty years, has been sold and that this will be their last day there, as the elderly woman will be transferred to a nursing home the following day. Despite being stunned by the urgency of the move, Marli can't wait to return to her hometown, Olinda. What she doesn't expect is to receive the most difficult news of this long day from Sofia, her teenage daughter.",
+      "tags": [],
+      "imgPortrait": "https://raw.githubusercontent.com/myceliumBrain/site-produtora/lite_mode/assets/filmes/retratos/Um_Dia_Antes_de_Todos_os_Outros_p.png",
+      "imgLandscape": "https://raw.githubusercontent.com/myceliumBrain/site-produtora/lite_mode/assets/filmes/paisagens/Um_Dia_Antes_de_Todos_os_Outros_l.jpg",
+      "videoHover": "",
+      "videoTrailer": "",
+      "videoTrailers": [
+        "https://youtu.be/Sx8v8Mir3CU?si=aMRkWPdL-J_WPxnj"
+      ],
+      "elenco": [
+        {
+          "role": "Marli",
+          "name": "Clarissa Pinheiro"
+        },
+        {
+          "role": "Sofia",
+          "name": "Marianna Bittencourt"
+        },
+        {
+          "role": "Iara",
+          "name": "Elvira Helena"
+        }
+      ],
+      "fotografias": [
+        "https://raw.githubusercontent.com/myceliumBrain/site-produtora/lite_mode/assets/filmes/fotografias/Um_Dia_Antes_de_Todos_os_Outros/Um_Dia_Antes_de_Todos_os_Outros_foto_1776289493415_0.jpg",
+        "https://raw.githubusercontent.com/myceliumBrain/site-produtora/lite_mode/assets/filmes/fotografias/Um_Dia_Antes_de_Todos_os_Outros/Um_Dia_Antes_de_Todos_os_Outros_foto_1776289523398_0.jpg",
+        "https://raw.githubusercontent.com/myceliumBrain/site-produtora/lite_mode/assets/filmes/fotografias/Um_Dia_Antes_de_Todos_os_Outros/Um_Dia_Antes_de_Todos_os_Outros_foto_1776289532586_0.jpg"
+      ],
+      "fichatecnica": [
+        {
+          "role": "Produção",
+          "name": "Nathalie Felippe"
+        },
+        {
+          "role": "Produção",
+          "name": "Valentina Homem"
+        },
+        {
+          "role": "Roteiro",
+          "name": "Jô Bilac"
+        },
+        {
+          "role": "Roteiro",
+          "name": "Fernanda Bond"
+        },
+        {
+          "role": "Roteiro",
+          "name": "Valentina Homem"
+        },
+        {
+          "role": "Direção de Arte",
+          "name": "Elsa Romero e Ianara Elisa"
+        },
+        {
+          "role": "Direção de Fotografia",
+          "name": "Louise Botkay e Amara Barroso"
+        }
+      ]
+    },
+    {
+      "title": "Amor de Bicho",
+      "titleEn": "Amor de Bicho",
+      "director": "Monica Prinzac",
+      "year": "2020 - 2024",
+      "genre": "Série Documental (2 temporadas)",
+      "hero": false,
+      "synopsis": "A relação sincera de amor, troca e respeito. Uma conexão de descobertas, emoções e transformações. Amor de Bicho revela histórias surpreendentes e únicas entre humanos e animais. Em 10 episódios, a série documental apresenta personagens da vida real e mergulha nesse convívio cheio de afetos e sentimentos, que envolve pessoas, bichos e meio ambiente. \n\nHistórias surpreendentes, emocionantes e divertidas de pessoas e animais que tiveram suas vidas transformadas a partir do convívio. Os bichos podem nos ajudar a contemplar nossa natureza mais autêntica e a encontrar respostas para os problemas cotidianos. A série vai explorar as várias formas de relações e as várias alternativas que bichos e humanos trocam para viverem melhor.\n\nExibido na Tv Mov. Da Uol (Uol Play)\n\nPersonagens: Roched, Santuário Vale da Rainha, Alessandra Luglio, Nina Rocha Kanner, entre outros. \n",
+      "synopsisEn": "A sincere relationship of love, exchange, and respect. A connection of discoveries, emotions, and transformations. \"Animal Love\" reveals surprising and unique stories between humans and animals. In 10 episodes, the documentary series presents real-life characters and delves into this coexistence full of affection and feelings, involving people, animals, and the environment.\n\nSurprising, moving, and fun stories of people and animals whose lives have been transformed through their interaction. Animals can help us contemplate our most authentic nature and find answers to everyday problems. The series will explore the various forms of relationships and the various alternatives that animals and humans exchange to live better lives.\n\nAired on UOL TV (UOL Play)\n\nFeatured by: Roched, Vale da Rainha Sanctuary, Alessandra Luglio, Nina Rocha Kanner, among others.",
+      "tags": [],
+      "imgPortrait": "https://raw.githubusercontent.com/myceliumBrain/site-produtora/lite_mode/assets/filmes/retratos/Amor_de_Bicho_p.png",
+      "imgLandscape": "",
+      "videoHover": "https://raw.githubusercontent.com/myceliumBrain/site-produtora/lite_mode/assets/filmes/previews/Amor_de_Bicho_v.mp4",
+      "videoTrailer": "https://vimeo.com/483286217",
+      "makingOff": [
+        "https://raw.githubusercontent.com/myceliumBrain/site-produtora/lite_mode/assets/filmes/makingoff/Amor_de_Bicho/Amor_de_Bicho_mo_1775244695846_0.jpg"
+      ],
+      "videoTrailers": [
+        "https://vimeo.com/483286217"
+      ]
+    },
+    {
+      "title": "Arte Brasileira Quadro a Quadro",
+      "titleEn": "Arte Brasileira Quadro a Quadro",
+      "director": "Marcos Guttmann e Fabiano Maciel",
+      "year": "2018 - 2026",
+      "genre": "Série Documental (2 temporadas)",
+      "hero": false,
+      "synopsis": "Arte Brasileira Quadro a Quadro é uma série de seis episódios que aborda obras de um período não muito conhecido e falado da Arte brasileira, o Pré-Modernismo. Baseada no livro do historiador de arte Rafael Cardoso, \"Arte Brasileira em 25 Quadros\", o programa parte da análise de obras do período de 1790 a 1930 para falar de temas que permeiam a atualidade, como igualdade de gênero, feminismo, racismo, identidade cultural, preservação do meio ambiente, emigração e moralismo na arte, entre outros.\n\nA série foi exibida originalmente pelo canal Arte1 em 2017 e conta com a direção de Marcos Guttmann e Fabiano Maciel. ",
+      "synopsisEn": "Brazilian Art Frame by Frame is a six-episode series that explores works from a little-known and rarely discussed period of Brazilian art: Pre-Modernism. Based on the book by art historian Rafael Cardoso, \"Brazilian Art in 25 Frames,\" the program uses the analysis of works from the period 1790 to 1930 to discuss themes that permeate the present day, such as gender equality, feminism, racism, cultural identity, environmental preservation, emigration, and moralism in art, among others.\n\nThe series originally aired on the Arte1 channel in 2017 and is directed by Marcos Guttmann and Fabiano Maciel.",
+      "tags": [],
+      "imgPortrait": "https://raw.githubusercontent.com/myceliumBrain/site-produtora/lite_mode/assets/filmes/retratos/Arte_Brasileira_Quadro_a_Quadro_p.jpg",
+      "imgLandscape": "https://raw.githubusercontent.com/myceliumBrain/site-produtora/lite_mode/assets/filmes/paisagens/Arte_Brasileira_Quadro_a_Quadro_l.png",
+      "videoHover": "https://raw.githubusercontent.com/myceliumBrain/site-produtora/lite_mode/assets/filmes/previews/Arte_Brasileira_Quadro_a_Quadro_p.mp4",
+      "videoTrailer": "https://raw.githubusercontent.com/myceliumBrain/site-produtora/lite_mode/assets/filmes/trailers/Arte_Brasileira_Quadro_a_Quadro_p.mp4",
+      "makingOff": [
+        "https://raw.githubusercontent.com/myceliumBrain/site-produtora/lite_mode/assets/filmes/makingoff/Arte_Brasileira_Quadro_a_Quadro/Arte_Brasileira_Quadro_a_Quadro_mo_1775244549871_0.webp"
+      ],
+      "videoTrailers": [
+        "https://raw.githubusercontent.com/myceliumBrain/site-produtora/lite_mode/assets/filmes/trailers/Arte_Brasileira_Quadro_a_Quadro_p.mp4"
+      ]
+    },
+    {
+      "title": "Zanine - Ser do Arquitetar",
+      "titleEn": "Zanine - Ser do Arquitetar",
+      "director": "André Horta",
+      "year": "2016",
+      "genre": "Longa-metragem documental",
+      "hero": false,
+      "synopsis": "A vida, o pensamento e as conquistas de José Zanine Caldas, arquiteto autodidata de projeção nos anos 1960 e homem que estava adiante de seu tempo. Zanine pensava em reaproveitamento, em sustentabilidade e, já 50 anos atrás, em preservação do meio ambiente. Com entrevistas de nomes como Oscar Niemeyer, Heloisa Buarque de Holanda, Ziraldo, Sérgio Rodrigues, Cydno Silveira, Calor Vergara, Alexandre Garcia, Juarez Machado, Vera Brandt, Ricardo Caruana, além de amigos e trabalhadores de Nova Viçoca na Bahia",
+      "synopsisEn": "The life, thoughts, and achievements of José Zanine Caldas, a self-taught architect who rose to prominence in the 1960s and was a man ahead of his time. Zanine thought about reuse, sustainability, and, even 50 years ago, environmental preservation. Featuring interviews with figures such as Oscar Niemeyer, Heloisa Buarque de Holanda, Ziraldo, Sérgio Rodrigues, Cydno Silveira, Carlos Vergara, Alexandre Garcia, Juarez Machado, Vera Brandt, Ricardo Caruana, as well as friends and workers from Nova Viçoca in Bahia.",
+      "tags": [],
+      "imgPortrait": "https://raw.githubusercontent.com/myceliumBrain/site-produtora/lite_mode/assets/filmes/retratos/Zanine_-_Ser_do_Arquitetar_p.png",
+      "imgLandscape": "",
+      "videoHover": "https://raw.githubusercontent.com/myceliumBrain/site-produtora/lite_mode/assets/filmes/previews/Zanine_-_Ser_do_Arquitetar_p.mp4",
+      "videoTrailer": "https://www.youtube.com/watch?v=8WqXMpC6njo",
+      "videoTrailers": [
+        "https://www.youtube.com/watch?v=8WqXMpC6njo"
+      ]
+    },
+    {
+      "title": "Design Brasileiro",
+      "titleEn": "Design Brasileiro",
+      "director": "Leonardo Domingues",
+      "year": "2013",
+      "genre": "Série documental (14 episódios)",
+      "hero": false,
+      "synopsis": "A exposição “Design Brasileiro Moderno e Contemporâneo” fez um mergulho no universo mobiliário com obras dos mais importantes designers nacionais.\n\n\nNomes renomados como Oscar Niemeyer, Lina Bo Bardi, José Zanine Caldas, Sérgio Rodrigues, Joaquim Tenreiro, Aida Boal, Paulo Mendes da Rocha e Jorge Zalszupin se uniram aos contemporâneos Domingos Tótora, Carlos Motta, Irmãos Campana, Zanini de Zanine, Rodrigo Almeida, entre outros, para mostrar o que se fez e o que está sendo realizado no Brasil neste segmento. \n\n\nO objetivo foi traçar um panorama histórico do design brasileiro de móveis. \n\n\nA exposição passou pelas cidades de Berlim, Lisboa, Londres, Rio de Janeiro, Brasília e Salvador.",
+      "synopsisEn": "The exhibition “Modern and Contemporary Brazilian Design” delved into the world of furniture with works by some of the most important national designers.\n\nRenowned names such as Oscar Niemeyer, Lina Bo Bardi, José Zanine Caldas, Sérgio Rodrigues, Joaquim Tenreiro, Aida Boal, Paulo Mendes da Rocha, and Jorge Zalszupin joined contemporary designers Domingos Tótora, Carlos Motta, the Campana Brothers, Zanini de Zanine, Rodrigo Almeida, among others, to showcase what has been done and what is being done in Brazil in this sector.\n\nThe objective was to trace a historical overview of Brazilian furniture design.\n\nThe exhibition traveled to the cities of Berlin, Lisbon, London, Rio de Janeiro, Brasília, and Salvador.",
+      "tags": [],
+      "imgPortrait": "https://raw.githubusercontent.com/myceliumBrain/site-produtora/lite_mode/assets/filmes/retratos/Design_Brasileiro_p.png",
+      "imgLandscape": "",
+      "videoHover": "",
+      "videoTrailer": "",
+      "fotografias": [
+        "https://raw.githubusercontent.com/myceliumBrain/site-produtora/lite_mode/assets/filmes/fotografias/Design_Brasileiro/Design_Brasileiro_foto_1775328543053_0.tiff"
+      ],
+      "videoTrailers": []
+    }
+  ],
+  "upcomingFilms": [
+    {
+      "title": "Penhasco",
+      "titleEn": "Penhasco",
+      "director": "Thiago Greco",
+      "status": "filming",
+      "genre": "Ficção/Thriller",
+      "genreEn": "",
+      "year": "2028",
+      "synopsis": "\"PENHASCO\", inspirado livremente em fatos reais, é um thriller que acompanha o momento decisivo na vida de Ana e Felipe, quando segredos sombrios vêm à tona e colocam toda uma família em rota de colisão. Ana, jovem influencer apaixonada pela natureza, vive de compartilhar aventuras e intimidades nas redes. Casada com Felipe, filho único da poderosa família Souza Leal, enfrenta o peso das tensões familiares: o marido, aos 32 anos, foge de responsabilidades; Jorge, o patriarca, usa poder e dinheiro para encobrir erros; Maria, a mãe, intervém para proteger o filho a qualquer custo. Tudo muda quando Ana descobre um segredo capaz de alterar para sempre o destino de todos. No alto do penhasco, passado e presente se chocam, e uma teia de mentiras ameaça destruir o que resta de verdade.",
+      "synopsisEn": "“PENHASCO”, loosely inspired by real events, is a thriller that follows a निर्णining moment in the lives of Ana and Felipe, when dark secrets come to light and set an entire family on a collision course. Ana, a young influencer passionate about nature, makes a living sharing adventures and intimate moments on social media. Married to Felipe, the only son of the powerful Souza Leal family, she faces the weight of family tensions: her husband, at 32, avoids responsibility; Jorge, the patriarch, uses power and money to cover up mistakes; Maria, the mother, intervenes to protect her son at any cost.\nEverything changes when Ana uncovers a secret capable of altering everyone’s fate forever. At the edge of the cliff, past and present collide, and a web of lies threatens to destroy whatever truth remains.",
+      "imgPortrait": "",
+      "imgLandscape": ""
+    }
+  ],
+  "historiaData": {
+    "manifesto": {
+      "eyebrow": "Produtora de Audiovisual | Rio de Janeiro | Brasil",
+      "eyebrowEn": "Production Company | Rio de Janeiro | Brazil",
+      "title1": "Pontos de Fuga",
+      "title1En": "Pontos de Fuga",
+      "title2": "Pontos de Fuga",
+      "title2En": "Pontos de Fuga",
+      "p1": "O primeiro projeto da Pontos de Fuga no cinema foi o documentário “Simonal - Ninguém sabe o duro que dei”, de 2009, que retrata a vida do cantor Wilson Simonal. O filme foi premiado em diversos festivais nacionais e internacionais e também se destacou como a maior bilheteria do gênero documentário do ano. A produtora também criou as séries “Design Brasileiro” para o Canal Curta!, “Arte Brasileira Quadro a Quadro” para o canal Arte1 e “Amor de Bicho” para a UOL. Em 2016, lançou o documentário “Zanine – O Ser do Arquitetar”.",
+      "p1En": "Pontos de Fuga’s first film project was the documentary “Simonal - Ninguém sabe o duro que dei” (2009), which portrays the life of singer Wilson Simonal. The film received awards at several national and international festivals and also stood out as the highest-grossing documentary of the year. The production company also created the series “Design Brasileiro” for Canal Curta!, “Arte Brasileira Quadro a Quadro” for the channel Arte1, and “Amor de Bicho” for UOL. In 2016, it released the documentary “Zanine – O Ser do Arquitetar.",
+      "p2": "Em 2019, a produtora lançou o longa de ficção “Simonal”, uma cinebiografia dirigida por Leonardo Domingues e estrelada por Fabrício Boliveira e Isis Valverde, que conquistou reconhecimento em festivais internacionais e nacionais. Em 2022, “O Amor Dá Voltas”, de Marcos Bernstein, com Cleo Pires, Juliana Didone e Igor Angelkorte no elenco. E em 2024, “Um Dia Antes de Todos os Outros”, um longa-metragem dirigido por Fernanda Bond e Valentina Homem, com roteiro de Jô Bilac. No momento, produz o documentário “Zico, o Samurai de Quintino”, que estreou nos cinemas em 2026. \n",
+      "p2En": "In 2019, the production company released the fiction feature film “Simonal”, a biopic directed by Leonardo Domingues and starring Fabrício Boliveira and Isis Valverde, which gained recognition at both international and national festivals. In 2022, it released “O Amor Dá Voltas”, directed by Marcos Bernstein and featuring Cleo Pires, Juliana Didone, and Igor Angelkorte in the cast. And in 2024, “Um Dia Antes de Todos os Outros”, a feature film directed by Fernanda Bond and Valentina Homem, with a screenplay by Jô Bilac. Currently, it is producing the documentary “Zico, o Samurai de Quintino”, which premiered in theaters in 2026.",
+      "identityStatement": "Rio de Janeiro como ponto de partida",
+      "identityStatementEn": "Pontos de Fuga",
+      "manifestoSub": "Explorar a trajetória →",
+      "manifestoSubEn": "Founded in ----- · Rio de Janeiro"
+    },
+    "festivais": [
+      {
+        "name": "48ª Mostra Internacional de Cinema de São Paulo INT'L Film Festival",
+        "year": "2024",
+        "logo": "https://raw.githubusercontent.com/myceliumBrain/site-produtora/lite_mode/assets/festivais/48ª_Mostra_Internacional_de_Cinema_de_São_Paulo_INT'L_Film_Festival_p.png"
+      },
+      {
+        "name": "Brazilian Film Festival of Miami",
+        "year": "",
+        "logo": "https://raw.githubusercontent.com/myceliumBrain/site-produtora/lite_mode/assets/festivais/Brazilian_Film_Festival_of_Miami_p.png"
+      },
+      {
+        "name": "Festival du Film Brésilien de Montreal",
+        "year": "",
+        "logo": "https://raw.githubusercontent.com/myceliumBrain/site-produtora/lite_mode/assets/festivais/Festival_du_Film_Brésilien_de_Montreal_p.png"
+      },
+      {
+        "name": "Olhar de Cinema - Festival Internacional de Curitiba",
+        "year": "",
+        "logo": "https://raw.githubusercontent.com/myceliumBrain/site-produtora/lite_mode/assets/festivais/323801_p.jpg"
+      },
+      {
+        "name": "S Film Festival",
+        "year": "",
+        "logo": "https://raw.githubusercontent.com/myceliumBrain/site-produtora/lite_mode/assets/festivais/S_Film_Festival_p.png"
+      },
+      {
+        "name": "FICVINA",
+        "year": "",
+        "logo": "https://raw.githubusercontent.com/myceliumBrain/site-produtora/lite_mode/assets/festivais/415644_p.jpeg"
+      },
+      {
+        "name": "Brazilian Film & TV Festival od Toronto",
+        "year": "",
+        "logo": "https://raw.githubusercontent.com/myceliumBrain/site-produtora/lite_mode/assets/festivais/Brazilian_Film_&_TV_Festival_od_Toronto_p.jpg"
+      },
+      {
+        "name": "Festin - Festival de Cinema Itinerante da Língua Portuguesa",
+        "year": "",
+        "logo": "https://raw.githubusercontent.com/myceliumBrain/site-produtora/lite_mode/assets/festivais/Festin_-_Festival_de_Cinema_Itinerante_da_Língua_Portuguesa_p.jpg"
+      },
+      {
+        "name": "Festival Internacional de Cine de Punta del Este",
+        "year": "",
+        "logo": "https://raw.githubusercontent.com/myceliumBrain/site-produtora/lite_mode/assets/festivais/Festival_Internacional_de_Cine_de_Punta_del_Este_p.jpg"
+      },
+      {
+        "name": "43ª Mostra Internacional de Cinema de São Paulo",
+        "year": "",
+        "logo": "https://raw.githubusercontent.com/myceliumBrain/site-produtora/lite_mode/assets/festivais/43ª_Mostra_Internacional_de_Cinema_de_São_Paulo_p.png"
+      },
+      {
+        "name": "Festival do Rio",
+        "year": "",
+        "logo": "https://raw.githubusercontent.com/myceliumBrain/site-produtora/lite_mode/assets/festivais/Festival_do_Rio_p.jpg"
+      },
+      {
+        "name": "Festival de Cinema de Gramado",
+        "year": "",
+        "logo": "https://raw.githubusercontent.com/myceliumBrain/site-produtora/lite_mode/assets/festivais/Festival_de_Cinema_de_Gramado_p.png"
+      },
+      {
+        "name": "Vancouver Latin American Film Festival",
+        "year": "",
+        "logo": "https://raw.githubusercontent.com/myceliumBrain/site-produtora/lite_mode/assets/festivais/Vancouver_Latin_American_Film_Festival_p.png"
+      },
+      {
+        "name": "Fest Atuanada do Audiovisual Brasileiro",
+        "year": "",
+        "logo": "https://raw.githubusercontent.com/myceliumBrain/site-produtora/lite_mode/assets/festivais/Fest_Atuanada_do_Audiovisual_Brasileiro_p.jpg"
+      },
+      {
+        "name": "Academia Brasileira de Cinema",
+        "year": "",
+        "logo": "https://raw.githubusercontent.com/myceliumBrain/site-produtora/lite_mode/assets/festivais/Academia_Brasileira_de_Cinema_p.jpg"
+      },
+      {
+        "name": "Festival Paulínia de Cinema",
+        "year": "",
+        "logo": "https://raw.githubusercontent.com/myceliumBrain/site-produtora/lite_mode/assets/festivais/Festival_Paulínia_de_Cinema_p.png"
+      },
+      {
+        "name": "8º Cine Fest Brasil Montevideo",
+        "year": "",
+        "logo": "https://raw.githubusercontent.com/myceliumBrain/site-produtora/lite_mode/assets/festivais/8º_Cine_Fest_Brasil_Montevideo_p.png"
+      },
+      {
+        "name": "Official Selection - Festival Internacional de Documentários",
+        "year": "",
+        "logo": "https://raw.githubusercontent.com/myceliumBrain/site-produtora/lite_mode/assets/festivais/Official_Selection_-_Festival_Internacional_de_Documentários_p.png"
+      },
+      {
+        "name": "42ª Mostra Internacional de Cinema SP",
+        "year": "",
+        "logo": "https://raw.githubusercontent.com/myceliumBrain/site-produtora/lite_mode/assets/festivais/42ª_Mostra_Internacional_de_Cinema_SP_p.jpg"
+      },
+      {
+        "name": "Festival Internacional de Cine de Mar Del Plata",
+        "year": "",
+        "logo": "https://raw.githubusercontent.com/myceliumBrain/site-produtora/lite_mode/assets/festivais/Festival_Internacional_de_Cine_de_Mar_Del_Plata_p.png"
+      },
+      {
+        "name": "Mostra Internacional de Cinema - São Paulo International Film Festival",
+        "year": "",
+        "logo": "https://raw.githubusercontent.com/myceliumBrain/site-produtora/lite_mode/assets/festivais/Mostra_Internacional_de_Cinema_-_São_Paulo_International_Film_Festival_p.png"
+      }
+    ],
+    "marcos": [
+      {
+        "year": "2013",
+        "title": "Fundação",
+        "titleEn": "Foundation",
+        "text": "A Pontos de Fuga é fundada no Rio de Janeiro por um grupo de cineastas comprometidos com o cinema independente brasileiro.",
+        "textEn": "Pontos de Fuga is founded in Rio de Janeiro by a group of filmmakers committed to Brazilian independent cinema."
+      },
+      {
+        "year": "2026",
+        "title": "Hoje",
+        "titleEn": "Today",
+        "text": "Com mais de X títulos no catálogo XXXXXXXXXXXXXXX",
+        "textEn": "With more than X titles in the catalog XXXXXXXXXXXXXXX"
+      }
+    ],
+    "team": [
+      {
+        "name": "XXXXXXXX XXXXXXXXXX",
+        "role": "Diretor",
+        "roleEn": "Director",
+        "img": "https://raw.githubusercontent.com/myceliumBrain/site-produtora/lite_mode/assets/equipe/XXXXXXXX_XXXXXXXXXX_p.jpeg",
+        "bio": "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+        "bioEn": "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"
+      },
+      {
+        "name": "YYYYYYYYYYYYY",
+        "role": "Diretora",
+        "roleEn": "Director",
+        "img": "https://raw.githubusercontent.com/myceliumBrain/site-produtora/lite_mode/assets/equipe/YYYYYYYYYYYYY_p.jpg",
+        "bio": "YYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYY",
+        "bioEn": "YYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYY"
+      }
+    ],
+    "parceiros": [
+      {
+        "name": "Arte 1",
+        "logo": "https://raw.githubusercontent.com/myceliumBrain/site-produtora/lite_mode/assets/parceiros/Arte_1_p.png"
+      },
+      {
+        "name": "Banco do Brasil",
+        "logo": "https://raw.githubusercontent.com/myceliumBrain/site-produtora/lite_mode/assets/parceiros/Banco_do_Brasil_p.png"
+      },
+      {
+        "name": "BNDES",
+        "logo": "https://raw.githubusercontent.com/myceliumBrain/site-produtora/lite_mode/assets/parceiros/BNDES_p.png"
+      },
+      {
+        "name": "BRDE",
+        "logo": "https://raw.githubusercontent.com/myceliumBrain/site-produtora/lite_mode/assets/parceiros/BNDE_p.png"
+      },
+      {
+        "name": "Canal Brasil",
+        "logo": "https://raw.githubusercontent.com/myceliumBrain/site-produtora/lite_mode/assets/parceiros/Canal_Brasil_p.png"
+      },
+      {
+        "name": "Canal Curta",
+        "logo": "https://raw.githubusercontent.com/myceliumBrain/site-produtora/lite_mode/assets/parceiros/Canal_Curta_p.png"
+      },
+      {
+        "name": "Downtown Filmes",
+        "logo": "https://raw.githubusercontent.com/myceliumBrain/site-produtora/lite_mode/assets/parceiros/Downtown_Filmes_p.jpg"
+      },
+      {
+        "name": "globofilmes",
+        "logo": "https://raw.githubusercontent.com/myceliumBrain/site-produtora/lite_mode/assets/parceiros/globofilmes_p.png"
+      },
+      {
+        "name": "HBO",
+        "logo": "https://raw.githubusercontent.com/myceliumBrain/site-produtora/lite_mode/assets/parceiros/HBO_p.png"
+      },
+      {
+        "name": "imagem filmes",
+        "logo": "https://raw.githubusercontent.com/myceliumBrain/site-produtora/lite_mode/assets/parceiros/imagem_filmes_p.jpg"
+      },
+      {
+        "name": "Lojas Americanas",
+        "logo": "https://raw.githubusercontent.com/myceliumBrain/site-produtora/lite_mode/assets/parceiros/Lojas_Americanas_p.ai"
+      },
+      {
+        "name": "Neoenergia",
+        "logo": "https://raw.githubusercontent.com/myceliumBrain/site-produtora/lite_mode/assets/parceiros/Neoenergia_p.png"
+      },
+      {
+        "name": "Netflix",
+        "logo": "https://raw.githubusercontent.com/myceliumBrain/site-produtora/lite_mode/assets/parceiros/Netflix_p.png"
+      },
+      {
+        "name": "Rio Filme",
+        "logo": "https://raw.githubusercontent.com/myceliumBrain/site-produtora/lite_mode/assets/parceiros/Rio_Filme_p.png"
+      }
+    ]
+  },
+  "_auth": {
+    "tokens": [
+      {
+        "label": "teste",
+        "salt": "9rxjbfEdglLn5ll+rs55qw==",
+        "iv": "lV5JPB8t3CNAl8zD",
+        "data": "Unv46Lcp1ftYpt9g1iWU1ngpETjbpHqREZPsVDMaaiA97leOHm6tPVht24EmT+bL7C6l/bLgEls="
+      }
+    ]
+  },
+  "otherProductions": [
+    {
+      "title": "A Ordem do Mundo",
+      "titleEn": "A Ordem do Mundo",
+      "director": "Aderbal Freire Filho",
+      "year": "",
+      "genre": "Peça Teatral",
+      "synopsis": "Monólogo de Drica Moraes, no papel da responsável por organizar todos os fatos que ocorrem no planeta, catalogando e arquivando recortes de manchetes e notícias.\n\nTexto de Patrícia Melo e direção de Aderbal Freire Filho.\n\nFicou em cartaz onde? Por quanto tempo?",
+      "synopsisEn": "Monologue by Drica Moraes, in the role of the person responsible for organizing all the events that occur on the planet, cataloging and archiving clippings of headlines and news.\n\nText by Patrícia Melo and directed by Aderbal Freire Filho.\n\nWhere was it staged? For how long?",
+      "imgPortrait": "https://raw.githubusercontent.com/myceliumBrain/site-produtora/lite_mode/assets/filmes/retratos/A_Ordem_do_Mundo_p.png",
+      "videoTrailers": [],
+      "imgLandscape": "",
+      "videoHover": ""
+    },
+    {
+      "title": "Confronto",
+      "titleEn": "Confronto",
+      "director": "",
+      "year": "",
+      "genre": "",
+      "synopsis": "Livre adaptação teatral de Domingos Oliveira do livro \"Elite da Tropa\", de Luiz Eduardo Soares.",
+      "synopsisEn": "A free theatrical adaptation by Domingos Oliveira of the book \"Elite da Tropa\" by Luiz Eduardo Soares.",
+      "imgPortrait": "https://raw.githubusercontent.com/myceliumBrain/site-produtora/lite_mode/assets/filmes/retratos/Confronto_p.jpg",
+      "videoTrailers": [],
+      "imgLandscape": "",
+      "videoHover": ""
+    },
+    {
+      "title": "Castelos de Areia",
+      "titleEn": "Castelos de Areia",
+      "director": "",
+      "year": "",
+      "genre": "",
+      "synopsis": "Exposição da artista visual, crítica de arte e escritora Katia Canton. Com curadoria de Adriana Rede e expografia de José Marton, a mostra reúne mais de 80 obras que tratam de sonhos e desejos, da impermanência da vida e da potência do imponderável.\n\n “O termo ‘castelo de areia’ pode aparecer nos lugares mais inesperados. Remete às brincadeiras de crianças na praia, mas também se refere às ilusões, que são construídas sem alicerces firmes, e tendem a se desmanchar”\n\nRealizada na Caixa Cultural São Paulo em 2016.",
+      "synopsisEn": "Exhibition by visual artist, art critic, and writer Katia Canton. Curated by Adriana Rede and with exhibition design by José Marton, the show brings together more than 80 works that deal with dreams and desires, the impermanence of life, and the power of the imponderable.\n\n“The term ‘sandcastle’ can appear in the most unexpected places. It refers to children's games on the beach, but also to illusions, which are built without firm foundations and tend to crumble.”\n\nHeld at Caixa Cultural São Paulo in 2016.",
+      "imgPortrait": "https://raw.githubusercontent.com/myceliumBrain/site-produtora/lite_mode/assets/filmes/retratos/Castelos_de_Areia_p.png",
+      "videoTrailers": [],
+      "imgLandscape": "",
+      "videoHover": ""
+    },
+    {
+      "title": "O Trem da História",
+      "titleEn": "O Trem da História",
+      "director": "",
+      "year": "",
+      "genre": "",
+      "synopsis": "Uma exposição interativa voltada para crianças e adolescentes. A mostra revela diversos períodos da história da arte através da réplica de obras importantes, que se encontram nos principais museus do país.",
+      "synopsisEn": "An interactive exhibition aimed at children and teenagers. The show reveals various periods in art history through replicas of important works found in the country's main museums.",
+      "imgPortrait": "https://raw.githubusercontent.com/myceliumBrain/site-produtora/lite_mode/assets/filmes/retratos/O_Trem_da_História_p.png",
+      "videoTrailers": [
+        "https://raw.githubusercontent.com/myceliumBrain/site-produtora/lite_mode/assets/filmes/trailers/O_Trem_da_História_t.mp4",
+        "https://raw.githubusercontent.com/myceliumBrain/site-produtora/lite_mode/assets/filmes/trailers/O_Trem_da_História_1_t.mp4"
+      ],
+      "imgLandscape": "https://raw.githubusercontent.com/myceliumBrain/site-produtora/lite_mode/assets/filmes/paisagens/O_Trem_da_História_l.jpg",
+      "videoHover": "",
+      "fotografias": [
+        "https://raw.githubusercontent.com/myceliumBrain/site-produtora/lite_mode/assets/filmes/fotografias/O_Trem_da_História/O_Trem_da_História_foto_1775331678205_0.jpg",
+        "https://raw.githubusercontent.com/myceliumBrain/site-produtora/lite_mode/assets/filmes/fotografias/O_Trem_da_História/O_Trem_da_História_foto_1775331679660_1.jpg",
+        "https://raw.githubusercontent.com/myceliumBrain/site-produtora/lite_mode/assets/filmes/fotografias/O_Trem_da_História/O_Trem_da_História_foto_1775331680910_2.jpg",
+        "https://raw.githubusercontent.com/myceliumBrain/site-produtora/lite_mode/assets/filmes/fotografias/O_Trem_da_História/O_Trem_da_História_foto_1775331683243_3.jpg",
+        "https://raw.githubusercontent.com/myceliumBrain/site-produtora/lite_mode/assets/filmes/fotografias/O_Trem_da_História/O_Trem_da_História_foto_1775331684557_4.jpg",
+        "https://raw.githubusercontent.com/myceliumBrain/site-produtora/lite_mode/assets/filmes/fotografias/O_Trem_da_História/O_Trem_da_História_foto_1775331685851_5.jpg",
+        "https://raw.githubusercontent.com/myceliumBrain/site-produtora/lite_mode/assets/filmes/fotografias/O_Trem_da_História/O_Trem_da_História_foto_1775331686949_6.jpg",
+        "https://raw.githubusercontent.com/myceliumBrain/site-produtora/lite_mode/assets/filmes/fotografias/O_Trem_da_História/O_Trem_da_História_foto_1775331687897_7.jpg",
+        "https://raw.githubusercontent.com/myceliumBrain/site-produtora/lite_mode/assets/filmes/fotografias/O_Trem_da_História/O_Trem_da_História_foto_1775331689254_8.jpg"
+      ]
+    }
+  ],
+  "pagesData": {
+    "producoes": {
+      "titlePt": "Produções",
+      "titleEn": "Productions"
+    },
+    "contato": {
+      "eyebrowPt": "Fale com a gente",
+      "eyebrowEn": "Get in touch",
+      "titlePt": "Contato",
+      "titleEn": "Contact",
+      "subPt": "Estamos disponíveis para parcerias, imprensa e qualquer conversa sobre cinema.",
+      "subEn": "We're available for partnerships, press, and any conversation about cinema.",
+      "whatsapp": "5521988902499"
+    },
+    "index": {
+      "ctaTitlePt": "Quer falar conosco?",
+      "ctaTitleEn": "Want to talk to us?",
+      "ctaBodyPt": "Estamos abertos a novos projetos, parcerias e colaborações.",
+      "ctaBodyEn": "We are open to new projects, partnerships, and collaborations.",
+      "heroLabelPt": "Em destaque · 2026",
+      "heroLabelEn": "Featured · 2026",
+      "gridTitlePt": "Produções recentes",
+      "gridTitleEn": "Recent productions",
+      "stripeItems": [
+        "Rio de Janeiro",
+        "Pontos de Fuga",
+        "Desde 20--"
+      ]
+    },
+    "historia": {
+      "teamEyebrowPt": "Quem faz acontecer",
+      "teamEyebrowEn": "The team",
+      "festivaisEyebrowPt": "Festivais",
+      "festivaisEyebrowEn": "Film Festivals",
+      "marcosEyebrowPt": "Marcos",
+      "marcosEyebrowEn": "Milestones",
+      "parceirosEyebrowPt": "Parceiros",
+      "parceirosEyebrowEn": "Partners"
+    },
+    "vemai": {
+      "eyebrowPt": "Em produção",
+      "eyebrowEn": "In production",
+      "titlePt": "Vem aí",
+      "titleEn": "Coming soon",
+      "subPt": "Cada projeto .....",
+      "subEn": "Each project...",
+      "statementPt": "Nós........ Produções...........",
+      "statementEn": "We........ Productions..........."
+    }
+  }
+}

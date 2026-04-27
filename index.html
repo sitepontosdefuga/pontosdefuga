@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>pontos de fuga</title>
+  <meta name="description" content="Produtora independente de cinema brasileiro. Filmes que nascem de inquietações e perguntas que não cabem em silêncio.">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="pontos de fuga">
+  <meta property="og:title" content="pontos de fuga">
+  <meta property="og:description" content="Produtora independente de cinema brasileiro. Filmes que nascem de inquietações.">
+  <meta property="og:image" content="assets/logo/pontos_de_fuga-matriz_t.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,600;1,9..144,300;1,9..144,400;1,9..144,600&family=Space+Grotesk:wght@300;400;500;600;700&display=swap">
+  <link rel="stylesheet" href="style/style-base.css">
+  <link rel="stylesheet" href="style/style-index.css">
+  <script>(function(){var s=localStorage.getItem('theme'),d=window.matchMedia('(prefers-color-scheme: dark)').matches;document.documentElement.setAttribute('data-theme',s||(d?'dark':'light'));})();</script>
+</head>
+<body>
+
+  <header>
+    <button class="logo-btn" id="menuBtn" aria-label="Abrir menu">
+      <div class="hamburger"><span></span><span></span><span></span></div>
+      <img src="assets/logo/pontos_de_fuga-matriz_t.png" alt="pontos de fuga" class="logo-img">
+    </button>
+    <div class="header-right">
+      <div class="lang-selector" id="langSelector">
+        <button class="lang-selector__trigger" id="langBtn">
+          <img class="lang-selector__flag" id="langCurrentFlag" src="https://flagcdn.com/w40/br.png" alt="Português">
+          <svg class="lang-selector__chevron" viewBox="0 0 10 6" width="10" height="6" fill="none" aria-hidden="true"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+        <div class="lang-selector__dropdown" id="langDropdown">
+          <button class="lang-selector__option" id="langOptionBtn">
+            <img class="lang-selector__flag" id="langOptionFlag" src="https://flagcdn.com/w40/us.png" alt="English">
+          </button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+
+  <!-- ══════════════════════════════════════════════════════════════
+       1. HERO — Impacto visual puro
+          Slideshow de filmes em tela cheia. Sem texto corporativo.
+          A primeira impressão é sempre cinematográfica.
+       ══════════════════════════════════════════════════════════════ -->
+  <section class="hero">
+    <div class="hero-slides">
+      <!-- slides gerados pelo JS -->
+    </div>
+    <div class="hero-grain"></div>
+    <div class="hero-vignette"></div>
+    <div class="hero-bottom-fade"></div>
+    <nav class="hero-nav" id="heroNav">
+      <!-- dots gerados pelo JS -->
+    </nav>
+    <div class="hero-content">
+      <div class="hero-film-info">
+        <div class="hero-label" data-i18n="hero.label">Em destaque · 2025</div>
+        <h1 class="hero-title"></h1>
+        <div class="hero-meta"></div>
+      </div>
+      <div class="hero-cta">
+        <a href="producoes.html" class="btn-outline">
+          <span data-i18n="hero.cta">Ver portfólio</span>
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+            <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1"/>
+          </svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ══════════════════════════════════════════════════════════════
+       2. CATÁLOGO — Grid de produções recentes
+       ══════════════════════════════════════════════════════════════ -->
+  <section class="section-grid">
+    <div class="section-grid-header">
+      <h2 class="section-grid-title reveal" data-i18n="grid.title">Produções recentes</h2>
+      <a href="producoes.html" class="section-grid-link reveal">
+        <span data-i18n="grid.all">Ver todas</span>
+        <svg width="14" height="14" viewBox="0 0 16 16" fill="none">
+          <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1"/>
+        </svg>
+      </a>
+    </div>
+    <div class="preview-grid" id="previewGrid"></div>
+  </section>
+
+
+  <!-- ══════════════════════════════════════════════════════════════
+       3. STRIPE — Separador energético
+          Fita em laranja queimado com os pilares da identidade.
+          Posição: entre a declaração de identidade e o conteúdo editorial.
+          Funciona como uma transição de energia — sobe a temperatura.
+       ══════════════════════════════════════════════════════════════ -->
+  <div class="section-stripe">
+    <div class="stripe-track" id="stripeTrack"></div>
+  </div>
+
+
+  <!-- ══════════════════════════════════════════════════════════════
+       4. VEM AÍ — O que está por vir (movido para cima)
+          Posição estratégica: logo após o último lançamento.
+          Narrativa: "foi isso que fizemos → é isso que vem".
+          Antes estava enterrado abaixo do grid — perdia visibilidade.
+       ══════════════════════════════════════════════════════════════ -->
+  <section class="section-upcoming">
+    <div class="upcoming-header">
+      <h2 class="upcoming-title reveal" data-i18n="upcoming.title">Vem aí</h2>
+      <span style="font-family:var(--font-display);font-size:13px;font-style:italic;color:rgba(10,10,10,0.3)" class="reveal" data-i18n="upcoming.sub">Em produção</span>
+    </div>
+    <ul class="upcoming-list" id="upcomingList"></ul>
+  </section>
+
+
+  <!-- ══════════════════════════════════════════════════════════════
+       7. CTA — Fechamento com propósito (seção nova)
+          A página antes terminava sem direção. Agora há um convite claro.
+          Posição: antes do footer, em fundo escuro que cria fechamento visual.
+          Narrativa: "viu o que fazemos → agora vem fazer com a gente".
+       ══════════════════════════════════════════════════════════════ -->
+  <section class="section-cta">
+    <div class="cta-inner">
+      <span class="cta-eyebrow reveal" data-i18n="cta.eyebrow">Contato</span>
+      <h2 class="cta-title reveal reveal-delay-1" data-i18n="cta.title">
+        Tem uma história que precisa ser contada?
+      </h2>
+      <p class="cta-body reveal reveal-delay-2" data-i18n="cta.body">
+        Estamos sempre abertos a novos projetos, parcerias criativas e colaborações que valham a pena.
+      </p>
+      <a href="contato.html" class="btn-cta reveal reveal-delay-3">
+        <span data-i18n="cta.link">Fale com a gente</span>
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+          <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1"/>
+        </svg>
+      </a>
+    </div>
+  </section>
+
+
+  <footer>
+    <div class="footer-top">
+      <div class="footer-logo">pontos de fuga</div>
+      <div class="footer-links">
+        <div class="footer-col">
+          <h4 data-i18n="footer.col1">Navegação</h4>
+          <ul>
+            <li><a href="producoes.html" data-i18n="nav.portfolio">Portfólio</a></li>
+            <li><a href="vemai.html" data-i18n="menu.upcoming">Vem aí</a></li>
+            <li><a href="historia.html" data-i18n="menu.history">Nossa história</a></li>
+            <li><a href="contato.html" data-i18n="menu.contact">Contato</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span class="footer-copy" data-i18n="footer.copy">© 2026 - PONTOS DE FUGA</span>
+      <div class="footer-social"></div>
+    </div>
+  </footer>
+
+
+  <!-- MENU OVERLAY -->
+  <div class="menu-overlay" id="menuOverlay">
+    <div class="menu-body">
+      <nav class="menu-primary">
+        <ul class="menu-primary-list">
+          <li><a href="producoes.html">
+            <span class="menu-item-title" data-i18n="menu.productions">Produções</span>
+            <span class="menu-item-count" data-i18n="menu.productions.count">10+</span>
+          </a></li>
+          <li><a href="vemai.html">
+            <span class="menu-item-title" data-i18n="menu.upcoming">Vem aí</span>
+            <span class="menu-item-count" data-i18n="menu.upcoming.count">Em produção</span>
+          </a></li>
+          <li><a href="historia.html">
+            <span class="menu-item-title" data-i18n="menu.history">Nossa história</span>
+            <span class="menu-item-count" data-i18n="menu.history.count">Sobre</span>
+          </a></li>
+          <li><a href="contato.html">
+            <span class="menu-item-title" data-i18n="menu.contact">Contato</span>
+            <span class="menu-item-count" data-i18n="menu.contact.count">fale com a gente</span>
+          </a></li>
+        </ul>
+      </nav>
+      <div class="menu-secondary">
+        <div class="menu-social"></div>
+        <div class="menu-copy">© 2026 - PONTOS DE FUGA</div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://unpkg.com/i18next/dist/umd/i18next.min.js"></script>
+  <script src="scripts/data.js"></script>
+  <script src="scripts/script-shared.js"></script>
+  <script src="scripts/script-index.js"></script>
+
+</body>
+</html>

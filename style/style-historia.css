@@ -1,0 +1,371 @@
+/* ================================================================
+   style-historia.css — pontos de fuga · Edição Indie / Alternativa
+   Visual: zine digital · produtora independente · DIY artístico
+
+   Estratégia: página editorial, quase um fanzine impresso.
+   Manifesto em tinta grande itálica,
+   membros com overlay quente nas fotos, parceiros em parchment.
+   ================================================================ */
+
+
+/* ─────────────────────────────────────────────────────────────────
+   [1]  PALETA INDIE (sobrescreve style-base.css)
+   ───────────────────────────────────────────────────────────────── */
+
+:root {
+  --black:      #1c1714;
+  --white:      #f5eedf;
+  --cream:      #ece5d3;
+  --gold:       #c83b18;
+  --red:        #c83b18;
+  --electric:   #1a3bd4;
+  --acid:       #b4d600;
+  --sand:       #d3c5ae;
+  --grey:       #cbc3b4;
+  --border:     rgba(28, 23, 20, 0.1);
+  --dim:        rgba(28, 23, 20, 0.4);
+  --pad-desk:   56px;
+  --pad-mob:    24px;
+}
+
+body {
+  background: var(--white);
+  color: var(--black);
+}
+
+
+/* ─────────────────────────────────────────────────────────────────
+   [2]  HEADER
+   ───────────────────────────────────────────────────────────────── */
+
+header {
+  background: var(--white);
+  background-color: var(--white);
+  border-bottom: 1px solid var(--border);
+}
+
+.logo-btn          { color: var(--black); }
+.hamburger span    { background: var(--black); }
+.header-link       { color: var(--black); transition: color 0.35s ease; }
+
+
+
+
+/* ─────────────────────────────────────────────────────────────────
+   [4]  MENU OVERLAY
+   ───────────────────────────────────────────────────────────────── */
+
+.menu-overlay {
+  background: var(--white);
+  border-right-color: var(--border);
+}
+
+.menu-primary-list li,
+.menu-primary-list li:last-child { border-color: var(--border); }
+
+.menu-primary-list a { color: var(--black); transition: padding 0.3s, color 0.3s; }
+.menu-item-title     { font-style: italic; color: var(--black); letter-spacing: -0.025em; transition: color 0.3s; }
+.menu-item-count     { color: var(--gold); font-style: italic; transition: color 0.3s; }
+
+.menu-primary-list li:nth-child(1) a:hover,
+.menu-primary-list li:nth-child(1) a:hover .menu-item-title { color: var(--gold); }
+.menu-primary-list li:nth-child(2) a:hover,
+.menu-primary-list li:nth-child(2) a:hover .menu-item-title { color: var(--amber); }
+.menu-primary-list li:nth-child(3) a:hover,
+.menu-primary-list li:nth-child(3) a:hover .menu-item-title { color: var(--sage); }
+.menu-primary-list li:nth-child(4) a:hover,
+.menu-primary-list li:nth-child(4) a:hover .menu-item-title { color: var(--gold); }
+
+.menu-social a       { color: var(--dim); }
+.menu-social a:hover { color: var(--black); }
+.menu-copy           { color: rgba(28, 23, 20, 0.2); }
+
+
+/* ─────────────────────────────────────────────────────────────────
+   [5]  FOOTER
+   ───────────────────────────────────────────────────────────────── */
+
+footer                { background: var(--black); border-top-color: rgba(28,23,20,0.2); }
+.footer-logo          { color: var(--white); }
+.footer-col h4        { color: rgba(245,238,223,0.35); font-style: italic; }
+.footer-col a         { color: rgba(245,238,223,0.55); }
+.footer-col a:hover   { color: var(--white); }
+.footer-bottom        { border-top-color: rgba(245,238,223,0.07); }
+.footer-copy          { color: rgba(245,238,223,0.18); }
+.footer-social a      { color: rgba(245,238,223,0.3); }
+.footer-social a:hover { color: var(--white); }
+
+
+/* ═══════════════════════════════════════════════════════════════════
+   NOSSA HISTÓRIA
+   ═══════════════════════════════════════════════════════════════════ */
+
+
+/* ─────────────────────────────────────────────────────────────────
+   [6]  PAGE
+   ───────────────────────────────────────────────────────────────── */
+
+.historia-page {
+  min-height: 100vh;
+  padding-top: 148px;
+  padding-bottom: 140px;
+}
+
+
+/* ─────────────────────────────────────────────────────────────────
+   [7]  MANIFESTO
+        Título enorme itálico em tinta — presença de cartaz.
+        Em em burnt orange: palavra-chave que pulsa.
+        Corpo: voz da produtora em tinta suave.
+   ───────────────────────────────────────────────────────────────── */
+
+.historia-manifesto {
+  padding: 0 var(--pad-desk);
+  margin-bottom: 148px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto auto;
+  column-gap: 80px;
+  row-gap: 0;
+}
+
+/* Eyebrow: itálico burnt */
+.historia-manifesto__eyebrow {
+  grid-column: 1 / -1;
+  font-family: var(--font-display);
+  font-size: 13px;
+  font-style: italic;
+  font-weight: 300;
+  letter-spacing: 0.02em;
+  text-transform: none;
+  color: var(--gold);
+  margin-bottom: 36px;
+  display: block;
+}
+
+/* Título: tinta escura, peso leve, grande itálico */
+.historia-manifesto__title {
+  font-family: var(--font-display);
+  font-size: clamp(56px, 8vw, 112px);
+  font-weight: 300;
+  line-height: 0.9;
+  letter-spacing: -0.025em;
+  color: var(--black);
+  align-self: start;
+  font-style: italic;
+}
+
+/* Em: burnt orange — palavra viva no título */
+.historia-manifesto__title em {
+  font-style: italic;
+  color: var(--gold);
+}
+
+.historia-manifesto__body {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+  align-self: end;
+  padding-bottom: 8px;
+}
+
+.historia-manifesto__body p {
+  font-family: var(--font-display);
+  font-size: 18px;
+  font-weight: 300;
+  line-height: 1.75;
+  color: rgba(28, 23, 20, 0.52);
+}
+
+
+/* ─────────────────────────────────────────────────────────────────
+   [9]  DIVISOR
+   ───────────────────────────────────────────────────────────────── */
+
+.historia-divider {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+  padding: 0 var(--pad-desk);
+  margin-bottom: 128px;
+}
+
+.historia-divider__line {
+  flex: 1;
+  height: 0;
+  border-top: 1px solid rgba(28, 23, 20, 0.25);
+}
+
+.historia-divider span {
+  font-family: var(--font-display);
+  font-size: 22px;
+  font-style: italic;
+  letter-spacing: -0.01em;
+  color: rgba(28, 23, 20, 0.4);
+  white-space: nowrap;
+}
+
+
+/* ─────────────────────────────────────────────────────────────────
+   [11]  FESTIVAIS
+         Grid assimétrica pequena — aparência de "cheio".
+   ───────────────────────────────────────────────────────────────── */
+
+.historia-festivais { padding: 0 var(--pad-desk); margin-bottom: 120px; }
+
+.historia-festivais__grid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  grid-auto-flow: dense;
+  gap: 0;
+}
+
+.historia-festival {
+  background: var(--white);
+  border: 1px solid rgba(28, 23, 20, 0.12);
+  margin: -1px 0 0 -1px;
+  min-height: 80px;
+  padding: 16px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  transition: background 0.25s;
+  cursor: default;
+}
+
+.historia-festival:hover { background: var(--cream); }
+
+.historia-festival img {
+  max-height: 36px;
+  max-width: 100%;
+  object-fit: contain;
+  opacity: 0.45;
+  transition: opacity 0.25s;
+}
+
+.historia-festival:hover img { opacity: 0.85; }
+
+.historia-festival__name {
+  font-family: var(--font-ui);
+  font-size: 9px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgba(28, 23, 20, 0.35);
+  text-align: center;
+  line-height: 1.3;
+}
+
+.historia-festival__year {
+  font-family: var(--font-ui);
+  font-size: 8px;
+  letter-spacing: 0.1em;
+  color: rgba(28, 23, 20, 0.2);
+}
+
+/* Assimetria: itens alternados ocupam 2 colunas */
+.historia-festival:nth-child(5n+1) { grid-column: span 2; }
+.historia-festival:nth-child(5n+4) { grid-column: span 2; }
+
+.historia-festival--filler,
+.historia-parceiro--filler { pointer-events: none; }
+
+
+/* ─────────────────────────────────────────────────────────────────
+   [12]  PARCEIROS
+         Grid claro com texto em tinta suave. Hover: tinta plena.
+   ───────────────────────────────────────────────────────────────── */
+
+.historia-parceiros { padding: 0 var(--pad-desk); }
+
+.historia-parceiros__header span {
+  font-family: var(--font-display);
+  font-size: 10px;
+  font-style: italic;
+  letter-spacing: 0.1em;
+  color: rgba(28, 23, 20, 0.3);
+  white-space: nowrap;
+}
+
+.historia-parceiros__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1px;
+  background: var(--border);
+}
+
+.historia-parceiro {
+  background: var(--white);
+  padding: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-display);
+  font-size: 20px;
+  font-weight: 300;
+  font-style: italic;
+  color: rgba(28, 23, 20, 0.28);
+  letter-spacing: 0.01em;
+  transition: color 0.3s, background 0.3s;
+}
+
+.parceiro-logo-img {
+  max-height: 48px;
+  max-width: 100%;
+  object-fit: contain;
+  opacity: 0.5;
+  transition: opacity 0.3s;
+}
+
+.historia-parceiro:hover .parceiro-logo-img { opacity: 1; }
+
+.historia-parceiro:hover {
+  color: var(--black);
+  background: var(--cream);
+}
+
+
+/* ─────────────────────────────────────────────────────────────────
+   [12]  RESPONSIVE
+   ───────────────────────────────────────────────────────────────── */
+
+@media (max-width: 1024px) {
+  .historia-festivais__grid { grid-template-columns: repeat(4, 1fr); }
+  .historia-parceiros__grid { grid-template-columns: 1fr 1fr; }
+}
+
+@media (max-width: 768px) {
+  .historia-page              { padding-top: 108px; padding-bottom: 96px; }
+  .historia-manifesto         { padding: 0 var(--pad-mob); margin-bottom: 96px; grid-template-columns: 1fr; row-gap: 40px; }
+  .historia-manifesto__title  { font-size: clamp(48px, 10vw, 80px); }
+  .historia-divider           { padding: 0 var(--pad-mob); margin-bottom: 80px; }
+  .historia-festivais         { padding: 0 var(--pad-mob); }
+  .historia-festivais__grid   { grid-template-columns: repeat(3, 1fr); }
+  .historia-parceiros         { padding: 0 var(--pad-mob); }
+  .historia-parceiros__grid   { grid-template-columns: 1fr 1fr; }
+  .historia-parceiro          { padding: 28px 20px; font-size: 16px; }
+  footer                      { padding: 40px var(--pad-mob) 24px; }
+  .footer-top                 { flex-direction: column; gap: 40px; }
+  .footer-links               { flex-wrap: wrap; gap: 32px; }
+}
+
+@media (max-width: 480px) {
+  .historia-parceiros__grid { grid-template-columns: 1fr; }
+}
+
+
+/* ══════════════════════════════════════════════════════════════════
+   DARK MODE — overrides específicos de história
+   ══════════════════════════════════════════════════════════════════ */
+
+/* Texto com rgba(28,23,20,x) hardcoded — inverte para claro */
+html[data-theme="dark"] .historia-manifesto__body p { color: rgba(240, 236, 228, 0.52); }
+html[data-theme="dark"] .historia-divider span       { color: rgba(240, 236, 228, 0.4); }
+html[data-theme="dark"] .historia-divider__line      { border-top-color: rgba(240, 236, 228, 0.2); }
+html[data-theme="dark"] .historia-festival           { border-color: rgba(240, 236, 228, 0.08); background: #1a1614; }
+html[data-theme="dark"] .historia-festival:hover     { background: #222018; }
+html[data-theme="dark"] .historia-festival__name     { color: rgba(240, 236, 228, 0.35); }
+html[data-theme="dark"] .historia-festival__year     { color: rgba(240, 236, 228, 0.2); }
+html[data-theme="dark"] .historia-parceiros__header span { color: rgba(240, 236, 228, 0.3); }
+html[data-theme="dark"] .historia-parceiro           { color: rgba(240, 236, 228, 0.28); }

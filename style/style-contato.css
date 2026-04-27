@@ -1,0 +1,378 @@
+/* ================================================================
+   style-contato.css — pontos de fuga · Edição Indie / Alternativa
+   Visual: zine digital · produtora independente · DIY artístico
+
+   Estratégia: formulário editorial — papel e tinta.
+   Campos com underline fino, foco em burnt orange, submit com
+   fill sólido. Sensação de carta escrita à mão, não formulário web.
+   ================================================================ */
+
+
+/* ─────────────────────────────────────────────────────────────────
+   [1]  PALETA INDIE (sobrescreve style-base.css)
+   ───────────────────────────────────────────────────────────────── */
+
+:root {
+  --black:      #1c1714;
+  --white:      #f5eedf;
+  --cream:      #ece5d3;
+  --gold:       #c83b18;
+  --red:        #c83b18;
+  --electric:   #1a3bd4;
+  --acid:       #b4d600;
+  --sand:       #d3c5ae;
+  --grey:       #cbc3b4;
+  --border:     rgba(28, 23, 20, 0.1);
+  --dim:        rgba(28, 23, 20, 0.4);
+  --pad-desk:   56px;
+  --pad-mob:    24px;
+}
+
+body {
+  background: var(--white);
+  color: var(--black);
+}
+
+
+/* ─────────────────────────────────────────────────────────────────
+   [2]  HEADER
+   ───────────────────────────────────────────────────────────────── */
+
+header {
+  background: var(--white);
+  background-color: var(--white);
+  border-bottom: 1px solid var(--border);
+}
+
+.logo-btn          { color: var(--black); }
+.hamburger span    { background: var(--black); }
+.header-link       { color: var(--black); transition: color 0.35s ease; }
+
+
+
+
+/* ─────────────────────────────────────────────────────────────────
+   [4]  MENU OVERLAY
+   ───────────────────────────────────────────────────────────────── */
+
+.menu-overlay {
+  background: var(--white);
+  border-right-color: var(--border);
+}
+
+.menu-primary-list li,
+.menu-primary-list li:last-child { border-color: var(--border); }
+
+.menu-primary-list a { color: var(--black); transition: padding 0.3s, color 0.3s; }
+.menu-item-title     { font-style: italic; color: var(--black); letter-spacing: -0.025em; transition: color 0.3s; }
+.menu-item-count     { color: var(--gold); font-style: italic; transition: color 0.3s; }
+
+.menu-primary-list li:nth-child(1) a:hover,
+.menu-primary-list li:nth-child(1) a:hover .menu-item-title { color: var(--gold); }
+.menu-primary-list li:nth-child(2) a:hover,
+.menu-primary-list li:nth-child(2) a:hover .menu-item-title { color: var(--amber); }
+.menu-primary-list li:nth-child(3) a:hover,
+.menu-primary-list li:nth-child(3) a:hover .menu-item-title { color: var(--sage); }
+.menu-primary-list li:nth-child(4) a:hover,
+.menu-primary-list li:nth-child(4) a:hover .menu-item-title { color: var(--gold); }
+
+.menu-social a       { color: var(--dim); }
+.menu-social a:hover { color: var(--black); }
+.menu-copy           { color: rgba(28, 23, 20, 0.2); }
+
+
+/* ─────────────────────────────────────────────────────────────────
+   [5]  FOOTER
+   ───────────────────────────────────────────────────────────────── */
+
+footer                { background: var(--black); border-top-color: rgba(28,23,20,0.2); }
+.footer-logo          { color: var(--white); }
+.footer-col h4        { color: rgba(245,238,223,0.35); font-style: italic; }
+.footer-col a         { color: rgba(245,238,223,0.55); }
+.footer-col a:hover   { color: var(--white); }
+.footer-bottom        { border-top-color: rgba(245,238,223,0.07); }
+.footer-copy          { color: rgba(245,238,223,0.18); }
+.footer-social a      { color: rgba(245,238,223,0.3); }
+.footer-social a:hover { color: var(--white); }
+
+
+/* ═══════════════════════════════════════════════════════════════════
+   PÁGINA DE CONTATO
+   ═══════════════════════════════════════════════════════════════════ */
+
+
+/* ─────────────────────────────────────────────────────────────────
+   [6]  PAGE LAYOUT
+   ───────────────────────────────────────────────────────────────── */
+
+.contact-page {
+  min-height: 100vh;
+  padding-top: 144px;
+  padding-bottom: 144px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+
+/* ─────────────────────────────────────────────────────────────────
+   [7]  HEADER DA PÁGINA
+        Eyebrow itálico, título grande em tinta, subtítulo suave.
+        Sensação de cartão postal / correspondência artística.
+   ───────────────────────────────────────────────────────────────── */
+
+.contact-header {
+  text-align: center;
+  max-width: 600px;
+  padding: 0 var(--pad-desk);
+  margin-bottom: 96px;
+}
+
+/* Eyebrow: itálico burnt — sem all-caps agressivo */
+.contact-eyebrow {
+  display: block;
+  font-family: var(--font-display);
+  font-size: 13px;
+  font-style: italic;
+  font-weight: 300;
+  letter-spacing: 0.03em;
+  text-transform: none;
+  color: var(--gold);
+  margin-bottom: 24px;
+}
+
+/* Título: itálico expressivo, muito maior */
+.contact-title {
+  font-family: var(--font-display);
+  font-size: clamp(56px, 9vw, 108px);
+  font-weight: 300;
+  line-height: 0.88;
+  letter-spacing: -0.03em;
+  margin-bottom: 28px;
+  color: var(--black);
+  font-style: italic;
+}
+
+.contact-sub {
+  font-family: var(--font-display);
+  font-size: 18px;
+  font-weight: 300;
+  line-height: 1.65;
+  color: rgba(28, 23, 20, 0.48);
+}
+
+
+/* ─────────────────────────────────────────────────────────────────
+   [8]  FORM WRAP
+   ───────────────────────────────────────────────────────────────── */
+
+.contact-body {
+  width: 100%;
+  max-width: 560px;
+  padding: 0 var(--pad-desk);
+}
+
+.contact-form-wrap { width: 100%; }
+
+
+/* ─────────────────────────────────────────────────────────────────
+   [9]  FORMULÁRIO
+        Campos com underline tênue em areia. Foco ativa burnt orange.
+        Estética de caderno de anotações, não formulário corporativo.
+   ───────────────────────────────────────────────────────────────── */
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0 1px;
+}
+
+.form-field {
+  display: flex;
+  flex-direction: column;
+  border-bottom: 1px solid var(--border);
+  padding: 24px 0;
+  position: relative;
+  transition: border-color 0.35s;
+}
+
+/* Foco: underline burnt orange — momento de expressão */
+.form-field:focus-within {
+  border-color: var(--gold);
+}
+
+.form-row .form-field:first-child {
+  padding-right: 24px;
+  border-right: 1px solid var(--border);
+}
+
+.form-row .form-field:last-child {
+  padding-left: 24px;
+}
+
+.form-field label {
+  font-family: var(--font-ui);
+  font-size: 9px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: rgba(28, 23, 20, 0.3);
+  margin-bottom: 12px;
+  transition: color 0.35s;
+}
+
+/* Label ativa: burnt orange */
+.form-field:focus-within label {
+  color: var(--gold);
+}
+
+.form-field input,
+.form-field textarea {
+  background: none;
+  border: none;
+  outline: none;
+  color: var(--black);
+  font-family: var(--font-display);
+  font-size: 22px;
+  font-weight: 300;
+  letter-spacing: 0.01em;
+  width: 100%;
+  resize: none;
+  caret-color: var(--gold);
+}
+
+.form-field textarea {
+  min-height: 130px;
+  line-height: 1.55;
+}
+
+.form-field input::placeholder,
+.form-field textarea::placeholder {
+  color: rgba(28, 23, 20, 0.14);
+}
+
+
+/* ─────────────────────────────────────────────────────────────────
+   [10]  AÇÕES DO FORMULÁRIO
+         Submit: tinta sólida no hover — decisão, não sugestão.
+         WhatsApp: azul elétrico no hover — pop de cor.
+   ───────────────────────────────────────────────────────────────── */
+
+.form-actions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 48px;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+
+.btn-submit {
+  display: inline-flex;
+  align-items: center;
+  gap: 14px;
+  border: 1px solid rgba(28, 23, 20, 0.28);
+  padding: 16px 32px;
+  font-family: var(--font-ui);
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--black);
+  background: none;
+  cursor: pointer;
+  transition: border-color 0.3s, background 0.3s, color 0.3s;
+}
+
+/* Submit: fill sólido tinta no hover */
+.btn-submit:hover {
+  border-color: var(--black);
+  background: var(--black);
+  color: var(--white);
+}
+
+.btn-submit svg         { transition: transform 0.3s; }
+.btn-submit:hover svg   { transform: translateX(5px); }
+
+/* WhatsApp: azul elétrico no hover */
+.btn-whatsapp {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-family: var(--font-ui);
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: rgba(28, 23, 20, 0.35);
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.btn-whatsapp:hover           { color: var(--electric); }
+.btn-whatsapp svg             { flex-shrink: 0; transition: transform 0.3s; }
+.btn-whatsapp:hover svg       { transform: scale(1.15); }
+
+
+/* ─────────────────────────────────────────────────────────────────
+   [11]  FEEDBACK DO FORMULÁRIO
+   ───────────────────────────────────────────────────────────────── */
+
+.form-feedback {
+  margin-top: 24px;
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  min-height: 20px;
+  transition: opacity 0.4s;
+}
+
+.form-feedback.success { color: var(--gold); }
+.form-feedback.error   { color: var(--electric); }
+
+
+/* ─────────────────────────────────────────────────────────────────
+   [12]  RESPONSIVE
+   ───────────────────────────────────────────────────────────────── */
+
+@media (max-width: 768px) {
+  .contact-page   { padding-top: 108px; padding-bottom: 96px; }
+  .contact-header { padding: 0 var(--pad-mob); margin-bottom: 64px; }
+  .contact-body   { padding: 0 var(--pad-mob); }
+
+  .form-row                         { grid-template-columns: 1fr; gap: 0; }
+  .form-row .form-field:first-child { padding-right: 0; border-right: none; }
+  .form-row .form-field:last-child  { padding-left: 0; }
+
+  .form-actions { flex-direction: column; align-items: flex-start; gap: 20px; }
+
+  footer          { padding: 40px var(--pad-mob) 24px; }
+  .footer-top     { flex-direction: column; gap: 40px; }
+  .footer-links   { flex-wrap: wrap; gap: 32px; }
+}
+
+
+/* ══════════════════════════════════════════════════════════════════
+   DARK MODE — overrides específicos de contato
+   ══════════════════════════════════════════════════════════════════ */
+
+/* Textos com rgba hardcoded */
+html[data-theme="dark"] .contact-sub      { color: rgba(240, 236, 228, 0.48); }
+
+/* Formulário */
+html[data-theme="dark"] .form-field label { color: rgba(240, 236, 228, 0.4); }
+html[data-theme="dark"] .form-field input,
+html[data-theme="dark"] .form-field textarea { color: #f0ece4; }
+html[data-theme="dark"] .form-field input::placeholder,
+html[data-theme="dark"] .form-field textarea::placeholder { color: rgba(240, 236, 228, 0.18); }
+html[data-theme="dark"] .form-row .form-field:first-child { border-right-color: rgba(240,236,228,0.08); }
+
+/* Botões */
+html[data-theme="dark"] .btn-submit        { border-color: rgba(240, 236, 228, 0.28); color: #f0ece4; }
+html[data-theme="dark"] .btn-submit:hover  { border-color: #f0ece4; background: #f0ece4; color: #0d0b09; }
+html[data-theme="dark"] .btn-whatsapp      { color: rgba(240, 236, 228, 0.35); }

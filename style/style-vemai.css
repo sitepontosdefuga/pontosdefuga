@@ -1,0 +1,360 @@
+/* ================================================================
+   style-vemai.css — pontos de fuga · Edição Indie / Alternativa
+   Visual: zine digital · produtora independente · DIY artístico
+
+   Estratégia: página de expectativa — fundo parchment, título
+   enorme itálico em tinta. Status em azul elétrico (simboliza
+   movimento, progresso). Tags ácidas. Cada filme é um evento.
+   ================================================================ */
+
+
+/* ─────────────────────────────────────────────────────────────────
+   [1]  PALETA INDIE (sobrescreve style-base.css)
+   ───────────────────────────────────────────────────────────────── */
+
+:root {
+  --black:      #1c1714;
+  --white:      #f5eedf;
+  --cream:      #ece5d3;
+  --gold:       #c83b18;
+  --red:        #c83b18;
+  --electric:   #1a3bd4;
+  --acid:       #b4d600;
+  --sand:       #d3c5ae;
+  --grey:       #cbc3b4;
+  --border:     rgba(28, 23, 20, 0.1);
+  --dim:        rgba(28, 23, 20, 0.4);
+  --pad-desk:   56px;
+  --pad-mob:    24px;
+}
+
+body {
+  background: var(--white);
+  color: var(--black);
+}
+
+
+/* ─────────────────────────────────────────────────────────────────
+   [2]  HEADER
+   ───────────────────────────────────────────────────────────────── */
+
+header {
+  background: var(--white);
+  background-color: var(--white);
+  border-bottom: 1px solid var(--border);
+}
+
+.logo-btn          { color: var(--black); }
+.hamburger span    { background: var(--black); }
+.header-link       { color: var(--black); transition: color 0.35s ease; }
+
+
+
+
+/* ─────────────────────────────────────────────────────────────────
+   [4]  MENU OVERLAY
+   ───────────────────────────────────────────────────────────────── */
+
+.menu-overlay {
+  background: var(--white);
+  border-right-color: var(--border);
+}
+
+.menu-primary-list li,
+.menu-primary-list li:last-child { border-color: var(--border); }
+
+.menu-primary-list a { color: var(--black); transition: padding 0.3s, color 0.3s; }
+.menu-item-title     { font-style: italic; color: var(--black); letter-spacing: -0.025em; transition: color 0.3s; }
+.menu-item-count     { color: var(--gold); font-style: italic; transition: color 0.3s; }
+
+.menu-primary-list li:nth-child(1) a:hover,
+.menu-primary-list li:nth-child(1) a:hover .menu-item-title { color: var(--gold); }
+.menu-primary-list li:nth-child(2) a:hover,
+.menu-primary-list li:nth-child(2) a:hover .menu-item-title { color: var(--amber); }
+.menu-primary-list li:nth-child(3) a:hover,
+.menu-primary-list li:nth-child(3) a:hover .menu-item-title { color: var(--sage); }
+.menu-primary-list li:nth-child(4) a:hover,
+.menu-primary-list li:nth-child(4) a:hover .menu-item-title { color: var(--gold); }
+
+.menu-social a       { color: var(--dim); }
+.menu-social a:hover { color: var(--black); }
+.menu-copy           { color: rgba(28, 23, 20, 0.2); }
+
+
+/* ─────────────────────────────────────────────────────────────────
+   [5]  FOOTER
+   ───────────────────────────────────────────────────────────────── */
+
+footer                { background: var(--black); border-top-color: rgba(28,23,20,0.2); }
+.footer-logo          { color: var(--white); }
+.footer-col h4        { color: rgba(245,238,223,0.35); font-style: italic; }
+.footer-col a         { color: rgba(245,238,223,0.55); }
+.footer-col a:hover   { color: var(--white); }
+.footer-bottom        { border-top-color: rgba(245,238,223,0.07); }
+.footer-copy          { color: rgba(245,238,223,0.18); }
+.footer-social a      { color: rgba(245,238,223,0.3); }
+.footer-social a:hover { color: var(--white); }
+
+
+/* ═══════════════════════════════════════════════════════════════════
+   VEM AÍ
+   ═══════════════════════════════════════════════════════════════════ */
+
+
+/* ─────────────────────────────────────────────────────────────────
+   [6]  PAGE
+   ───────────────────────────────────────────────────────────────── */
+
+.vemai-page {
+  min-height: 100vh;
+  padding-top: 148px;
+  padding-bottom: 140px;
+}
+
+
+/* ─────────────────────────────────────────────────────────────────
+   [7]  INTRO
+        Título enorme itálico — impacto de cartaz.
+        Eyebrow burnt itálico. Sub-texto em tinta suave.
+        Linha decorativa em burnt orange.
+   ───────────────────────────────────────────────────────────────── */
+
+.vemai-intro {
+  max-width: 860px;
+  padding: 0 var(--pad-desk);
+  margin-bottom: 128px;
+}
+
+/* Eyebrow: itálico burnt sem all-caps */
+.vemai-intro__eyebrow {
+  display: block;
+  font-family: var(--font-display);
+  font-size: 13px;
+  font-style: italic;
+  font-weight: 300;
+  letter-spacing: 0.02em;
+  text-transform: none;
+  color: var(--gold);
+  margin-bottom: 28px;
+}
+
+/* Título: enorme itálico tinta */
+.vemai-intro__title {
+  font-family: var(--font-display);
+  font-size: clamp(72px, 11vw, 136px);
+  font-weight: 300;
+  line-height: 0.88;
+  letter-spacing: -0.03em;
+  color: var(--black);
+  margin-bottom: 52px;
+  font-style: italic;
+}
+
+/* Texto de manifesto: tinta plena em tamanho grande */
+.vemai-intro__text {
+  font-family: var(--font-display);
+  font-size: clamp(22px, 3vw, 38px);
+  font-weight: 300;
+  line-height: 1.3;
+  color: var(--black);
+  margin-bottom: 52px;
+}
+
+/* Em: burnt orange — palavras que importam */
+.vemai-intro__text em {
+  font-style: italic;
+  color: var(--gold);
+}
+
+/* Linha de acento: burnt orange */
+.vemai-intro__line {
+  width: 48px;
+  height: 3px;
+  background: var(--gold);
+  margin-bottom: 36px;
+}
+
+.vemai-intro__sub {
+  font-family: var(--font-display);
+  font-size: 18px;
+  font-weight: 300;
+  line-height: 1.75;
+  color: rgba(28, 23, 20, 0.5);
+  max-width: 540px;
+}
+
+
+/* ─────────────────────────────────────────────────────────────────
+   [8]  FILMES EM PRODUÇÃO
+        Cada item: imagem à esquerda, info à direita.
+        Status: azul elétrico — simboliza movimento e progresso.
+        Tags: fundo ácido preenchido.
+        Hover: indent leve + escala da imagem.
+   ───────────────────────────────────────────────────────────────── */
+
+.vemai-filmes { padding: 0 var(--pad-desk); }
+
+.vemai-filme {
+  display: grid;
+  grid-template-columns: 360px 1fr;
+  gap: 0 80px;
+  padding: 72px 0;
+  border-top: 1px solid var(--border);
+  align-items: start;
+  transition: padding-left 0.4s ease;
+}
+
+.vemai-filme:last-child  { border-bottom: 1px solid var(--border); }
+.vemai-filme:hover       { padding-left: 16px; }
+
+/* Imagem */
+.vemai-filme__img-wrap {
+  position: relative;
+  aspect-ratio: 3 / 4;
+  overflow: hidden;
+  background: var(--grey);
+  flex-shrink: 0;
+}
+
+/* Placeholder: gradiente parchment em vez de cinza escuro */
+.vemai-filme__img-bg {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, var(--cream) 0%, var(--sand) 100%);
+}
+
+.vemai-filme__img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.7s cubic-bezier(0.76, 0, 0.24, 1);
+}
+
+.vemai-filme:hover .vemai-filme__img { transform: scale(1.04); }
+
+.vemai-filme__placeholder {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 0;
+}
+
+.vemai-filme__placeholder svg {
+  opacity: 0.1;
+  stroke: var(--sand);
+}
+
+/* Info */
+.vemai-filme__info {
+  display: flex;
+  flex-direction: column;
+  padding-top: 8px;
+}
+
+/* Status: azul elétrico — contraste com burnt orange do resto */
+.vemai-filme__status {
+  font-family: var(--font-ui);
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: var(--electric);
+  margin-bottom: 22px;
+}
+
+/* Título: tinta itálica grande */
+.vemai-filme__title {
+  font-family: var(--font-display);
+  font-size: clamp(40px, 5.5vw, 76px);
+  font-weight: 300;
+  font-style: italic;
+  line-height: 0.93;
+  color: var(--black);
+  margin-bottom: 14px;
+  letter-spacing: -0.025em;
+}
+
+.vemai-filme__meta {
+  font-size: 10px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: rgba(28, 23, 20, 0.38);
+  margin-bottom: 44px;
+}
+
+.vemai-filme__synopsis {
+  font-family: var(--font-display);
+  font-size: 18px;
+  font-weight: 300;
+  line-height: 1.75;
+  color: rgba(28, 23, 20, 0.52);
+  max-width: 520px;
+}
+
+.vemai-filme__tags {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-top: 40px;
+}
+
+/* Tags: fundo ácido preenchido — consistência com identidade */
+.vemai-filme__tag {
+  font-family: var(--font-ui);
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  background: var(--acid);
+  color: var(--black);
+  padding: 7px 14px;
+  border: none;
+  display: inline-block;
+}
+
+
+/* ─────────────────────────────────────────────────────────────────
+   [9]  RESPONSIVE
+   ───────────────────────────────────────────────────────────────── */
+
+@media (max-width: 1024px) {
+  .vemai-filme {
+    grid-template-columns: 280px 1fr;
+    gap: 0 48px;
+  }
+}
+
+@media (max-width: 768px) {
+  .vemai-page   { padding-top: 108px; padding-bottom: 96px; }
+  .vemai-intro  { padding: 0 var(--pad-mob); margin-bottom: 96px; }
+  .vemai-filmes { padding: 0 var(--pad-mob); }
+
+  .vemai-filme {
+    grid-template-columns: 1fr;
+    gap: 36px 0;
+    padding: 56px 0;
+  }
+
+  .vemai-filme__img-wrap { aspect-ratio: 4 / 3; }
+
+  footer        { padding: 40px var(--pad-mob) 24px; }
+  .footer-top   { flex-direction: column; gap: 40px; }
+  .footer-links { flex-wrap: wrap; gap: 32px; }
+}
+
+
+/* ══════════════════════════════════════════════════════════════════
+   DARK MODE — overrides específicos de vem aí
+   ══════════════════════════════════════════════════════════════════ */
+
+/* Textos com rgba hardcoded */
+html[data-theme="dark"] .vemai-intro__sub    { color: rgba(240, 236, 228, 0.5); }
+html[data-theme="dark"] .vemai-filme__meta   { color: rgba(240, 236, 228, 0.38); }
+html[data-theme="dark"] .vemai-filme__synopsis { color: rgba(240, 236, 228, 0.52); }
+
+/* Tag com fundo ácido: mantém texto escuro */
+html[data-theme="dark"] .vemai-filme__tag { color: #1c1714; }

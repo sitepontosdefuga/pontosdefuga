@@ -1,0 +1,554 @@
+/* ================================================================
+   style-filme.css — pontos de fuga · Edição Indie / Alternativa
+   Visual: zine digital · produtora independente · DIY artístico
+
+   Estratégia: hero permanece escuro (imagem de capa do filme).
+   Body vira parchment — contraste limpo que destaca a sinopse.
+   Tags com fundo ácido. Eyebrow em burnt orange.
+   ================================================================ */
+
+
+/* ─────────────────────────────────────────────────────────────────
+   [1]  PALETA INDIE (sobrescreve style-base.css)
+   ───────────────────────────────────────────────────────────────── */
+
+:root {
+  --black:      #1c1714;
+  --white:      #f5eedf;
+  --cream:      #ece5d3;
+  --gold:       #c83b18;
+  --red:        #c83b18;
+  --electric:   #1a3bd4;
+  --acid:       #b4d600;
+  --sand:       #d3c5ae;
+  --grey:       #cbc3b4;
+  --border:     rgba(28, 23, 20, 0.1);
+  --dim:        rgba(28, 23, 20, 0.4);
+  --pad-desk:   56px;
+  --pad-mob:    24px;
+}
+
+body {
+  background: var(--white);
+  color: var(--black);
+}
+
+
+/* ─────────────────────────────────────────────────────────────────
+   [2]  HEADER
+   ───────────────────────────────────────────────────────────────── */
+
+header {
+  background: transparent;         /* transparente sobre o hero escuro */
+  background-color: transparent;
+  border-bottom: none;
+}
+
+/* Quando scroll passa do hero, header fica visível — script adiciona classe */
+.header--scrolled {
+  background: var(--white);
+  background-color: var(--white);
+  border-bottom: 1px solid var(--border);
+}
+
+.logo-btn          { color: var(--white); }
+.hamburger span    { background: var(--white); }
+.header-link       { color: var(--white); transition: color 0.35s ease; }
+
+
+
+
+/* ─────────────────────────────────────────────────────────────────
+   [4]  MENU OVERLAY
+   ───────────────────────────────────────────────────────────────── */
+
+.menu-overlay {
+  background: var(--white);
+  border-right-color: var(--border);
+}
+
+.menu-primary-list li,
+.menu-primary-list li:last-child { border-color: var(--border); }
+
+.menu-primary-list a { color: var(--black); transition: padding 0.3s, color 0.3s; }
+.menu-item-title     { font-style: italic; color: var(--black); letter-spacing: -0.025em; transition: color 0.3s; }
+.menu-item-count     { color: var(--gold); font-style: italic; transition: color 0.3s; }
+
+.menu-primary-list li:nth-child(1) a:hover,
+.menu-primary-list li:nth-child(1) a:hover .menu-item-title { color: var(--gold); }
+.menu-primary-list li:nth-child(2) a:hover,
+.menu-primary-list li:nth-child(2) a:hover .menu-item-title { color: var(--amber); }
+.menu-primary-list li:nth-child(3) a:hover,
+.menu-primary-list li:nth-child(3) a:hover .menu-item-title { color: var(--sage); }
+.menu-primary-list li:nth-child(4) a:hover,
+.menu-primary-list li:nth-child(4) a:hover .menu-item-title { color: var(--gold); }
+
+.menu-social a       { color: var(--dim); }
+.menu-social a:hover { color: var(--black); }
+.menu-copy           { color: rgba(28, 23, 20, 0.2); }
+
+
+/* ─────────────────────────────────────────────────────────────────
+   [5]  FOOTER
+   ───────────────────────────────────────────────────────────────── */
+
+footer                { background: var(--black); border-top-color: rgba(28,23,20,0.2); }
+.footer-logo          { color: var(--white); }
+.footer-col h4        { color: rgba(245,238,223,0.35); font-style: italic; }
+.footer-col a         { color: rgba(245,238,223,0.55); }
+.footer-col a:hover   { color: var(--white); }
+.footer-bottom        { border-top-color: rgba(245,238,223,0.07); }
+.footer-copy          { color: rgba(245,238,223,0.18); }
+.footer-social a      { color: rgba(245,238,223,0.3); }
+.footer-social a:hover { color: var(--white); }
+
+
+/* ═══════════════════════════════════════════════════════════════════
+   PÁGINA DO FILME
+   ═══════════════════════════════════════════════════════════════════ */
+
+
+/* ─────────────────────────────────────────────────────────────────
+   [6]  PAGE
+   ───────────────────────────────────────────────────────────────── */
+
+.filme-page { min-height: 100vh; }
+
+
+/* ─────────────────────────────────────────────────────────────────
+   [7]  HERO — permanece escuro (imagem de capa do filme)
+        Eyebrow em ácido, título grande parchment.
+   ───────────────────────────────────────────────────────────────── */
+
+.filme-hero {
+  position: relative;
+  width: 100vw;
+  height: 70vh;
+  overflow: hidden;
+  display: flex;
+  align-items: flex-end;
+  padding-top: 80px;
+}
+
+/* Fundo: fallback para tinta quente */
+.filme-hero__bg {
+  position: absolute;
+  inset: 0;
+  top: 80px;
+  background-size: contain;
+  background-position: center top;
+  background-repeat: no-repeat;
+  background-color: var(--black);
+  transition: transform 0.8s cubic-bezier(0.76, 0, 0.24, 1);
+}
+
+/* Gradiente de leitura na base do hero */
+.filme-hero::before {
+  content: '';
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  height: 65%;
+  background: linear-gradient(to bottom, transparent, var(--black));
+  z-index: 2;
+  pointer-events: none;
+}
+
+.filme-hero__content {
+  position: relative;
+  z-index: 3;
+  padding: 0 var(--pad-desk) 40px;
+  width: 100%;
+}
+
+/* Eyebrow: ácido — elemento diferenciador */
+.filme-hero__eyebrow {
+  font-family: var(--font-display);
+  font-size: 10px;
+  font-style: italic;
+  letter-spacing: 0.04em;
+  text-transform: none;
+  color: var(--acid);
+  margin-bottom: 12px;
+  display: block;
+}
+
+.filme-hero__title {
+  font-family: var(--font-display);
+  font-size: clamp(32px, 4vw, 60px);
+  font-weight: 300;
+  line-height: 0.92;
+  letter-spacing: -0.02em;
+  color: var(--white);
+  margin-bottom: 14px;
+  font-style: italic;
+}
+
+.filme-hero__meta {
+  font-size: 10px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: rgba(245, 238, 223, 0.45);
+}
+
+
+/* ─────────────────────────────────────────────────────────────────
+   [8]  BODY — parchment, sinopse em tinta, tags ácidas
+   ───────────────────────────────────────────────────────────────── */
+
+.filme-body {
+  position: relative;
+  background: var(--white);
+  padding: 56px var(--pad-desk) 80px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.filme-synopsis {
+  max-width: 680px;
+  text-align: center;
+}
+
+.filme-synopsis p {
+  font-family: var(--font-display);
+  font-size: clamp(20px, 2vw, 26px);
+  font-weight: 300;
+  line-height: 1.78;
+  color: rgba(28, 23, 20, 0.68);
+}
+
+.filme-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  margin-top: 32px;
+}
+
+.filme-info__tags {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px;
+}
+
+/* Tags: fundo ácido preenchido — consistência com identidade */
+.filme-info__tags .tag {
+  font-family: var(--font-ui);
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  background: var(--acid);
+  color: var(--black);
+  padding: 7px 14px;
+  border: none;
+  display: inline-block;
+}
+
+
+/* ─────────────────────────────────────────────────────────────────
+   [9]  TRAILER
+   ───────────────────────────────────────────────────────────────── */
+
+.filme-trailer-container {
+  width: 100%;
+  max-width: 840px;
+  margin-top: 32px;
+}
+
+.filme-trailer {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  width: 100%;
+}
+
+.filme-trailer__label {
+  font-family: var(--font-display);
+  font-size: clamp(18px, 1.8vw, 24px);
+  font-style: italic;
+  letter-spacing: -0.01em;
+  color: var(--dim);
+  text-transform: lowercase;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  white-space: nowrap;
+}
+
+.filme-trailer__label::before,
+.filme-trailer__label::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: var(--border);
+}
+
+.filme-trailer__item {
+  width: 100%;
+}
+
+.filme-trailer__item + .filme-trailer__item {
+  margin-top: 2rem;
+}
+
+/* ── FICHA TÉCNICA / ELENCO ── */
+.filme-crew-section {
+  width: 100%;
+  max-width: 840px;
+  margin-top: 32px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0 2rem;
+  align-items: start;
+}
+
+.filme-collapse {
+  width: 100%;
+}
+
+.filme-collapse__toggle {
+  width: 100%;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  font-family: var(--font-display);
+  font-size: clamp(18px, 1.8vw, 24px);
+  font-style: italic;
+  letter-spacing: -0.01em;
+  color: var(--dim);
+  text-transform: lowercase;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  white-space: nowrap;
+  text-align: left;
+}
+
+.filme-collapse__toggle::before,
+.filme-collapse__toggle::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: var(--border);
+}
+
+.filme-collapse__arrow {
+  display: inline-block;
+  transition: transform 0.3s ease;
+  font-style: normal;
+}
+
+.filme-collapse__body {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.filme-collapse.open .filme-collapse__body {
+  max-height: 2000px;
+}
+
+.filme-crew-row {
+  display: flex;
+  gap: 1.5rem;
+  padding: 0.6rem 0;
+  border-bottom: 1px solid var(--border);
+  font-family: var(--mono);
+  font-size: 0.85rem;
+}
+
+.filme-crew-role {
+  color: var(--dim);
+  min-width: 140px;
+  text-transform: lowercase;
+}
+
+.filme-crew-name {
+  color: var(--fg);
+}
+
+.filme-trailer__video {
+  width: 100%;
+  display: block;
+  background: var(--black);
+}
+
+.filme-trailer__embed {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+}
+
+.filme-trailer__embed iframe {
+  width: 100%;
+  height: 100%;
+  background: var(--black);
+}
+
+.filme-gallery-section {
+  margin-top: 32px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+  width: 100%;
+  max-width: 840px;
+}
+
+.filme-gallery {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 6px;
+  width: 100%;
+}
+
+.filme-gallery__img {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  display: block;
+}
+
+@media (max-width: 768px) {
+  .filme-gallery { grid-template-columns: repeat(2, 1fr); }
+}
+
+/* ─────────────────────────────────────────────────────────────────
+   LIGHTBOX
+   ───────────────────────────────────────────────────────────────── */
+
+.lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  background: rgba(28, 23, 20, 0.96);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.25s ease;
+}
+
+.lightbox.open {
+  opacity: 1;
+  pointer-events: all;
+}
+
+.lightbox__img-wrap {
+  max-width: 90vw;
+  max-height: 88vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.lightbox__img {
+  max-width: 90vw;
+  max-height: 88vh;
+  object-fit: contain;
+  display: block;
+  user-select: none;
+}
+
+.lightbox__nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  color: rgba(245, 238, 223, 0.5);
+  font-size: 28px;
+  padding: 16px 20px;
+  cursor: pointer;
+  transition: color 0.2s;
+  line-height: 1;
+}
+
+.lightbox__nav:hover { color: var(--white); }
+.lightbox__nav--prev { left: 12px; }
+.lightbox__nav--next { right: 12px; }
+.lightbox__nav:disabled { opacity: 0.15; cursor: default; }
+
+.lightbox__close {
+  position: absolute;
+  top: 16px;
+  right: 20px;
+  background: none;
+  border: none;
+  color: rgba(245, 238, 223, 0.5);
+  font-size: 20px;
+  cursor: pointer;
+  transition: color 0.2s;
+  line-height: 1;
+  padding: 8px;
+}
+
+.lightbox__close:hover { color: var(--white); }
+
+.lightbox__counter {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-family: var(--font-ui);
+  font-size: 10px;
+  letter-spacing: 0.12em;
+  color: rgba(245, 238, 223, 0.3);
+}
+
+
+/* ─────────────────────────────────────────────────────────────────
+   [10]  RESPONSIVE
+   ───────────────────────────────────────────────────────────────── */
+
+@media (max-width: 768px) {
+  .filme-hero          { height: 52vh; }
+  .filme-hero__content { padding: 0 var(--pad-mob) 40px; }
+  .filme-body          { padding: 40px var(--pad-mob) 56px; }
+  .filme-info          { position: static; align-items: center; margin-top: 40px; }
+  .filme-info__tags    { align-items: center; }
+  .filme-crew-section  { grid-template-columns: 1fr; gap: 2rem 0; }
+  footer               { padding: 40px var(--pad-mob) 24px; }
+  .footer-top          { flex-direction: column; gap: 40px; }
+  .footer-links        { flex-wrap: wrap; gap: 32px; }
+  .filme-synopsis p    { font-size: 15px; line-height: 1.65; }
+}
+
+
+/* ══════════════════════════════════════════════════════════════════
+   DARK MODE — overrides específicos da página de filme
+   ══════════════════════════════════════════════════════════════════ */
+
+/* Hero usa var(--black) como cor de fundo/gradiente.
+   No dark mode --black vira claro, então fixamos cores do hero. */
+html[data-theme="dark"] .filme-hero__bg {
+  background-color: #0d0b09;
+}
+html[data-theme="dark"] .filme-hero::before {
+  background: linear-gradient(to bottom, transparent, #0d0b09);
+}
+html[data-theme="dark"] .filme-hero__title { color: #f0ece4; }
+
+/* Header: nesta página começa transparente sobre o hero escuro.
+   --white virou dark, então var(--white) já é correto para o logo/hamburger.
+   Mas a declaração no CSS é color: var(--white) — que agora = dark.
+   Precisamos manter claro para ser legível sobre o hero escuro. */
+html[data-theme="dark"] .logo-btn        { color: #f0ece4; }
+html[data-theme="dark"] .hamburger span  { background: #f0ece4; }
+html[data-theme="dark"] .header-link     { color: rgba(240, 236, 228, 0.7); }
+html[data-theme="dark"] .header--scrolled {
+  background:       rgba(13, 11, 9, 0.72);
+  background-color: rgba(13, 11, 9, 0.72);
+}
+
+html[data-theme="light"] .header--scrolled {
+  background:       rgba(245, 238, 223, 0.72);
+  background-color: rgba(245, 238, 223, 0.72);
+}
+
+/* Body do filme (abaixo do hero) */
+html[data-theme="dark"] .filme-synopsis p { color: rgba(240, 236, 228, 0.68); }

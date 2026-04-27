@@ -1,0 +1,1354 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Guia Técnico — pontos de fuga</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+
+  :root {
+    --black: #0a0a0a;
+    --dark: #111111;
+    --surface: #1a1a1a;
+    --surface2: #222222;
+    --border: #2a2a2a;
+    --muted: #666;
+    --text: #d0cec9;
+    --text-dim: #888;
+    --accent: #c8a96e;
+    --accent2: #6e9ec8;
+    --green: #4caf76;
+    --red: #c84c4c;
+    --yellow: #c8a040;
+    --page-w: 210mm;
+    --pad: 16mm;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'Inter', sans-serif;
+    background: var(--black);
+    color: var(--text);
+    font-size: 10pt;
+    line-height: 1.65;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  /* ── PAGES ── */
+  .page {
+    width: var(--page-w);
+    min-height: 297mm;
+    margin: 0 auto;
+    padding: var(--pad);
+    position: relative;
+    page-break-after: always;
+    break-after: page;
+  }
+
+  @media print {
+    body { background: #0a0a0a; }
+    .page { page-break-after: always; }
+  }
+
+  /* ── COVER ── */
+  .cover {
+    background: var(--black);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border-left: 3px solid var(--accent2);
+  }
+  .cover-top { padding-top: 10mm; }
+  .cover-label {
+    font-size: 7.5pt;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--accent2);
+    margin-bottom: 6mm;
+  }
+  .cover-title {
+    font-size: 28pt;
+    font-weight: 700;
+    color: #fff;
+    line-height: 1.1;
+    margin-bottom: 4mm;
+  }
+  .cover-subtitle {
+    font-size: 12pt;
+    font-weight: 300;
+    color: var(--text-dim);
+    margin-bottom: 8mm;
+  }
+  .cover-desc {
+    font-size: 9.5pt;
+    color: var(--text-dim);
+    line-height: 1.7;
+    max-width: 120mm;
+  }
+  .cover-bottom {
+    border-top: 1px solid var(--border);
+    padding-top: 5mm;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+  }
+  .cover-org { font-size: 8pt; color: var(--accent); letter-spacing: 0.1em; text-transform: uppercase; }
+  .cover-date { font-size: 8pt; color: var(--text-dim); }
+  .cover-badge {
+    display: inline-block;
+    background: var(--accent2);
+    color: var(--black);
+    font-size: 7pt;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    padding: 3px 8px;
+    border-radius: 2px;
+    margin-bottom: 6mm;
+  }
+
+  /* ── TOC ── */
+  .toc-title {
+    font-size: 11pt;
+    font-weight: 600;
+    color: var(--accent2);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    margin-bottom: 6mm;
+    padding-bottom: 3mm;
+    border-bottom: 1px solid var(--border);
+  }
+  .toc-section { margin-bottom: 5mm; }
+  .toc-section-label {
+    font-size: 7.5pt;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--text-dim);
+    margin-bottom: 2mm;
+  }
+  .toc-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    padding: 2.5px 0;
+    border-bottom: 1px dotted var(--border);
+  }
+  .toc-item-name { font-size: 9.5pt; color: var(--text); }
+  .toc-item-page { font-size: 8.5pt; color: var(--text-dim); font-variant-numeric: tabular-nums; }
+  .toc-sub {
+    padding-left: 5mm;
+    padding: 1.5px 0 1.5px 5mm;
+    border-bottom: 1px dotted #1e1e1e;
+  }
+  .toc-sub .toc-item-name { font-size: 8.5pt; color: var(--text-dim); }
+
+  /* ── SECTION PAGES ── */
+  .section-header {
+    border-left: 3px solid var(--accent2);
+    padding-left: 4mm;
+    margin-bottom: 6mm;
+  }
+  .section-eyebrow {
+    font-size: 7pt;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--accent2);
+    margin-bottom: 2mm;
+  }
+  .section-title {
+    font-size: 16pt;
+    font-weight: 700;
+    color: #fff;
+    line-height: 1.2;
+  }
+  .section-sub {
+    font-size: 9pt;
+    color: var(--text-dim);
+    margin-top: 2mm;
+  }
+
+  /* ── TYPOGRAPHY ── */
+  h2 {
+    font-size: 11pt;
+    font-weight: 600;
+    color: #fff;
+    margin: 6mm 0 3mm;
+    padding-bottom: 1.5mm;
+    border-bottom: 1px solid var(--border);
+  }
+  h3 {
+    font-size: 9.5pt;
+    font-weight: 600;
+    color: var(--accent);
+    margin: 4mm 0 2mm;
+  }
+  h4 {
+    font-size: 9pt;
+    font-weight: 600;
+    color: var(--text);
+    margin: 3mm 0 1.5mm;
+  }
+  p { margin-bottom: 2.5mm; }
+  p + p { margin-top: 0; }
+  strong { color: #fff; font-weight: 600; }
+  em { color: var(--accent); font-style: normal; }
+
+  /* ── CODE ── */
+  code {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 8pt;
+    background: var(--surface2);
+    color: #9cdcfe;
+    padding: 1px 5px;
+    border-radius: 3px;
+    border: 1px solid var(--border);
+  }
+  pre {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 7.5pt;
+    background: var(--surface2);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    padding: 4mm;
+    margin: 3mm 0;
+    overflow: hidden;
+    white-space: pre-wrap;
+    word-break: break-all;
+    line-height: 1.6;
+    color: #d4d4d4;
+  }
+  pre .cm { color: #6a9955; } /* comment */
+  pre .kw { color: #569cd6; } /* keyword */
+  pre .st { color: #ce9178; } /* string */
+  pre .fn { color: #dcdcaa; } /* function */
+  pre .nm { color: #9cdcfe; } /* variable */
+  pre .nu { color: #b5cea8; } /* number */
+
+  /* ── CODE BLOCK WITH LABEL ── */
+  .code-block { margin: 3mm 0; }
+  .code-label {
+    font-size: 7pt;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--text-dim);
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-bottom: none;
+    padding: 2px 6px;
+    border-radius: 4px 4px 0 0;
+    display: inline-block;
+  }
+  .code-block pre { margin-top: 0; border-radius: 0 4px 4px 4px; }
+
+  /* ── CALLOUTS ── */
+  .callout {
+    border-left: 3px solid;
+    padding: 3mm 4mm;
+    margin: 3mm 0;
+    border-radius: 0 4px 4px 0;
+  }
+  .callout-info { border-color: var(--accent2); background: rgba(110,158,200,0.07); }
+  .callout-warn { border-color: var(--yellow); background: rgba(200,160,64,0.07); }
+  .callout-danger { border-color: var(--red); background: rgba(200,76,76,0.07); }
+  .callout-success { border-color: var(--green); background: rgba(76,175,118,0.07); }
+  .callout-label {
+    font-size: 7pt;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    margin-bottom: 1.5mm;
+  }
+  .callout-info .callout-label { color: var(--accent2); }
+  .callout-warn .callout-label { color: var(--yellow); }
+  .callout-danger .callout-label { color: var(--red); }
+  .callout-success .callout-label { color: var(--green); }
+  .callout p { margin: 0; font-size: 9pt; }
+
+  /* ── TABLES ── */
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 3mm 0;
+    font-size: 8.5pt;
+  }
+  th {
+    background: var(--surface);
+    color: var(--accent2);
+    font-weight: 600;
+    font-size: 7.5pt;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 2.5mm 3mm;
+    text-align: left;
+    border-bottom: 1px solid var(--border);
+  }
+  td {
+    padding: 2.5mm 3mm;
+    border-bottom: 1px solid #1e1e1e;
+    vertical-align: top;
+  }
+  tr:last-child td { border-bottom: none; }
+  td code { font-size: 7.5pt; }
+
+  /* ── STEP LIST ── */
+  .steps { counter-reset: step; margin: 3mm 0; }
+  .step {
+    counter-increment: step;
+    display: flex;
+    gap: 3mm;
+    margin-bottom: 3mm;
+    align-items: flex-start;
+  }
+  .step::before {
+    content: counter(step);
+    background: var(--accent2);
+    color: var(--black);
+    font-size: 7pt;
+    font-weight: 700;
+    min-width: 5mm;
+    height: 5mm;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    margin-top: 0.5mm;
+  }
+  .step-content { flex: 1; }
+  .step-content p { margin: 0; font-size: 9pt; }
+  .step-content code { font-size: 7.5pt; }
+
+  /* ── GRID ── */
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 4mm; margin: 3mm 0; }
+  .grid-3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 3mm; margin: 3mm 0; }
+
+  /* ── CARD ── */
+  .card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    padding: 3mm 4mm;
+  }
+  .card-title {
+    font-size: 8.5pt;
+    font-weight: 600;
+    color: var(--accent);
+    margin-bottom: 1.5mm;
+  }
+  .card p { font-size: 8.5pt; margin: 0; color: var(--text-dim); }
+
+  /* ── FILE TREE ── */
+  .filetree {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 8pt;
+    background: var(--surface2);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    padding: 4mm;
+    margin: 3mm 0;
+    line-height: 1.8;
+  }
+  .filetree .dir { color: var(--accent2); }
+  .filetree .file { color: var(--text); }
+  .filetree .note { color: var(--text-dim); }
+
+  /* ── DIVIDER ── */
+  hr { border: none; border-top: 1px solid var(--border); margin: 5mm 0; }
+
+  /* ── PAGE NUMBER ── */
+  .page-num {
+    position: absolute;
+    bottom: var(--pad);
+    right: var(--pad);
+    font-size: 7.5pt;
+    color: var(--text-dim);
+  }
+
+  /* ── TAG ── */
+  .tag {
+    display: inline-block;
+    background: var(--surface2);
+    border: 1px solid var(--border);
+    border-radius: 2px;
+    font-size: 7pt;
+    font-family: 'JetBrains Mono', monospace;
+    padding: 1px 5px;
+    color: var(--text-dim);
+  }
+  .tag-blue { border-color: var(--accent2); color: var(--accent2); }
+  .tag-green { border-color: var(--green); color: var(--green); }
+  .tag-red { border-color: var(--red); color: var(--red); }
+  .tag-yellow { border-color: var(--yellow); color: var(--yellow); }
+
+  /* ── ERROR CARD ── */
+  .error-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    padding: 3mm 4mm;
+    margin: 2.5mm 0;
+  }
+  .error-card-header {
+    display: flex;
+    align-items: center;
+    gap: 2mm;
+    margin-bottom: 2mm;
+  }
+  .error-card-code {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 8pt;
+    color: var(--red);
+    font-weight: 600;
+  }
+  .error-card-title { font-size: 9pt; font-weight: 600; color: #fff; }
+  .error-card p { font-size: 8.5pt; color: var(--text-dim); margin: 0 0 1.5mm; }
+  .error-card .fix { font-size: 8.5pt; color: var(--green); }
+</style>
+</head>
+<body>
+
+<!-- ═══════════════════════════════════════════
+     CAPA
+═══════════════════════════════════════════ -->
+<div class="page cover">
+  <div class="cover-top">
+    <div class="cover-badge">Referência Técnica</div>
+    <div class="cover-label">pontos de fuga · documentação</div>
+    <h1 class="cover-title">Guia<br>Técnico</h1>
+    <p class="cover-subtitle">Referência para manutenção e resolução de problemas</p>
+    <p class="cover-desc">
+      Este guia cobre a arquitetura do site, integração com o GitHub, configuração de acesso SSH,
+      solução de erros comuns e procedimentos de manutenção. Destinado a quem tem noção básica
+      de programação ou linha de comando.
+    </p>
+  </div>
+  <div class="cover-bottom">
+    <div class="cover-org">pontos de fuga</div>
+    <div class="cover-date">Abril 2026</div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════
+     SUMÁRIO
+═══════════════════════════════════════════ -->
+<div class="page">
+  <div class="toc-title">Sumário</div>
+
+  <div class="toc-section">
+    <div class="toc-section-label">Arquitetura</div>
+    <div class="toc-item"><span class="toc-item-name">1. Visão geral do sistema</span><span class="toc-item-page">3</span></div>
+    <div class="toc-item toc-sub"><span class="toc-item-name">Estrutura de arquivos</span><span class="toc-item-page">3</span></div>
+    <div class="toc-item toc-sub"><span class="toc-item-name">Fluxo de dados</span><span class="toc-item-page">3</span></div>
+    <div class="toc-item"><span class="toc-item-name">2. Scripts JavaScript</span><span class="toc-item-page">4</span></div>
+    <div class="toc-item toc-sub"><span class="toc-item-name">Ordem de carregamento</span><span class="toc-item-page">4</span></div>
+    <div class="toc-item toc-sub"><span class="toc-item-name">dataReady e Promise</span><span class="toc-item-page">4</span></div>
+  </div>
+
+  <div class="toc-section">
+    <div class="toc-section-label">GitHub</div>
+    <div class="toc-item"><span class="toc-item-name">3. GitHub Pages e repositório</span><span class="toc-item-page">5</span></div>
+    <div class="toc-item toc-sub"><span class="toc-item-name">Como o site é publicado</span><span class="toc-item-page">5</span></div>
+    <div class="toc-item toc-sub"><span class="toc-item-name">Personal Access Token (PAT)</span><span class="toc-item-page">5</span></div>
+    <div class="toc-item"><span class="toc-item-name">4. Integração com GitHub API</span><span class="toc-item-page">6</span></div>
+    <div class="toc-item toc-sub"><span class="toc-item-name">Como o admin salva dados</span><span class="toc-item-page">6</span></div>
+    <div class="toc-item toc-sub"><span class="toc-item-name">Como o admin carrega dados</span><span class="toc-item-page">6</span></div>
+  </div>
+
+  <div class="toc-section">
+    <div class="toc-section-label">Acesso e segurança</div>
+    <div class="toc-item"><span class="toc-item-name">5. Token e criptografia</span><span class="toc-item-page">7</span></div>
+    <div class="toc-item toc-sub"><span class="toc-item-name">Como o token é armazenado</span><span class="toc-item-page">7</span></div>
+    <div class="toc-item toc-sub"><span class="toc-item-name">Proteção contra brute force</span><span class="toc-item-page">7</span></div>
+    <div class="toc-item"><span class="toc-item-name">6. SSH e Git local</span><span class="toc-item-page">8</span></div>
+  </div>
+
+  <div class="toc-section">
+    <div class="toc-section-label">Resolução de problemas</div>
+    <div class="toc-item"><span class="toc-item-name">7. Erros comuns do admin</span><span class="toc-item-page">9</span></div>
+    <div class="toc-item"><span class="toc-item-name">8. Erros do GitHub</span><span class="toc-item-page">10</span></div>
+    <div class="toc-item"><span class="toc-item-name">9. Problemas de exibição</span><span class="toc-item-page">11</span></div>
+    <div class="toc-item"><span class="toc-item-name">10. Manutenção e atualizações</span><span class="toc-item-page">12</span></div>
+  </div>
+
+  <div class="toc-section">
+    <div class="toc-section-label">Referência</div>
+    <div class="toc-item"><span class="toc-item-name">11. data.json — estrutura completa</span><span class="toc-item-page">13</span></div>
+    <div class="toc-item"><span class="toc-item-name">12. Variáveis CSS e temas</span><span class="toc-item-page">14</span></div>
+    <div class="toc-item"><span class="toc-item-name">13. Checklist de deploy</span><span class="toc-item-page">15</span></div>
+  </div>
+
+  <div class="page-num">2</div>
+</div>
+
+<!-- ═══════════════════════════════════════════
+     1. VISÃO GERAL DO SISTEMA
+═══════════════════════════════════════════ -->
+<div class="page">
+  <div class="section-header">
+    <div class="section-eyebrow">Seção 1</div>
+    <div class="section-title">Visão geral do sistema</div>
+    <div class="section-sub">Arquitetura, estrutura de arquivos e fluxo de dados</div>
+  </div>
+
+  <p>O site <strong>pontos de fuga</strong> é um site estático hospedado no <strong>GitHub Pages</strong>. Não existe servidor backend — todo o conteúdo dinâmico é gerenciado via um painel admin no próprio browser, que lê e escreve diretamente em um arquivo JSON no repositório usando a GitHub API.</p>
+
+  <h2>Estrutura de arquivos</h2>
+  <div class="filetree">
+<span class="dir">site-produtora/</span>
+├── <span class="file">index.html</span>          <span class="note">← página inicial</span>
+├── <span class="file">producoes.html</span>      <span class="note">← catálogo de filmes</span>
+├── <span class="file">filme.html</span>          <span class="note">← página individual de filme</span>
+├── <span class="file">historia.html</span>       <span class="note">← sobre / time / festivais</span>
+├── <span class="file">vemai.html</span>          <span class="note">← filmes em produção</span>
+├── <span class="file">contato.html</span>        <span class="note">← formulário de contato</span>
+├── <span class="file">admin.html</span>          <span class="note">← painel admin (não indexado)</span>
+├── <span class="file">robots.txt</span>          <span class="note">← bloqueia /admin.html dos crawlers</span>
+├── <span class="file">sitemap.xml</span>         <span class="note">← mapa do site para SEO</span>
+├── <span class="dir">scripts/</span>
+│   ├── <span class="file">data.json</span>        <span class="note">← TODA a base de dados do site</span>
+│   ├── <span class="file">data.js</span>          <span class="note">← carrega data.json, expõe dataReady</span>
+│   ├── <span class="file">script-shared.js</span> <span class="note">← nav, menu, lang, footer — todas as páginas</span>
+│   ├── <span class="file">script-index.js</span>  <span class="note">← lógica exclusiva do index.html</span>
+│   ├── <span class="file">script-filme.js</span>  <span class="note">← lógica exclusiva do filme.html</span>
+│   ├── <span class="file">script-producoes.js</span>
+│   ├── <span class="file">script-historia.js</span>
+│   ├── <span class="file">script-vemai.js</span>
+│   ├── <span class="file">script-contato.js</span>
+│   └── <span class="file">script-admin.js</span>  <span class="note">← painel admin</span>
+└── <span class="dir">style/</span>
+    ├── <span class="file">style-base.css</span>   <span class="note">← variáveis, reset, nav, footer</span>
+    ├── <span class="file">style-admin.css</span>
+    └── <span class="file">style-[página].css</span>
+  </div>
+
+  <h2>Fluxo de dados</h2>
+  <div class="grid-2">
+    <div class="card">
+      <div class="card-title">Leitura (ao abrir o site)</div>
+      <p>O browser carrega <code>data.js</code> → faz fetch de <code>data.json</code> → resolve a Promise <code>dataReady</code> → cada script de página renderiza o conteúdo.</p>
+    </div>
+    <div class="card">
+      <div class="card-title">Escrita (ao salvar no admin)</div>
+      <p>Admin coleta os campos → serializa para JSON → chama GitHub Contents API com PUT → GitHub atualiza o arquivo no repositório → GitHub Pages publica em ~1 min.</p>
+    </div>
+  </div>
+
+  <div class="callout callout-info">
+    <div class="callout-label">Importante</div>
+    <p>O site não usa banco de dados nem servidor. Todos os dados vivem em <code>scripts/data.json</code> no GitHub. Qualquer edição feita pelo admin é um commit no repositório.</p>
+  </div>
+
+  <div class="page-num">3</div>
+</div>
+
+<!-- ═══════════════════════════════════════════
+     2. SCRIPTS JAVASCRIPT
+═══════════════════════════════════════════ -->
+<div class="page">
+  <div class="section-header">
+    <div class="section-eyebrow">Seção 2</div>
+    <div class="section-title">Scripts JavaScript</div>
+    <div class="section-sub">Ordem de carregamento, dependências e o padrão dataReady</div>
+  </div>
+
+  <h2>Ordem de carregamento</h2>
+  <p>Cada página HTML carrega os scripts nesta ordem, com <code>defer</code>:</p>
+
+  <div class="code-block">
+    <div class="code-label">Exemplo — index.html</div>
+    <pre>&lt;script src="scripts/data.js" defer&gt;&lt;/script&gt;
+&lt;script src="scripts/script-shared.js" defer&gt;&lt;/script&gt;
+&lt;script src="scripts/script-index.js" defer&gt;&lt;/script&gt;</pre>
+  </div>
+
+  <p>O atributo <code>defer</code> garante que os scripts executam na ordem declarada, depois que o HTML foi parseado — mas <strong>não</strong> esperam o fetch de <code>data.json</code> terminar. Por isso existe o padrão <code>dataReady</code>.</p>
+
+  <h2>dataReady — a Promise central</h2>
+  <p>Em <code>data.js</code>, a variável global <code>dataReady</code> é uma Promise que resolve quando os dados JSON estão carregados e disponíveis nas variáveis globais:</p>
+
+  <div class="code-block">
+    <div class="code-label">scripts/data.js (simplificado)</div>
+    <pre><span class="kw">const</span> <span class="nm">dataReady</span> = fetch(<span class="st">'scripts/data.json'</span>)
+  .then(r => r.json())
+  .then(json => {
+    <span class="nm">films</span>          = json.films          || [];
+    <span class="nm">upcomingFilms</span>  = json.upcomingFilms  || [];
+    <span class="nm">otherProductions</span> = json.otherProductions || [];
+    <span class="nm">historiaData</span>   = json.historia        || {};
+    <span class="nm">pagesData</span>      = json.pages            || {};
+    <span class="nm">siteData</span>       = json.siteData         || {};
+  });</pre>
+  </div>
+
+  <p>Cada script de página envolve sua lógica em <code>dataReady.then(() => { ... })</code>. Isso garante que as variáveis estão prontas antes de tentar renderizar.</p>
+
+  <h2>Variáveis globais disponíveis após dataReady</h2>
+  <table>
+    <tr><th>Variável</th><th>Tipo</th><th>Conteúdo</th></tr>
+    <tr><td><code>films</code></td><td>Array</td><td>Filmes do catálogo principal</td></tr>
+    <tr><td><code>upcomingFilms</code></td><td>Array</td><td>Filmes em produção ("vem aí")</td></tr>
+    <tr><td><code>otherProductions</code></td><td>Array</td><td>Outras produções</td></tr>
+    <tr><td><code>historiaData</code></td><td>Object</td><td>Manifesto, time, marcos, parceiros, festivais</td></tr>
+    <tr><td><code>pagesData</code></td><td>Object</td><td>Conteúdo editável de cada página (index, vemai, etc.)</td></tr>
+    <tr><td><code>siteData</code></td><td>Object</td><td>Logo, links sociais, configurações gerais</td></tr>
+  </table>
+
+  <h2>window.updateDOM — troca de idioma</h2>
+  <p>Cada script de página define <code>window.updateDOM = function() {...}</code>. Quando o usuário troca o idioma (PT/EN), <code>script-shared.js</code> chama essa função para re-renderizar todo o conteúdo dinâmico na nova língua.</p>
+
+  <div class="callout callout-warn">
+    <div class="callout-label">Atenção</div>
+    <p>Se você adicionar um novo campo de texto ao JSON e renderizá-lo via JS, lembre de incluir a re-renderização dentro de <code>window.updateDOM</code>, senão o texto não atualiza ao trocar idioma.</p>
+  </div>
+
+  <div class="page-num">4</div>
+</div>
+
+<!-- ═══════════════════════════════════════════
+     3. GITHUB PAGES E REPOSITÓRIO
+═══════════════════════════════════════════ -->
+<div class="page">
+  <div class="section-header">
+    <div class="section-eyebrow">Seção 3</div>
+    <div class="section-title">GitHub Pages e repositório</div>
+    <div class="section-sub">Como o site é hospedado e o que é necessário para funcionar</div>
+  </div>
+
+  <h2>Como o site é publicado</h2>
+  <p>O site está no repositório <code>myceliumBrain/site-produtora</code>, branch <code>lite_mode</code>. O GitHub Pages está configurado para servir os arquivos desta branch diretamente na raiz.</p>
+
+  <div class="grid-2">
+    <div class="card">
+      <div class="card-title">URL do site</div>
+      <p><code>myceliumbrain.github.io/site-produtora</code></p>
+    </div>
+    <div class="card">
+      <div class="card-title">Branch publicada</div>
+      <p><code>lite_mode</code> (branch principal do projeto)</p>
+    </div>
+  </div>
+
+  <p>Para verificar ou alterar a configuração: <strong>GitHub → repositório → Settings → Pages → Source</strong>.</p>
+
+  <h2>Personal Access Token (PAT)</h2>
+  <p>O painel admin precisa de um <strong>Personal Access Token</strong> do GitHub para conseguir salvar dados. Sem ele, o botão "Salvar" retorna erro 401.</p>
+
+  <h3>Como criar um novo token</h3>
+  <div class="steps">
+    <div class="step"><div class="step-content"><p>Acesse <code>github.com</code> com sua conta e vá em <strong>Settings</strong> (foto de perfil → Settings).</p></div></div>
+    <div class="step"><div class="step-content"><p>Role até o fim do menu lateral e clique em <strong>Developer settings</strong>.</p></div></div>
+    <div class="step"><div class="step-content"><p>Clique em <strong>Personal access tokens → Tokens (classic)</strong>.</p></div></div>
+    <div class="step"><div class="step-content"><p>Clique em <strong>Generate new token (classic)</strong>.</p></div></div>
+    <div class="step"><div class="step-content"><p>Em <strong>Note</strong>, dê um nome como "admin site produtora".</p></div></div>
+    <div class="step"><div class="step-content"><p>Em <strong>Expiration</strong>, escolha "No expiration" (ou defina uma data se preferir mais segurança).</p></div></div>
+    <div class="step"><div class="step-content"><p>Em <strong>Scopes</strong>, marque apenas <code>repo</code> (dá acesso de leitura e escrita ao repositório).</p></div></div>
+    <div class="step"><div class="step-content"><p>Clique em <strong>Generate token</strong> e <strong>copie o token imediatamente</strong> — ele só aparece uma vez.</p></div></div>
+    <div class="step"><div class="step-content"><p>Cole o token no campo correspondente no painel admin ao fazer login.</p></div></div>
+  </div>
+
+  <div class="callout callout-danger">
+    <div class="callout-label">Segurança</div>
+    <p>O token dá acesso de escrita ao repositório. Nunca compartilhe nem deixe salvo em lugar inseguro. Se vazar, revogue imediatamente em GitHub → Developer settings → Personal access tokens.</p>
+  </div>
+
+  <h3>Permissões necessárias do token</h3>
+  <table>
+    <tr><th>Scope</th><th>Necessário?</th><th>Para quê</th></tr>
+    <tr><td><code>repo</code></td><td><span class="tag tag-green">Sim</span></td><td>Ler e escrever arquivos no repositório</td></tr>
+    <tr><td><code>workflow</code></td><td><span class="tag">Não</span></td><td>Não usado</td></tr>
+    <tr><td><code>admin:repo_hook</code></td><td><span class="tag">Não</span></td><td>Não usado</td></tr>
+  </table>
+
+  <div class="page-num">5</div>
+</div>
+
+<!-- ═══════════════════════════════════════════
+     4. INTEGRAÇÃO COM GITHUB API
+═══════════════════════════════════════════ -->
+<div class="page">
+  <div class="section-header">
+    <div class="section-eyebrow">Seção 4</div>
+    <div class="section-title">Integração com GitHub API</div>
+    <div class="section-sub">Como o admin lê e escreve dados no repositório</div>
+  </div>
+
+  <h2>Como o admin carrega dados</h2>
+  <p>Ao entrar no painel, o admin faz um <code>GET</code> para a GitHub Contents API:</p>
+
+  <div class="code-block">
+    <div class="code-label">Requisição GET</div>
+    <pre>GET https://api.github.com/repos/myceliumBrain/site-produtora/contents/scripts/data.json
+Authorization: token ghp_xxxxxxxxxxxx
+Accept: application/vnd.github.v3+json</pre>
+  </div>
+
+  <p>A resposta contém o campo <code>content</code> (conteúdo do arquivo em Base64) e o campo <code>sha</code> (hash do arquivo — necessário para fazer o PUT).</p>
+
+  <p>O admin decodifica o Base64 com <code>TextDecoder</code> e faz parse do JSON resultante.</p>
+
+  <h2>Como o admin salva dados</h2>
+  <p>Ao clicar em "Salvar", o admin faz um <code>PUT</code> para a mesma URL com o novo conteúdo:</p>
+
+  <div class="code-block">
+    <div class="code-label">Requisição PUT</div>
+    <pre>PUT https://api.github.com/repos/myceliumBrain/site-produtora/contents/scripts/data.json
+Authorization: token ghp_xxxxxxxxxxxx
+
+{
+  "message": "admin: atualiza data.json",
+  "content": "&lt;base64 do novo JSON&gt;",
+  "sha": "&lt;sha do arquivo atual&gt;"
+}</pre>
+  </div>
+
+  <p>O campo <code>sha</code> é obrigatório para evitar conflitos — o GitHub rejeita o PUT se o <code>sha</code> não corresponder à versão atual do arquivo.</p>
+
+  <div class="callout callout-warn">
+    <div class="callout-label">Conflito de SHA</div>
+    <p>Se duas abas do admin tentarem salvar ao mesmo tempo, a segunda irá falhar com erro 409 (conflito). Solução: recarregar a página admin e refazer as edições perdidas.</p>
+  </div>
+
+  <h2>Verificando chamadas à API manualmente</h2>
+  <p>Você pode testar a API diretamente no terminal para verificar se o token funciona e se o arquivo está acessível:</p>
+
+  <div class="code-block">
+    <div class="code-label">Terminal (bash/zsh)</div>
+    <pre>curl -H "Authorization: token SEU_TOKEN_AQUI" \
+     -H "Accept: application/vnd.github.v3+json" \
+     https://api.github.com/repos/myceliumBrain/site-produtora/contents/scripts/data.json</pre>
+  </div>
+
+  <p>Se retornar <code>"message": "Bad credentials"</code>, o token está errado ou expirou. Se retornar <code>"message": "Not Found"</code>, o repositório ou o caminho do arquivo estão errados.</p>
+
+  <h2>Rate limit da API</h2>
+  <table>
+    <tr><th>Autenticado</th><th>Não autenticado</th><th>Verificar limite</th></tr>
+    <tr><td>5.000 req/hora</td><td>60 req/hora</td><td><code>GET /rate_limit</code></td></tr>
+  </table>
+  <p>Para uso normal do admin, o rate limit nunca será atingido.</p>
+
+  <div class="page-num">6</div>
+</div>
+
+<!-- ═══════════════════════════════════════════
+     5. TOKEN E CRIPTOGRAFIA
+═══════════════════════════════════════════ -->
+<div class="page">
+  <div class="section-header">
+    <div class="section-eyebrow">Seção 5</div>
+    <div class="section-title">Token e criptografia</div>
+    <div class="section-sub">Como o token é armazenado com segurança e a proteção contra ataques</div>
+  </div>
+
+  <h2>Como o token é armazenado</h2>
+  <p>O token do GitHub não é armazenado em texto puro. O admin usa <strong>AES-GCM</strong> com chave derivada via <strong>PBKDF2</strong> a partir da senha escolhida pelo usuário. O resultado criptografado é salvo no <code>localStorage</code> do browser.</p>
+
+  <div class="card" style="margin: 3mm 0">
+    <div class="card-title">Fluxo de criptografia</div>
+    <p>Senha + salt → PBKDF2 (100.000 iterações) → chave AES-GCM → criptografa token → salva no localStorage</p>
+  </div>
+
+  <p>Para descriptografar: a senha é pedida novamente a cada sessão → mesma derivação PBKDF2 → descriptografa o token salvo → token fica apenas na memória (RAM) enquanto o admin está aberto.</p>
+
+  <h3>Chaves no localStorage</h3>
+  <table>
+    <tr><th>Chave</th><th>Conteúdo</th></tr>
+    <tr><td><code>pf_enc_token</code></td><td>Token GitHub criptografado (AES-GCM, Base64)</td></tr>
+    <tr><td><code>pf_salt</code></td><td>Salt aleatório usado na derivação PBKDF2 (Base64)</td></tr>
+    <tr><td><code>pf_login_attempts</code></td><td>JSON com contador e timestamp para brute force</td></tr>
+  </table>
+
+  <div class="callout callout-info">
+    <div class="callout-label">Esqueceu a senha?</div>
+    <p>Se a senha for esquecida, abra o DevTools do browser (F12) → Console e execute: <code>localStorage.removeItem('pf_enc_token'); localStorage.removeItem('pf_salt');</code> — depois recarregue a página e configure novamente com um novo token.</p>
+  </div>
+
+  <h2>Proteção contra brute force</h2>
+  <p>O admin limita tentativas de login:</p>
+  <div class="grid-2">
+    <div class="card">
+      <div class="card-title">Tentativas permitidas</div>
+      <p><strong>5 tentativas</strong> antes do bloqueio</p>
+    </div>
+    <div class="card">
+      <div class="card-title">Duração do bloqueio</div>
+      <p><strong>15 minutos</strong> automáticos</p>
+    </div>
+  </div>
+
+  <p>O estado do bloqueio é salvo em <code>localStorage</code> (chave <code>pf_login_attempts</code>). Para desbloquear manualmente em emergência:</p>
+
+  <div class="code-block">
+    <div class="code-label">Console do browser (F12)</div>
+    <pre>localStorage.removeItem('pf_login_attempts');</pre>
+  </div>
+
+  <h2>Redefinir acesso completamente</h2>
+  <p>Para apagar todas as credenciais salvas e recomeçar do zero:</p>
+  <div class="code-block">
+    <div class="code-label">Console do browser (F12)</div>
+    <pre>localStorage.removeItem('pf_enc_token');
+localStorage.removeItem('pf_salt');
+localStorage.removeItem('pf_login_attempts');
+location.reload();</pre>
+  </div>
+
+  <div class="callout callout-warn">
+    <div class="callout-label">Atenção</div>
+    <p>O localStorage é por domínio e por browser. Se a equipe usa computadores diferentes, cada um precisa configurar as credenciais no seu próprio browser.</p>
+  </div>
+
+  <div class="page-num">7</div>
+</div>
+
+<!-- ═══════════════════════════════════════════
+     6. SSH E GIT LOCAL
+═══════════════════════════════════════════ -->
+<div class="page">
+  <div class="section-header">
+    <div class="section-eyebrow">Seção 6</div>
+    <div class="section-title">SSH e Git local</div>
+    <div class="section-sub">Para alterações diretas no repositório via terminal</div>
+  </div>
+
+  <p>Embora o dia a dia seja via painel admin, em alguns casos (mudança de layout, correção de bug, atualização de código) pode ser necessário editar os arquivos e enviar via Git.</p>
+
+  <h2>Configurar SSH com GitHub</h2>
+  <div class="steps">
+    <div class="step"><div class="step-content"><p>Verificar se já existe uma chave SSH: <code>ls ~/.ssh/id_ed25519.pub</code> — se existir, pule para o passo 3.</p></div></div>
+    <div class="step"><div class="step-content"><p>Gerar nova chave (troque o email pelo seu):<br><code>ssh-keygen -t ed25519 -C "seu@email.com"</code> — pressione Enter em tudo para usar os padrões.</p></div></div>
+    <div class="step"><div class="step-content"><p>Copiar a chave pública: <code>cat ~/.ssh/id_ed25519.pub</code> — copie todo o texto exibido.</p></div></div>
+    <div class="step"><div class="step-content"><p>No GitHub: <strong>Settings → SSH and GPG keys → New SSH key</strong> → cole a chave e salve.</p></div></div>
+    <div class="step"><div class="step-content"><p>Testar a conexão: <code>ssh -T git@github.com</code> — deve aparecer "Hi username! You've successfully authenticated".</p></div></div>
+  </div>
+
+  <h2>Clonar o repositório</h2>
+  <div class="code-block">
+    <div class="code-label">Terminal</div>
+    <pre>git clone git@github.com:myceliumBrain/site-produtora.git
+cd site-produtora
+git checkout lite_mode</pre>
+  </div>
+
+  <h2>Fluxo de trabalho básico</h2>
+  <div class="code-block">
+    <div class="code-label">Terminal — ciclo editar → commitar → publicar</div>
+    <pre><span class="cm"># 1. Atualizar com as mudanças mais recentes</span>
+git pull origin lite_mode
+
+<span class="cm"># 2. Editar os arquivos necessários (no editor de sua preferência)</span>
+
+<span class="cm"># 3. Ver o que mudou</span>
+git status
+git diff
+
+<span class="cm"># 4. Adicionar as mudanças</span>
+git add scripts/data.json          <span class="cm"># ou git add -A para tudo</span>
+
+<span class="cm"># 5. Commitar com mensagem descritiva</span>
+git commit -m "fix: corrige título do filme X"
+
+<span class="cm"># 6. Enviar para o GitHub (publica o site)</span>
+git push origin lite_mode</pre>
+  </div>
+
+  <div class="callout callout-warn">
+    <div class="callout-label">Conflito entre admin e Git local</div>
+    <p>Se o admin salvou e depois você faz <code>git pull</code>, pode acontecer conflito em <code>data.json</code>. Sempre faça <code>git pull</code> antes de editar localmente, e comunique a equipe antes de fazer push.</p>
+  </div>
+
+  <h2>Comandos úteis de diagnóstico</h2>
+  <table>
+    <tr><th>Comando</th><th>O que faz</th></tr>
+    <tr><td><code>git log --oneline -10</code></td><td>Últimos 10 commits</td></tr>
+    <tr><td><code>git diff HEAD~1 scripts/data.json</code></td><td>O que mudou no data.json no último commit</td></tr>
+    <tr><td><code>git show HEAD:scripts/data.json</code></td><td>Conteúdo do data.json no último commit</td></tr>
+    <tr><td><code>git stash</code></td><td>Salva mudanças locais temporariamente</td></tr>
+    <tr><td><code>git stash pop</code></td><td>Restaura mudanças salvas com stash</td></tr>
+  </table>
+
+  <div class="page-num">8</div>
+</div>
+
+<!-- ═══════════════════════════════════════════
+     7. ERROS COMUNS DO ADMIN
+═══════════════════════════════════════════ -->
+<div class="page">
+  <div class="section-header">
+    <div class="section-eyebrow">Seção 7</div>
+    <div class="section-title">Erros comuns do admin</div>
+    <div class="section-sub">Mensagens de erro, causas e soluções</div>
+  </div>
+
+  <div class="error-card">
+    <div class="error-card-header">
+      <span class="error-card-code">ERRO</span>
+      <span class="error-card-title">"Senha incorreta" ao fazer login</span>
+    </div>
+    <p>A senha digitada não descriptografou o token. Pode ser erro de digitação (maiúsculas, espaço extra) ou o token foi configurado com senha diferente.</p>
+    <p class="fix">Solução: verifique caps lock. Se a senha realmente foi esquecida, limpe o localStorage (veja Seção 5) e reconfigure.</p>
+  </div>
+
+  <div class="error-card">
+    <div class="error-card-header">
+      <span class="error-card-code">ERRO</span>
+      <span class="error-card-title">"Conta bloqueada por 15 minutos"</span>
+    </div>
+    <p>5 tentativas de senha erradas foram registradas.</p>
+    <p class="fix">Solução: aguardar 15 min OU abrir DevTools (F12) → Console → <code>localStorage.removeItem('pf_login_attempts'); location.reload();</code></p>
+  </div>
+
+  <div class="error-card">
+    <div class="error-card-header">
+      <span class="error-card-code">HTTP 401</span>
+      <span class="error-card-title">Unauthorized — ao salvar</span>
+    </div>
+    <p>O token do GitHub está inválido, expirado, ou não tem a permissão <code>repo</code>.</p>
+    <p class="fix">Solução: gere um novo token (Seção 3) e reconfigure no admin. Lembre de marcar o scope <code>repo</code>.</p>
+  </div>
+
+  <div class="error-card">
+    <div class="error-card-header">
+      <span class="error-card-code">HTTP 409</span>
+      <span class="error-card-title">Conflict — ao salvar</span>
+    </div>
+    <p>O SHA do arquivo mudou desde que o admin carregou os dados. Outra pessoa salvou antes ou você tem duas abas do admin abertas.</p>
+    <p class="fix">Solução: recarregar o admin (F5), refazer as edições e tentar salvar novamente.</p>
+  </div>
+
+  <div class="error-card">
+    <div class="error-card-header">
+      <span class="error-card-code">HTTP 403</span>
+      <span class="error-card-title">Forbidden — ao salvar</span>
+    </div>
+    <p>O token não tem permissão de escrita no repositório. Pode ser um token fine-grained sem a permissão correta, ou o repositório está em organização com restrições.</p>
+    <p class="fix">Solução: use um token classic (não fine-grained) com scope <code>repo</code>.</p>
+  </div>
+
+  <div class="error-card">
+    <div class="error-card-header">
+      <span class="error-card-code">ERRO</span>
+      <span class="error-card-title">"Erro ao carregar dados" — página em branco</span>
+    </div>
+    <p>O fetch de <code>data.json</code> falhou. Causas: arquivo corrompido (JSON inválido), falha de rede, ou o arquivo foi deletado do repositório.</p>
+    <p class="fix">Solução: verifique se <code>scripts/data.json</code> existe no repositório e se é um JSON válido (use <code>jsonlint.com</code> para validar).</p>
+  </div>
+
+  <div class="error-card">
+    <div class="error-card-header">
+      <span class="error-card-code">ERRO</span>
+      <span class="error-card-title">Painel abre mas os campos aparecem vazios</span>
+    </div>
+    <p>Os dados carregaram mas uma seção específica está faltando no JSON (ex: <code>historia</code>, <code>pages</code>).</p>
+    <p class="fix">Solução: abrir o DevTools (F12) → Console e verificar se há erros JavaScript. Verificar a estrutura do <code>data.json</code> (Seção 11).</p>
+  </div>
+
+  <div class="page-num">9</div>
+</div>
+
+<!-- ═══════════════════════════════════════════
+     8. ERROS DO GITHUB
+═══════════════════════════════════════════ -->
+<div class="page">
+  <div class="section-header">
+    <div class="section-eyebrow">Seção 8</div>
+    <div class="section-title">Erros do GitHub</div>
+    <div class="section-sub">Problemas com o repositório, Pages e publicação</div>
+  </div>
+
+  <h2>Site não atualiza após salvar</h2>
+  <p>O GitHub Pages pode demorar entre 30 segundos e 3 minutos para publicar depois de um commit. Verifique:</p>
+
+  <div class="steps">
+    <div class="step"><div class="step-content"><p>Confirme que o commit aparece no repositório: <code>github.com/myceliumBrain/site-produtora/commits/lite_mode</code></p></div></div>
+    <div class="step"><div class="step-content"><p>Verifique o status do deploy: <strong>repositório → Actions</strong> (se houver workflow) ou <strong>repositório → Environments → github-pages</strong>.</p></div></div>
+    <div class="step"><div class="step-content"><p>Se o deploy falhou (ícone vermelho), clique no workflow para ver o log de erro.</p></div></div>
+    <div class="step"><div class="step-content"><p>Forçar atualização no browser: <strong>Ctrl+Shift+R</strong> (Windows/Linux) ou <strong>Cmd+Shift+R</strong> (Mac).</p></div></div>
+  </div>
+
+  <h2>GitHub Pages não está ativo</h2>
+  <div class="steps">
+    <div class="step"><div class="step-content"><p>No repositório, vá em <strong>Settings → Pages</strong>.</p></div></div>
+    <div class="step"><div class="step-content"><p>Em <strong>Source</strong>, selecione <strong>Deploy from a branch</strong>.</p></div></div>
+    <div class="step"><div class="step-content"><p>Em <strong>Branch</strong>, selecione <code>lite_mode</code> e pasta <code>/ (root)</code>.</p></div></div>
+    <div class="step"><div class="step-content"><p>Clique em <strong>Save</strong> e aguarde alguns minutos.</p></div></div>
+  </div>
+
+  <h2>Recuperar versão anterior do data.json</h2>
+  <p>Como cada salvamento é um commit, é possível voltar para uma versão anterior:</p>
+
+  <div class="code-block">
+    <div class="code-label">Terminal — ver histórico do data.json</div>
+    <pre><span class="cm"># Ver commits que alteraram o data.json</span>
+git log --oneline scripts/data.json
+
+<span class="cm"># Ver o conteúdo em um commit específico (substitua HASH pelo hash do commit)</span>
+git show HASH:scripts/data.json
+
+<span class="cm"># Restaurar o data.json para uma versão anterior</span>
+git checkout HASH -- scripts/data.json
+git commit -m "fix: restaura data.json para versão anterior"
+git push origin lite_mode</pre>
+  </div>
+
+  <div class="callout callout-success">
+    <div class="callout-label">Backup automático</div>
+    <p>O Git mantém todo o histórico de mudanças. Nada é perdido permanentemente — sempre é possível recuperar uma versão anterior de qualquer arquivo.</p>
+  </div>
+
+  <h2>Erro de permissão ao fazer push</h2>
+  <div class="error-card">
+    <div class="error-card-header">
+      <span class="error-card-code">ERRO</span>
+      <span class="error-card-title">Permission denied (publickey) — ao fazer git push</span>
+    </div>
+    <p>A chave SSH não está configurada ou não foi adicionada ao GitHub.</p>
+    <p class="fix">Solução: seguir os passos da Seção 6 para configurar SSH. Verificar com: <code>ssh -T git@github.com</code></p>
+  </div>
+
+  <div class="error-card">
+    <div class="error-card-header">
+      <span class="error-card-code">ERRO</span>
+      <span class="error-card-title">rejected — non-fast-forward</span>
+    </div>
+    <p>O repositório remoto tem commits que você não tem localmente (alguém fez push antes de você).</p>
+    <p class="fix">Solução: <code>git pull --rebase origin lite_mode</code> e depois tente o push novamente.</p>
+  </div>
+
+  <div class="page-num">10</div>
+</div>
+
+<!-- ═══════════════════════════════════════════
+     9. PROBLEMAS DE EXIBIÇÃO
+═══════════════════════════════════════════ -->
+<div class="page">
+  <div class="section-header">
+    <div class="section-eyebrow">Seção 9</div>
+    <div class="section-title">Problemas de exibição</div>
+    <div class="section-sub">Conteúdo não aparece, imagens quebradas, texto errado</div>
+  </div>
+
+  <h2>Imagem não aparece no site</h2>
+  <p>Imagens são referenciadas por URL. Causas comuns de imagens quebradas:</p>
+
+  <table>
+    <tr><th>Causa</th><th>Como identificar</th><th>Solução</th></tr>
+    <tr><td>URL digitada errada</td><td>Imagem tem ícone de quebrado no browser</td><td>Verificar a URL no admin — abrir a URL diretamente no browser para testar</td></tr>
+    <tr><td>Imagem deletada da origem</td><td>URL retorna 404</td><td>Reupar a imagem e atualizar a URL</td></tr>
+    <tr><td>URL com espaços ou acentos</td><td>Funciona no desktop mas não no mobile</td><td>Usar URLs sem espaços (substituir por <code>%20</code> ou renomear o arquivo)</td></tr>
+    <tr><td>HTTP em vez de HTTPS</td><td>Erro de "mixed content" no console</td><td>Trocar <code>http://</code> por <code>https://</code> na URL</td></tr>
+  </table>
+
+  <h2>Texto aparece como HTML escapado (&amp;lt; &amp;amp; etc.)</h2>
+  <p>Isso pode acontecer se o conteúdo for inserido em um campo que espera texto simples, mas você colou HTML. O site escapa automaticamente todos os caracteres especiais por segurança.</p>
+  <p>Solução: remova quaisquer tags HTML do texto no admin (ex: não use <code>&lt;b&gt;</code>, <code>&lt;i&gt;</code>). O site não suporta rich text.</p>
+
+  <h2>Mudança de idioma não atualiza um campo</h2>
+  <p>Cada campo bilíngue tem dois campos no JSON: um para PT e outro para EN (sufixo <code>En</code>). Se o campo EN estiver vazio, o site mostra o PT mesmo com idioma trocado. Verifique se o campo <code>titleEn</code>, <code>synopsisEn</code>, etc. está preenchido no admin.</p>
+
+  <h2>Filme abre com "Filme não encontrado"</h2>
+  <p>A URL de um filme usa um índice numérico (<code>?i=3</code>). Se filmes forem reordenados ou removidos, índices antigos ficam inválidos. Links no site são gerados automaticamente — mas links externos (redes sociais, etc.) podem ficar quebrados. Não há solução simples além de atualizar os links externos.</p>
+
+  <h2>Console do browser — como abrir e ler erros</h2>
+  <p>O console é a principal ferramenta de diagnóstico. Para abrir:</p>
+  <div class="grid-3">
+    <div class="card"><div class="card-title">Windows / Linux</div><p><code>F12</code> ou <code>Ctrl+Shift+I</code></p></div>
+    <div class="card"><div class="card-title">Mac</div><p><code>Cmd+Option+I</code></p></div>
+    <div class="card"><div class="card-title">Depois</div><p>Clique na aba <strong>Console</strong></p></div>
+  </div>
+
+  <p>Erros em vermelho indicam problemas. Os mais comuns no site:</p>
+
+  <table>
+    <tr><th>Mensagem no console</th><th>O que significa</th></tr>
+    <tr><td><code>Failed to fetch</code></td><td>Não conseguiu carregar <code>data.json</code> (sem internet ou arquivo não existe)</td></tr>
+    <tr><td><code>Unexpected token</code> em JSON</td><td><code>data.json</code> está com erro de sintaxe (vírgula extra, aspas faltando)</td></tr>
+    <tr><td><code>Cannot read properties of undefined</code></td><td>Um campo esperado está faltando no JSON</td></tr>
+    <tr><td><code>NetworkError</code></td><td>Problema de rede ou CORS ao acessar a API do GitHub</td></tr>
+  </table>
+
+  <div class="page-num">11</div>
+</div>
+
+<!-- ═══════════════════════════════════════════
+     10. MANUTENÇÃO E ATUALIZAÇÕES
+═══════════════════════════════════════════ -->
+<div class="page">
+  <div class="section-header">
+    <div class="section-eyebrow">Seção 10</div>
+    <div class="section-title">Manutenção e atualizações</div>
+    <div class="section-sub">Tarefas periódicas e procedimentos de atualização de código</div>
+  </div>
+
+  <h2>Tarefas de manutenção periódica</h2>
+  <table>
+    <tr><th>Tarefa</th><th>Frequência</th><th>Como fazer</th></tr>
+    <tr><td>Renovar o token do GitHub</td><td>Se expirar</td><td>Seção 3 — gerar novo token e reconfigurá-lo no admin</td></tr>
+    <tr><td>Verificar links sociais</td><td>Semestral</td><td>Admin → Links — confirmar que os URLs ainda funcionam</td></tr>
+    <tr><td>Atualizar ano no sitemap.xml</td><td>Anual</td><td>Editar <code>sitemap.xml</code> no repositório e atualizar <code>&lt;lastmod&gt;</code></td></tr>
+    <tr><td>Verificar imagens quebradas</td><td>Trimestral</td><td>Abrir cada página, inspecionar visualmente</td></tr>
+  </table>
+
+  <h2>Atualizar o código do site</h2>
+  <p>Para mudanças de código (HTML, CSS, JS) que vão além do que o admin oferece:</p>
+
+  <div class="steps">
+    <div class="step"><div class="step-content"><p>Clone ou atualize o repositório local: <code>git pull origin lite_mode</code></p></div></div>
+    <div class="step"><div class="step-content"><p>Faça as alterações nos arquivos necessários.</p></div></div>
+    <div class="step"><div class="step-content"><p>Teste localmente abrindo o HTML no browser (ou usando um servidor local: <code>python3 -m http.server 8000</code>).</p></div></div>
+    <div class="step"><div class="step-content"><p>Commit e push: <code>git add . && git commit -m "descricao" && git push origin lite_mode</code></p></div></div>
+    <div class="step"><div class="step-content"><p>Aguarde 1-3 min para o GitHub Pages publicar e verifique o site.</p></div></div>
+  </div>
+
+  <h2>Adicionar nova seção ou campo ao admin</h2>
+  <p>O admin e os dados do site são acoplados. Se quiser adicionar um novo campo editável:</p>
+  <div class="steps">
+    <div class="step"><div class="step-content"><p>Adicionar o campo ao <code>data.json</code> com um valor padrão.</p></div></div>
+    <div class="step"><div class="step-content"><p>Expor o campo no script da página correspondente (<code>script-index.js</code> etc.) para renderização.</p></div></div>
+    <div class="step"><div class="step-content"><p>Adicionar o campo ao painel admin em <code>script-admin.js</code> (<code>renderAll()</code> + <code>collectAll()</code>).</p></div></div>
+    <div class="step"><div class="step-content"><p>Se o campo for bilíngue, adicionar versão PT e EN.</p></div></div>
+  </div>
+
+  <h2>Estrutura de um filme no data.json</h2>
+  <p>Para referência ao manipular diretamente:</p>
+  <div class="code-block">
+    <div class="code-label">data.json — objeto filme</div>
+    <pre>{
+  <span class="st">"title"</span>:       <span class="st">"Título em PT"</span>,
+  <span class="st">"titleEn"</span>:     <span class="st">"Title in EN"</span>,
+  <span class="st">"synopsis"</span>:    <span class="st">"Sinopse..."</span>,
+  <span class="st">"synopsisEn"</span>:  <span class="st">"Synopsis..."</span>,
+  <span class="st">"director"</span>:    <span class="st">"Nome"</span>,
+  <span class="st">"genre"</span>:       <span class="st">"Drama"</span>,
+  <span class="st">"genreEn"</span>:     <span class="st">"Drama"</span>,
+  <span class="st">"year"</span>:        <span class="st">"2025"</span>,
+  <span class="st">"imgPortrait"</span>: <span class="st">"https://..."</span>,
+  <span class="st">"imgLandscape"</span>:<span class="st">"https://..."</span>,
+  <span class="st">"hero"</span>:        <span class="kw">true</span>,         <span class="cm">// aparece no slideshow da home</span>
+  <span class="st">"tags"</span>:        [<span class="st">"Drama"</span>, <span class="st">"2025"</span>],
+  <span class="st">"videoTrailers"</span>: [<span class="st">"https://youtube.com/watch?v=..."</span>],
+  <span class="st">"fichatecnica"</span>: [{<span class="st">"role"</span>: <span class="st">"Roteiro"</span>, <span class="st">"name"</span>: <span class="st">"Nome"</span>}],
+  <span class="st">"elenco"</span>:      [{<span class="st">"role"</span>: <span class="st">"Personagem"</span>, <span class="st">"name"</span>: <span class="st">"Ator"</span>}],
+  <span class="st">"fotografias"</span>: [<span class="st">"https://..."</span>],
+  <span class="st">"makingOff"</span>:   [<span class="st">"https://..."</span>]
+}</pre>
+  </div>
+
+  <div class="page-num">12</div>
+</div>
+
+<!-- ═══════════════════════════════════════════
+     11. DATA.JSON — ESTRUTURA COMPLETA
+═══════════════════════════════════════════ -->
+<div class="page">
+  <div class="section-header">
+    <div class="section-eyebrow">Seção 11</div>
+    <div class="section-title">data.json — estrutura</div>
+    <div class="section-sub">Mapa completo das chaves do arquivo de dados</div>
+  </div>
+
+  <h2>Estrutura de alto nível</h2>
+  <div class="code-block">
+    <div class="code-label">data.json — raiz</div>
+    <pre>{
+  <span class="st">"films"</span>:            [...],   <span class="cm">// Array de filmes do catálogo</span>
+  <span class="st">"upcomingFilms"</span>:    [...],   <span class="cm">// Array de filmes em produção</span>
+  <span class="st">"otherProductions"</span>: [...],   <span class="cm">// Array de outras produções</span>
+  <span class="st">"historia"</span>:         {...},   <span class="cm">// Conteúdo da página história</span>
+  <span class="st">"pages"</span>:            {...},   <span class="cm">// Conteúdo editável de cada página</span>
+  <span class="st">"siteData"</span>:         {...}    <span class="cm">// Config global (logo, links sociais)</span>
+}</pre>
+  </div>
+
+  <h2>historia</h2>
+  <table>
+    <tr><th>Chave</th><th>Tipo</th><th>Descrição</th></tr>
+    <tr><td><code>manifesto</code></td><td>Object</td><td>eyebrow, title1, title2, p1, p2 (e versões En)</td></tr>
+    <tr><td><code>team</code></td><td>Array</td><td>Membros: name, role, roleEn, bio, bioEn, img</td></tr>
+    <tr><td><code>marcos</code></td><td>Array</td><td>Marcos históricos: year, title, titleEn, text, textEn</td></tr>
+    <tr><td><code>festivais</code></td><td>Array</td><td>Festivais: name, year, logo</td></tr>
+    <tr><td><code>parceiros</code></td><td>Array</td><td>Parceiros: string OU {name, logo}</td></tr>
+  </table>
+
+  <h2>pages</h2>
+  <table>
+    <tr><th>Chave</th><th>Descrição</th></tr>
+    <tr><td><code>pages.index</code></td><td>ctaTitlePt/En, ctaBodyPt/En, heroLabelPt/En, gridTitlePt/En, stripeItems</td></tr>
+    <tr><td><code>pages.vemai</code></td><td>eyebrowPt/En, titlePt/En, subPt/En, statementPt/En</td></tr>
+    <tr><td><code>pages.historia</code></td><td>teamEyebrowPt/En, festivaisEyebrowPt/En, marcosEyebrowPt/En, parceirosEyebrowPt/En</td></tr>
+  </table>
+
+  <h2>siteData</h2>
+  <table>
+    <tr><th>Chave</th><th>Tipo</th><th>Descrição</th></tr>
+    <tr><td><code>logoUrl</code></td><td>String</td><td>URL da imagem do logo</td></tr>
+    <tr><td><code>socialLinks</code></td><td>Array</td><td>Links sociais: [{label, url}]</td></tr>
+  </table>
+
+  <h2>upcomingFilms — campos extras</h2>
+  <p>Além dos campos padrão de filme, upcomingFilms tem:</p>
+  <table>
+    <tr><th>Campo</th><th>Valores</th><th>Exibição</th></tr>
+    <tr><td><code>status</code></td><td><code>"filming"</code> / <code>"dev"</code> / <code>"post"</code></td><td>Badge colorido na página vemai e home</td></tr>
+  </table>
+
+  <div class="callout callout-danger">
+    <div class="callout-label">JSON inválido</div>
+    <p>Se <code>data.json</code> ficar com sintaxe inválida (edição manual errada), o site inteiro para de funcionar. Sempre valide o JSON antes de commitar: use <code>python3 -m json.tool data.json</code> no terminal ou o site <code>jsonlint.com</code>.</p>
+  </div>
+
+  <div class="page-num">13</div>
+</div>
+
+<!-- ═══════════════════════════════════════════
+     12. VARIÁVEIS CSS E TEMAS
+═══════════════════════════════════════════ -->
+<div class="page">
+  <div class="section-header">
+    <div class="section-eyebrow">Seção 12</div>
+    <div class="section-title">Variáveis CSS e temas</div>
+    <div class="section-sub">Como o design é controlado via custom properties</div>
+  </div>
+
+  <p>Todo o design visual do site é controlado por variáveis CSS definidas em <code>:root</code> no arquivo <code>style/style-base.css</code>. Para mudar cores, espaçamentos ou tipografia, basta alterar essas variáveis.</p>
+
+  <h2>Variáveis de cor principais</h2>
+  <table>
+    <tr><th>Variável</th><th>Valor atual</th><th>Uso</th></tr>
+    <tr><td><code>--black</code></td><td><code>#0a0a0a</code></td><td>Fundo principal</td></tr>
+    <tr><td><code>--dark</code></td><td><code>#111111</code></td><td>Fundo de seções escuras</td></tr>
+    <tr><td><code>--surface</code></td><td><code>#1a1a1a</code></td><td>Cards e painéis</td></tr>
+    <tr><td><code>--border-f</code></td><td><code>#222</code></td><td>Bordas sutis</td></tr>
+    <tr><td><code>--text</code></td><td><code>#d0cec9</code></td><td>Texto principal</td></tr>
+    <tr><td><code>--muted</code></td><td><code>#888</code></td><td>Texto secundário</td></tr>
+    <tr><td><code>--accent</code></td><td><code>#c8a96e</code></td><td>Cor de destaque (dourado)</td></tr>
+  </table>
+
+  <h2>Variáveis de layout</h2>
+  <table>
+    <tr><th>Variável</th><th>Valor</th><th>Uso</th></tr>
+    <tr><td><code>--pad-desk</code></td><td><code>clamp(24px, 5vw, 80px)</code></td><td>Padding lateral nas páginas</td></tr>
+    <tr><td><code>--nav-h</code></td><td><code>64px</code></td><td>Altura da barra de navegação</td></tr>
+  </table>
+
+  <h2>Tipografia</h2>
+  <p>O site usa duas fontes do Google Fonts:</p>
+  <div class="grid-2">
+    <div class="card">
+      <div class="card-title">Fraunces</div>
+      <p>Fonte serifada para títulos e destaques. Carregada com pesos 300, 400, 600.</p>
+    </div>
+    <div class="card">
+      <div class="card-title">Space Grotesk</div>
+      <p>Fonte sans-serif para corpo de texto e interface. Pesos 300, 400, 500, 600.</p>
+    </div>
+  </div>
+
+  <h2>Breakpoints responsivos</h2>
+  <table>
+    <tr><th>Breakpoint</th><th>Valor</th><th>Contexto</th></tr>
+    <tr><td>Mobile</td><td><code>max-width: 768px</code></td><td>Layout de coluna única, nav mobile</td></tr>
+    <tr><td>Tablet</td><td><code>max-width: 1024px</code></td><td>Grid 2 colunas</td></tr>
+    <tr><td>Desktop</td><td>acima de 1024px</td><td>Layout completo</td></tr>
+  </table>
+
+  <h2>Acessibilidade — prefers-reduced-motion</h2>
+  <p>O site respeita a preferência do sistema operacional por menos animação. Quando ativada (<strong>Configurações → Acessibilidade → Reduzir movimento</strong>), todas as durações de transição e animação são zeradas automaticamente via:</p>
+  <div class="code-block">
+    <div class="code-label">style-base.css</div>
+    <pre>@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}</pre>
+  </div>
+
+  <div class="page-num">14</div>
+</div>
+
+<!-- ═══════════════════════════════════════════
+     13. CHECKLIST DE DEPLOY
+═══════════════════════════════════════════ -->
+<div class="page">
+  <div class="section-header">
+    <div class="section-eyebrow">Seção 13</div>
+    <div class="section-title">Checklist de deploy</div>
+    <div class="section-sub">O que verificar antes e depois de publicar mudanças</div>
+  </div>
+
+  <h2>Antes de fazer push</h2>
+  <table>
+    <tr><th></th><th>Item</th><th>Como verificar</th></tr>
+    <tr><td>☐</td><td>data.json é JSON válido</td><td><code>python3 -m json.tool scripts/data.json</code></td></tr>
+    <tr><td>☐</td><td>Nenhuma imagem tem URL com HTTP (deve ser HTTPS)</td><td>Grep: <code>grep "http://" scripts/data.json</code></td></tr>
+    <tr><td>☐</td><td>Abriu as páginas localmente sem erro no console</td><td>Servidor local: <code>python3 -m http.server 8000</code></td></tr>
+    <tr><td>☐</td><td>Testou a troca de idioma (PT ↔ EN)</td><td>Clicar no botão de idioma em cada página</td></tr>
+    <tr><td>☐</td><td>Nenhum campo com texto HTML cru (ex: <code>&lt;b&gt;texto&lt;/b&gt;</code>)</td><td>Verificar visualmente no site</td></tr>
+  </table>
+
+  <h2>Depois de fazer push</h2>
+  <table>
+    <tr><th></th><th>Item</th><th>Como verificar</th></tr>
+    <tr><td>☐</td><td>Deploy concluído no GitHub Actions/Pages</td><td>GitHub → repositório → deployments</td></tr>
+    <tr><td>☐</td><td>Site atualizado no browser (hard refresh)</td><td>Ctrl+Shift+R</td></tr>
+    <tr><td>☐</td><td>Home carrega e slideshow funciona</td><td>Acessar index.html</td></tr>
+    <tr><td>☐</td><td>Página de filmes exibe catálogo</td><td>Acessar producoes.html</td></tr>
+    <tr><td>☐</td><td>Admin ainda consegue salvar</td><td>Editar e salvar algo sem erro</td></tr>
+  </table>
+
+  <h2>Referência rápida — comandos mais usados</h2>
+  <div class="code-block">
+    <div class="code-label">Terminal — referência rápida</div>
+    <pre><span class="cm"># Servidor local para testes</span>
+python3 -m http.server 8000
+
+<span class="cm"># Validar JSON</span>
+python3 -m json.tool scripts/data.json
+
+<span class="cm"># Ver últimas mudanças</span>
+git log --oneline -10
+
+<span class="cm"># Buscar texto em todos os arquivos JS</span>
+grep -r "texto_buscado" scripts/
+
+<span class="cm"># Desfazer última mudança local (antes do commit)</span>
+git checkout -- scripts/data.json
+
+<span class="cm"># Ver diferença entre o que está local e o remoto</span>
+git fetch && git diff origin/lite_mode</pre>
+  </div>
+
+  <h2>Contatos e recursos</h2>
+  <div class="grid-2">
+    <div class="card">
+      <div class="card-title">Repositório</div>
+      <p><code>github.com/myceliumBrain/site-produtora</code></p>
+    </div>
+    <div class="card">
+      <div class="card-title">GitHub Pages status</div>
+      <p><code>githubstatus.com</code> — verificar se o serviço está no ar</p>
+    </div>
+    <div class="card">
+      <div class="card-title">Documentação GitHub API</div>
+      <p><code>docs.github.com/rest/repos/contents</code></p>
+    </div>
+    <div class="card">
+      <div class="card-title">Validador JSON</div>
+      <p><code>jsonlint.com</code> — colar e validar o data.json</p>
+    </div>
+  </div>
+
+  <div class="callout callout-success">
+    <div class="callout-label">Resumo da arquitetura</div>
+    <p>Site estático no GitHub Pages → dados em <code>data.json</code> no repositório → admin lê/escreve via GitHub API com token autenticado → cada salvamento = 1 commit → publicação automática em 1-3 min.</p>
+  </div>
+
+  <div class="page-num">15</div>
+</div>
+
+</body>
+</html>
