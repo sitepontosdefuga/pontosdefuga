@@ -48,7 +48,7 @@ dataReady.then(() => { /* espera os dados do json serem carregados */
     const hasVideo = !!film.videoHover;
 
     return `
-      <a href="filme.html?i=${index}" class="film-card ${wide} ${tall} card--${film.ratio}${hasVideo ? ' card--has-video' : ''}">
+      <a href="filme?i=${index}" class="film-card ${wide} ${tall} card--${film.ratio}${hasVideo ? ' card--has-video' : ''}">
         <div class="film-card__img">
           ${placeholderSVG()}
           <img class="img-portrait"
@@ -107,7 +107,7 @@ dataReady.then(() => { /* espera os dados do json serem carregados */
       ? `<span class="other-card__dir">Dir. ${prod.director}</span>`
       : `<span class="other-card__dir"></span>`;
     return `
-      <a href="filme.html?i=${index}&src=other" class="other-card">
+      <a href="filme?i=${index}&src=other" class="other-card">
         <div class="other-card__img">
           ${placeholderSVG()}
           <img src="${prod.imgPortrait || ''}" alt="${escHtml(title)}" loading="lazy" onerror="this.style.display='none'">

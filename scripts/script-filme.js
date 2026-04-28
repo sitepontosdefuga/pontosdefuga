@@ -39,7 +39,7 @@ dataReady.then(() => { /* espera os dados do json serem carregados */
         <div style="padding:120px var(--pad-desk);display:flex;flex-direction:column;gap:24px;max-width:480px">
           <p style="opacity:0.4;font-size:0.85rem;letter-spacing:0.1em;text-transform:uppercase">Filme não encontrado</p>
           <p style="opacity:0.6;line-height:1.6">Não conseguimos localizar este filme no catálogo. O link pode estar desatualizado.</p>
-          <a href="producoes.html" style="font-size:0.78rem;letter-spacing:0.12em;text-transform:uppercase;border-bottom:1px solid currentColor;padding-bottom:2px;width:fit-content">← Ver todas as produções</a>
+          <a href="producoes" style="font-size:0.78rem;letter-spacing:0.12em;text-transform:uppercase;border-bottom:1px solid currentColor;padding-bottom:2px;width:fit-content">← Ver todas as produções</a>
         </div>`;
       return;
     }

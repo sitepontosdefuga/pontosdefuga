@@ -90,7 +90,7 @@ dataReady.then(() => { /* espera os dados do json serem carregados */
     document.getElementById('previewGrid').innerHTML = previewFilms.map(f => {
       const originalIndex = films.indexOf(f);
       return `
-        <a href="filme.html?i=${originalIndex}" class="preview-card reveal">
+        <a href="filme?i=${originalIndex}" class="preview-card reveal">
           <div class="preview-card__bg">
             ${placeholderSVG(48, 0.6)}
             <img class="preview-card__img-portrait"
@@ -139,7 +139,7 @@ dataReady.then(() => { /* espera os dados do json serem carregados */
 
       return `
         <li class="upcoming-item reveal ${delay}">
-          <a href="filme.html?src=upcoming&i=${i}" class="upcoming-item__link">
+          <a href="filme?src=upcoming&i=${i}" class="upcoming-item__link">
             <span class="upcoming-item__num">${num}</span>
             <span class="upcoming-item__title">${escHtml(title)}</span>
             <div class="upcoming-item__meta">

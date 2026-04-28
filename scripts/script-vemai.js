@@ -18,7 +18,7 @@ dataReady.then(() => { /* espera os dados do json serem carregados */
       const status   = i18next.t(statusKey[f.status]);
 
       return `
-        <a href="filme.html?src=upcoming&i=${i}" class="vemai-filme reveal">
+        <a href="filme?src=upcoming&i=${i}" class="vemai-filme reveal">
           <div class="vemai-filme__img-wrap">
             <div class="vemai-filme__img-bg"></div>
             ${placeholderSVG(64, 0.6, 'vemai-filme__placeholder')}

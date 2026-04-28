@@ -103,9 +103,11 @@ menuOverlay.insertBefore(menuCloseBtn, menuOverlay.firstChild);
 
 /* N1 — destaca a página atual no menu overlay */
 (function markCurrentPage() {
-  const file = window.location.pathname.split('/').pop() || 'index.html';
+  const path = window.location.pathname.replace(/\/$/, '') || '/';
+  const file = path.split('/').pop() || '/';
   menuOverlay.querySelectorAll('.menu-primary-list a').forEach(link => {
-    if (link.getAttribute('href') === file) link.classList.add('menu-link--active');
+    const href = link.getAttribute('href').replace(/\/$/, '') || '/';
+    if (href === file || href === path) link.classList.add('menu-link--active');
   });
 })();
 
