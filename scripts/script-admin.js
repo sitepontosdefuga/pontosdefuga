@@ -4,9 +4,9 @@
    O token GitHub fica criptografado no data.json (_auth.tokens)
    ============================================================ */
 
-const REPO   = 'myceliumBrain/site-produtora';
+const REPO   = 'sitepontosdefuga/pontosdefuga';
 const FILE   = 'scripts/data.json';
-const BRANCH = 'lite_mode';
+const BRANCH = 'main';
 
 function escHtml(s) {
   return String(s == null ? '' : s)
