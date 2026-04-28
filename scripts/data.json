@@ -641,7 +641,14 @@
     ]
   },
   "_auth": {
-    "tokens": [],
+    "tokens": [
+      {
+        "label": "Admin",
+        "salt": "KyqAmZ4peo/J1z9/qk2JAw==",
+        "iv": "vZ47qditYPI26ckN",
+        "data": "2qpfWHUkwwo5J8LOtEJ8OlXhdjMD1JkgP4kbmJROmnWSd57QnQAIgUh+wJU2Mt6xmoqvZlCoMNs="
+      }
+    ],
     "users": []
   },
   "otherProductions": [
