@@ -398,11 +398,57 @@
       "imgLandscape": "https://raw.githubusercontent.com/myceliumBrain/site-produtora/lite_mode/assets/filmes/paisagens/Arte_Brasileira_Quadro_a_Quadro_l.png",
       "videoHover": "https://raw.githubusercontent.com/myceliumBrain/site-produtora/lite_mode/assets/filmes/previews/Arte_Brasileira_Quadro_a_Quadro_p.mp4",
       "videoTrailer": "https://raw.githubusercontent.com/myceliumBrain/site-produtora/lite_mode/assets/filmes/trailers/Arte_Brasileira_Quadro_a_Quadro_p.mp4",
-      "makingOff": [
-        "https://raw.githubusercontent.com/myceliumBrain/site-produtora/lite_mode/assets/filmes/makingoff/Arte_Brasileira_Quadro_a_Quadro/Arte_Brasileira_Quadro_a_Quadro_mo_1775244549871_0.webp"
-      ],
+      "makingOff": [],
       "videoTrailers": [
         "https://raw.githubusercontent.com/myceliumBrain/site-produtora/lite_mode/assets/filmes/trailers/Arte_Brasileira_Quadro_a_Quadro_p.mp4"
+      ],
+      "fichatecnica": [
+        {
+          "role": "Argumento",
+          "name": "Rafael Cardoso"
+        },
+        {
+          "role": "Roteiro",
+          "name": "Rafael Cardoso, Sérgio Martins e Roberto Conduru"
+        },
+        {
+          "role": "Roteiro adicional",
+          "name": "Marcos Guttmann e Fabiano Maciel"
+        },
+        {
+          "role": "Direção Geral",
+          "name": "Marcos Guttmann"
+        },
+        {
+          "role": "Produção",
+          "name": "Nathalie Felippe e Leonardo Domingues"
+        },
+        {
+          "role": "Produção Executiva",
+          "name": "Nathalie Felippe"
+        },
+        {
+          "role": "Direção de Produção",
+          "name": "Catharina Felix"
+        },
+        {
+          "role": "Direção de Fotografia",
+          "name": "Markão Oliveira e Reynaldo Zangrandi "
+        },
+        {
+          "role": "Edição",
+          "name": "Fábio Gavião"
+        },
+        {
+          "role": "Trilha Sonora Original",
+          "name": "João Viana"
+        }
+      ],
+      "elenco": [
+        {
+          "role": "Narração",
+          "name": "Branca Messina"
+        }
       ]
     },
     {
