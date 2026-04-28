@@ -51,13 +51,13 @@ button:focus-visible {
   border-radius: 2px;
 }
 
-/* A2 — respeita preferência por menos movimento */
-@media (prefers-reduced-motion: reduce) {
+/* A2 — respeita preferência por menos movimento (desativado: interfere com animações do site) */
+/* @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after {
     animation-duration: 0.01ms !important;
     transition-duration: 0.01ms !important;
   }
-}
+} */
 
 
 
