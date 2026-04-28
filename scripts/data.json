@@ -255,6 +255,24 @@
       ],
       "videoTrailers": [
         "https://www.youtube.com/watch?v=wQER5RBU6n4"
+      ],
+      "fichatecnica": [
+        {
+          "role": "Produtor",
+          "name": "Roberto Berliner, Cláudio Manoel"
+        },
+        {
+          "role": "Roteiro",
+          "name": "Cláudio Manoel"
+        },
+        {
+          "role": "Edição",
+          "name": "Karen Akerman, Pedro Durán"
+        },
+        {
+          "role": "Diretor de Fotografia",
+          "name": "Gustavo Hadba"
+        }
       ]
     },
     {
