@@ -16,6 +16,12 @@ dataReady.then(() => { /* espera os dados do json serem carregados */
     const copies = Math.max(8, Math.ceil(window.innerWidth / (items.length * 150)) * 2);
     const repeated = Array.from({ length: copies }, () => items).flat();
     track.innerHTML = repeated.map(t => `<span class="stripe-item">${escHtml(t)}</span>`).join('');
+    // Calcula duração com base na largura real para velocidade constante entre browsers
+    requestAnimationFrame(() => {
+      const pxPerSecond = 80;
+      const duration = (track.scrollWidth * 0.5) / pxPerSecond;
+      track.style.animationDuration = duration + 's';
+    });
   }
   renderStripe();
 
