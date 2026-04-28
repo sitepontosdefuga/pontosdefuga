@@ -325,66 +325,6 @@
       ]
     },
     {
-      "title": "Amor de Bicho",
-      "titleEn": "Amor de Bicho",
-      "director": "Monica Prinzac",
-      "year": "2020 - 2024",
-      "genre": "Série Documental (2 temporadas)",
-      "hero": false,
-      "synopsis": "A relação sincera de amor, troca e respeito. Uma conexão de descobertas, emoções e transformações. Amor de Bicho revela histórias surpreendentes e únicas entre humanos e animais. Em 10 episódios, a série documental apresenta personagens da vida real e mergulha nesse convívio cheio de afetos e sentimentos, que envolve pessoas, bichos e meio ambiente. \n\nHistórias surpreendentes, emocionantes e divertidas de pessoas e animais que tiveram suas vidas transformadas a partir do convívio. Os bichos podem nos ajudar a contemplar nossa natureza mais autêntica e a encontrar respostas para os problemas cotidianos. A série vai explorar as várias formas de relações e as várias alternativas que bichos e humanos trocam para viverem melhor.\n\nExibido na Tv Mov. Da Uol (Uol Play)\n\nPersonagens: Roched, Santuário Vale da Rainha, Alessandra Luglio, Nina Rocha Kanner, entre outros. \n",
-      "synopsisEn": "A sincere relationship of love, exchange, and respect. A connection of discoveries, emotions, and transformations. \"Amor de Bicho\" reveals surprising and unique stories between humans and animals. In 10 episodes, the documentary series presents real-life characters and delves into this coexistence full of affection and feelings, involving people, animals, and the environment.\n\nSurprising, moving, and fun stories of people and animals whose lives have been transformed through their interaction. Animals can help us contemplate our most authentic nature and find answers to everyday problems. The series will explore the various forms of relationships and the various alternatives that animals and humans exchange to live better lives.\n\nAired on UOL TV (UOL Play)\n\nFeatured by: Roched, Vale da Rainha Sanctuary, Alessandra Luglio, Nina Rocha Kanner, among others.",
-      "tags": [],
-      "imgPortrait": "https://raw.githubusercontent.com/myceliumBrain/site-produtora/lite_mode/assets/filmes/retratos/Amor_de_Bicho_p.png",
-      "imgLandscape": "https://raw.githubusercontent.com/sitepontosdefuga/pontosdefuga/main/assets/filmes/paisagens/Amor_de_Bicho_l.png",
-      "videoHover": "https://raw.githubusercontent.com/myceliumBrain/site-produtora/lite_mode/assets/filmes/previews/Amor_de_Bicho_v.mp4",
-      "videoTrailer": "https://vimeo.com/483286217",
-      "makingOff": [],
-      "videoTrailers": [
-        ""
-      ],
-      "fotografias": [
-        "https://raw.githubusercontent.com/sitepontosdefuga/pontosdefuga/main/assets/filmes/fotografias/Amor_de_Bicho/Amor_de_Bicho_foto_1777339614595_0.jpg",
-        "https://raw.githubusercontent.com/sitepontosdefuga/pontosdefuga/main/assets/filmes/fotografias/Amor_de_Bicho/Amor_de_Bicho_foto_1777339619913_0.jpg",
-        "https://raw.githubusercontent.com/sitepontosdefuga/pontosdefuga/main/assets/filmes/fotografias/Amor_de_Bicho/Amor_de_Bicho_foto_1777339625969_0.png"
-      ],
-      "fichatecnica": [
-        {
-          "role": "Produção",
-          "name": "Nathalie Felippe e Mônica Prinzac"
-        },
-        {
-          "role": "Direção de Fotografia",
-          "name": "Manuel Águas"
-        },
-        {
-          "role": "Edição",
-          "name": "Rita Carvana"
-        },
-        {
-          "role": "Roteiro",
-          "name": "Mônica Prinzac e Mariana Muniz"
-        },
-        {
-          "role": "Direção de Produção",
-          "name": "Catharina Felix"
-        }
-      ],
-      "elenco": [
-        {
-          "role": "",
-          "name": "Jonas Santiago"
-        },
-        {
-          "role": "",
-          "name": "Camila Alves"
-        },
-        {
-          "role": "",
-          "name": "Claudinê "
-        }
-      ]
-    },
-    {
       "title": "Arte Brasileira Quadro a Quadro",
       "titleEn": "Arte Brasileira Quadro a Quadro",
       "director": "Marcos Guttmann e Fabiano Maciel",
@@ -448,6 +388,66 @@
         {
           "role": "Narração",
           "name": "Branca Messina"
+        }
+      ]
+    },
+    {
+      "title": "Amor de Bicho",
+      "titleEn": "Amor de Bicho",
+      "director": "Monica Prinzac",
+      "year": "2020 - 2024",
+      "genre": "Série Documental (2 temporadas)",
+      "hero": false,
+      "synopsis": "A relação sincera de amor, troca e respeito. Uma conexão de descobertas, emoções e transformações. Amor de Bicho revela histórias surpreendentes e únicas entre humanos e animais. Em 10 episódios, a série documental apresenta personagens da vida real e mergulha nesse convívio cheio de afetos e sentimentos, que envolve pessoas, bichos e meio ambiente. \n\nHistórias surpreendentes, emocionantes e divertidas de pessoas e animais que tiveram suas vidas transformadas a partir do convívio. Os bichos podem nos ajudar a contemplar nossa natureza mais autêntica e a encontrar respostas para os problemas cotidianos. A série vai explorar as várias formas de relações e as várias alternativas que bichos e humanos trocam para viverem melhor.\n\nExibido na Tv Mov. Da Uol (Uol Play)\n\nPersonagens: Roched, Santuário Vale da Rainha, Alessandra Luglio, Nina Rocha Kanner, entre outros. \n",
+      "synopsisEn": "A sincere relationship of love, exchange, and respect. A connection of discoveries, emotions, and transformations. \"Amor de Bicho\" reveals surprising and unique stories between humans and animals. In 10 episodes, the documentary series presents real-life characters and delves into this coexistence full of affection and feelings, involving people, animals, and the environment.\n\nSurprising, moving, and fun stories of people and animals whose lives have been transformed through their interaction. Animals can help us contemplate our most authentic nature and find answers to everyday problems. The series will explore the various forms of relationships and the various alternatives that animals and humans exchange to live better lives.\n\nAired on UOL TV (UOL Play)\n\nFeatured by: Roched, Vale da Rainha Sanctuary, Alessandra Luglio, Nina Rocha Kanner, among others.",
+      "tags": [],
+      "imgPortrait": "https://raw.githubusercontent.com/myceliumBrain/site-produtora/lite_mode/assets/filmes/retratos/Amor_de_Bicho_p.png",
+      "imgLandscape": "https://raw.githubusercontent.com/sitepontosdefuga/pontosdefuga/main/assets/filmes/paisagens/Amor_de_Bicho_l.png",
+      "videoHover": "https://raw.githubusercontent.com/myceliumBrain/site-produtora/lite_mode/assets/filmes/previews/Amor_de_Bicho_v.mp4",
+      "videoTrailer": "https://vimeo.com/483286217",
+      "makingOff": [],
+      "videoTrailers": [
+        ""
+      ],
+      "fotografias": [
+        "https://raw.githubusercontent.com/sitepontosdefuga/pontosdefuga/main/assets/filmes/fotografias/Amor_de_Bicho/Amor_de_Bicho_foto_1777339614595_0.jpg",
+        "https://raw.githubusercontent.com/sitepontosdefuga/pontosdefuga/main/assets/filmes/fotografias/Amor_de_Bicho/Amor_de_Bicho_foto_1777339619913_0.jpg",
+        "https://raw.githubusercontent.com/sitepontosdefuga/pontosdefuga/main/assets/filmes/fotografias/Amor_de_Bicho/Amor_de_Bicho_foto_1777339625969_0.png"
+      ],
+      "fichatecnica": [
+        {
+          "role": "Produção",
+          "name": "Nathalie Felippe e Mônica Prinzac"
+        },
+        {
+          "role": "Direção de Fotografia",
+          "name": "Manuel Águas"
+        },
+        {
+          "role": "Edição",
+          "name": "Rita Carvana"
+        },
+        {
+          "role": "Roteiro",
+          "name": "Mônica Prinzac e Mariana Muniz"
+        },
+        {
+          "role": "Direção de Produção",
+          "name": "Catharina Felix"
+        }
+      ],
+      "elenco": [
+        {
+          "role": "",
+          "name": "Jonas Santiago"
+        },
+        {
+          "role": "",
+          "name": "Camila Alves"
+        },
+        {
+          "role": "",
+          "name": "Claudinê "
         }
       ]
     },
