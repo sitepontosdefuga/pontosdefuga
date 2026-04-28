@@ -329,7 +329,7 @@
       ],
       "fichatecnica": [
         {
-          "role": "Produção",
+          "role": "Produtoras",
           "name": "Nathalie Felippe e Valentina Homem"
         },
         {
@@ -351,6 +351,10 @@
         {
           "role": "Trilha Original",
           "name": "Caio Domingues e Nicolau Domingues"
+        },
+        {
+          "role": "Coprodução",
+          "name": "Sempre Viva"
         }
       ]
     },
