@@ -389,7 +389,20 @@ a, button { cursor: pointer !important; }
 .tag-badge button:hover { color: var(--danger); }
 
 .tags-input-row { display: flex; gap: 0.5rem; margin-top: 0.5rem; }
-.tags-input-row input { flex: 1; }
+.tags-input-row input {
+  flex: 1;
+  background: var(--surface);
+  border: 1px solid var(--border-f);
+  color: var(--white);
+  font-family: var(--mono);
+  font-size: 0.85rem;
+  padding: 0.75rem 1rem;
+  outline: none;
+  border-radius: 2px;
+  transition: border-color 0.2s;
+}
+.tags-input-row input:focus { border-color: var(--accent); }
+.tags-input-row input::placeholder { color: var(--muted, #666); }
 
 /* ── INPUTS SOLTOS (fora de .field) — mesmo visual do painel ── */
 .adm-input {
