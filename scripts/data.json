@@ -331,8 +331,8 @@
       "year": "2018 - 2026",
       "genre": "Série Documental (2 temporadas)",
       "hero": false,
-      "synopsis": "Arte Brasileira Quadro a Quadro é uma série de seis episódios que aborda obras de um período não muito conhecido e falado da Arte brasileira, o Pré-Modernismo. Baseada no livro do historiador de arte Rafael Cardoso, \"Arte Brasileira em 25 Quadros\", o programa parte da análise de obras do período de 1790 a 1930 para falar de temas que permeiam a atualidade, como igualdade de gênero, feminismo, racismo, identidade cultural, preservação do meio ambiente, emigração e moralismo na arte, entre outros.\n\nA série foi exibida originalmente pelo canal Arte1 em 2017 e conta com a direção de Marcos Guttmann e Fabiano Maciel. ",
-      "synopsisEn": "Brazilian Art Frame by Frame is a six-episode series that explores works from a little-known and rarely discussed period of Brazilian art: Pre-Modernism. Based on the book by art historian Rafael Cardoso, \"Brazilian Art in 25 Frames,\" the program uses the analysis of works from the period 1790 to 1930 to discuss themes that permeate the present day, such as gender equality, feminism, racism, cultural identity, environmental preservation, emigration, and moralism in art, among others.\n\nThe series originally aired on the Arte1 channel in 2017 and is directed by Marcos Guttmann and Fabiano Maciel.",
+      "synopsis": "Arte Brasileira Quadro a Quadro é uma série documental sobre a história da arte brasileira a partir de suas obras mais relevantes. A primeira temporada, exibida pelo canal Arte1 em 2017, é baseada no livro Arte Brasileira em 25 Quadros, do historiador de arte Rafael Cardoso, e aborda o período do Pré-Modernismo, discutindo temas como feminismo, racismo, identidade cultural, imigração e preservação ambiental por meio da análise de obras produzidas entre 1790 e 1930.\nA segunda temporada, exibida em 2026, amplia esse olhar ao abordar quadros do passado e do presente para discutir temas como colonização, abolicionismo, direitos das mulheres, modernismo, boemia e preservação ambiental, tornando a história da arte mais acessível ao grande público.",
+      "synopsisEn": "Arte Brasileira Quadro a Quadro is a documentary series about the history of Brazilian art through its most relevant works. The first season, originally broadcast on Arte1 in 2017, is based on the book Brazilian Art in 25 Paintings by art historian Rafael Cardoso and focuses on the Pre-Modernist period, exploring themes such as feminism, racism, cultural identity, immigration, and environmental preservation through the analysis of works created between 1790 and 1930.\nThe second season, released in 2026, expands this perspective by examining paintings from both the past and the present to discuss themes such as colonization, abolitionism, women’s rights, modernism, bohemian culture, and environmental preservation, making the history of Brazilian art more accessible to a wider audience.",
       "tags": [],
       "imgPortrait": "https://raw.githubusercontent.com/myceliumBrain/site-produtora/lite_mode/assets/filmes/retratos/Arte_Brasileira_Quadro_a_Quadro_p.jpg",
       "imgLandscape": "https://raw.githubusercontent.com/myceliumBrain/site-produtora/lite_mode/assets/filmes/paisagens/Arte_Brasileira_Quadro_a_Quadro_l.png",
@@ -382,6 +382,14 @@
         {
           "role": "Trilha Sonora Original",
           "name": "João Viana"
+        },
+        {
+          "role": "Produção",
+          "name": "Solavanco "
+        },
+        {
+          "role": "Co-produção",
+          "name": "Solar Filmes"
         }
       ],
       "elenco": [
