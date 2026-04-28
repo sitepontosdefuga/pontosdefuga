@@ -296,23 +296,11 @@
       "fichatecnica": [
         {
           "role": "Produção",
-          "name": "Nathalie Felippe"
-        },
-        {
-          "role": "Produção",
-          "name": "Valentina Homem"
+          "name": "Nathalie Felippe e Valentina Homem"
         },
         {
           "role": "Roteiro",
-          "name": "Jô Bilac"
-        },
-        {
-          "role": "Roteiro",
-          "name": "Fernanda Bond"
-        },
-        {
-          "role": "Roteiro",
-          "name": "Valentina Homem"
+          "name": "Jô Bilac, Fernanda Bond e Valentina Homem"
         },
         {
           "role": "Direção de Arte",
@@ -321,6 +309,14 @@
         {
           "role": "Direção de Fotografia",
           "name": "Louise Botkay e Amara Barroso"
+        },
+        {
+          "role": "Montagem",
+          "name": "Alice Furtado"
+        },
+        {
+          "role": "Trilha Original",
+          "name": "Caio Domingues e Nicolau Domingues"
         }
       ]
     },
