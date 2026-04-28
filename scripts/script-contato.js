@@ -10,7 +10,7 @@ dataReady.then(() => {
   const form     = document.getElementById('contactForm');
   const feedback = document.getElementById('formFeedback');
 
-  emailjs.init('Rq3NnSh6M4ep2ARq_');
+  emailjs.init('NO_Pgj0RItOKnFMxp');
 
   /* F4 — validação em tempo real */
   const emailRegexLive = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -56,7 +56,7 @@ dataReady.then(() => {
     btn.disabled = true;
     btn.style.opacity = '0.5';
 
-    emailjs.send('service_2yrzyqh', 'template_lg3h37e', {
+    emailjs.send('service_45xix2n', 'template_waiwfry', {
       nome,
       email,
       telefone: form.telefone.value.trim() || '—',
