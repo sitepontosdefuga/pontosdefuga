@@ -654,8 +654,8 @@
       "director": "Aderbal Freire Filho",
       "year": "",
       "genre": "Peça Teatral",
-      "synopsis": "Monólogo de Drica Moraes, no papel da responsável por organizar todos os fatos que ocorrem no planeta, catalogando e arquivando recortes de manchetes e notícias.\n\nTexto de Patrícia Melo e direção de Aderbal Freire Filho.\n\nFicou em cartaz onde? Por quanto tempo?",
-      "synopsisEn": "Monologue by Drica Moraes, in the role of the person responsible for organizing all the events that occur on the planet, cataloging and archiving clippings of headlines and news.\n\nText by Patrícia Melo and directed by Aderbal Freire Filho.\n\nWhere was it staged? For how long?",
+      "synopsis": "Monólogo de Drica Moraes, no papel da responsável por organizar todos os fatos que ocorrem no planeta, catalogando e arquivando recortes de manchetes e notícias.\n\nTexto de Patrícia Melo e direção de Aderbal Freire Filho.\n",
+      "synopsisEn": "Monologue by Drica Moraes, in the role of the person responsible for organizing all the events that occur on the planet, cataloging and archiving clippings of headlines and news.\n\nText by Patrícia Melo and directed by Aderbal Freire Filho.\n",
       "imgPortrait": "https://raw.githubusercontent.com/myceliumBrain/site-produtora/lite_mode/assets/filmes/retratos/A_Ordem_do_Mundo_p.png",
       "videoTrailers": [],
       "imgLandscape": "",
@@ -740,8 +740,7 @@
       "gridTitleEn": "Recent productions",
       "stripeItems": [
         "Rio de Janeiro",
-        "Pontos de Fuga",
-        "Desde 20--"
+        "Pontos de Fuga"
       ]
     },
     "historia": {
