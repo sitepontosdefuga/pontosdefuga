@@ -5,10 +5,6 @@
       {
         "label": "Instagram",
         "url": "https://www.instagram.com/pontosdefuga_/"
-      },
-      {
-        "label": "Relatórios de comercialização",
-        "url": "https://drive.google.com/drive/folders/1g-RpPL8dvd7IjQXj-NLPrP4ujAC3LYPc?usp=share_link"
       }
     ],
     "fontDisplayUrl": "https://fonts.googleapis.com/css2?family=Red+Hat+Mono:ital,wght@0,300;0,400;0,500;1,300&display=swap",
@@ -641,7 +637,14 @@
     ]
   },
   "_auth": {
-    "tokens": [],
+    "tokens": [
+      {
+        "label": "Admin",
+        "salt": "KyqAmZ4peo/J1z9/qk2JAw==",
+        "iv": "vZ47qditYPI26ckN",
+        "data": "2qpfWHUkwwo5J8LOtEJ8OlXhdjMD1JkgP4kbmJROmnWSd57QnQAIgUh+wJU2Mt6xmoqvZlCoMNs="
+      }
+    ],
     "users": []
   },
   "otherProductions": [
@@ -651,8 +654,8 @@
       "director": "Aderbal Freire Filho",
       "year": "",
       "genre": "Peça Teatral",
-      "synopsis": "Monólogo de Drica Moraes, no papel da responsável por organizar todos os fatos que ocorrem no planeta, catalogando e arquivando recortes de manchetes e notícias.\n\nTexto de Patrícia Melo e direção de Aderbal Freire Filho.\n\nFicou em cartaz onde? Por quanto tempo?",
-      "synopsisEn": "Monologue by Drica Moraes, in the role of the person responsible for organizing all the events that occur on the planet, cataloging and archiving clippings of headlines and news.\n\nText by Patrícia Melo and directed by Aderbal Freire Filho.\n\nWhere was it staged? For how long?",
+      "synopsis": "Monólogo de Drica Moraes, no papel da responsável por organizar todos os fatos que ocorrem no planeta, catalogando e arquivando recortes de manchetes e notícias.\n\nTexto de Patrícia Melo e direção de Aderbal Freire Filho.\n",
+      "synopsisEn": "Monologue by Drica Moraes, in the role of the person responsible for organizing all the events that occur on the planet, cataloging and archiving clippings of headlines and news.\n\nText by Patrícia Melo and directed by Aderbal Freire Filho.\n",
       "imgPortrait": "https://raw.githubusercontent.com/myceliumBrain/site-produtora/lite_mode/assets/filmes/retratos/A_Ordem_do_Mundo_p.png",
       "videoTrailers": [],
       "imgLandscape": "",
@@ -724,7 +727,7 @@
       "titleEn": "Contact",
       "subPt": "Estamos disponíveis para parcerias, imprensa e qualquer conversa sobre cinema.",
       "subEn": "We're available for partnerships, press, and any conversation about cinema.",
-      "whatsapp": "5521988902499"
+      "whatsapp": "5521967712304"
     },
     "index": {
       "ctaTitlePt": "Quer falar conosco?",
@@ -737,8 +740,7 @@
       "gridTitleEn": "Recent productions",
       "stripeItems": [
         "Rio de Janeiro",
-        "Pontos de Fuga",
-        "Desde 20--"
+        "Pontos de Fuga"
       ]
     },
     "historia": {
