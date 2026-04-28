@@ -62,6 +62,7 @@ dataReady.then(() => {
       telefone: form.telefone.value.trim() || '—',
       assunto,
       mensagem,
+      to_email: (pagesData.contato && pagesData.contato.toEmail) || '',
     })
     .then(() => {
       feedback.textContent = lang === 'en'

@@ -844,6 +844,7 @@ function renderPagContato() {
       <div class="field full"><label>Subtítulo PT</label><textarea id="pc-subPt">${esc(c.subPt||'')}</textarea></div>
       <div class="field full"><label>Subtítulo EN</label><textarea id="pc-subEn">${esc(c.subEn||'')}</textarea></div>
       <div class="field full"><label>WhatsApp (só o número, ex: 5521988902499)</label><input id="pc-whatsapp" value="${esc(c.whatsapp||'')}"></div>
+      <div class="field full"><label>E-mail destinatário <span class="field-note">quem recebe as mensagens do formulário de contato</span></label><input id="pc-toEmail" type="email" placeholder="contato@produtora.com.br" value="${esc(c.toEmail||'')}"></div>
     </div>`;
 }
 
@@ -1389,7 +1390,7 @@ function collectAll() {
     if (el) data.pagesData.producoes[f] = el.value;
   });
   if (!data.pagesData.contato) data.pagesData.contato = {};
-  ['eyebrowPt','eyebrowEn','titlePt','titleEn','subPt','subEn','whatsapp'].forEach(f => {
+  ['eyebrowPt','eyebrowEn','titlePt','titleEn','subPt','subEn','whatsapp','toEmail'].forEach(f => {
     const el = document.getElementById('pc-' + f);
     if (el) data.pagesData.contato[f] = el.value;
   });
